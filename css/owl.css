@@ -1,4 +1,12 @@
 .item{
     display: flex;
     justify-content: center;
+    transition: .5s;
+}
+.item:hover{
+    scale: 1.05;
+    
+}
+.owl-nav{
+    display: none;
 }

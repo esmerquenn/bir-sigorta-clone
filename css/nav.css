@@ -37,6 +37,9 @@
 
   /* Add more custom dark mode styles here */
 }
+.font-asap {
+  font-family: "Asap" !important;
+}
 
 @media only screen and (min-width: 992px) {
   .hidden_dropdown {
