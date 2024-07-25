@@ -3,10 +3,27 @@
     justify-content: center;
     transition: .5s;
 }
-.item:hover{
+.owl_item:hover{
     scale: 1.05;
     
 }
+.relative_section{
+    position:  relative !important;
+}
+.owl-next, .owl-prev{
+  
+  color: azure !important;
+  font-size: 3rem !important;
+  right: 10px !important;
+
+}
 .owl-nav{
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    right: 0;
+    left: 0;
+
 }

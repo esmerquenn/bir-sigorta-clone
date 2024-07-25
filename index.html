@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
     <link rel="stylesheet" href="css/owl.css" />
-    <link rel="stylesheet" href="css/flip-card.css">
+    <link rel="stylesheet" href="css/flip-card.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link
@@ -30,7 +30,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
+    <style>
+      #image-slider .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #image-slider .item img {
+        width: 100%;
+        max-width: 200px;
+        border: 2px solid #00acc1;
+      }
+    </style>
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
@@ -300,8 +313,9 @@
       </div>
     </header>
     <main>
-      <section class="owl-carousel owl-theme my-10 py-3 px-4 lg:px-10 xl:px-20">
-        <div class="item">
+      <!-- OWL FIRST START -->
+      <section class="owl-carousel carousel-1 owl-theme my-10 py-3 px-4 lg:px-10 xl:px-20">
+        <div class="item owl_item">
           <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
             <img class="w-full" src="./assets/img/car.jpg" alt="Sunset in the mountains" />
             <div class="px-6 py-4">
@@ -309,7 +323,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item owl_item">
           <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
             <img class="w-full" src="./assets/img/life2.jpeg" alt="Sunset in the mountains" />
             <div class="px-6 py-4">
@@ -317,7 +331,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item owl_item">
           <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
             <img class="w-full" src="./assets/img/home2.jpg" alt="Sunset in the mountains" />
             <div class="px-6 py-4">
@@ -325,7 +339,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item owl_item">
           <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
             <img class="w-full" src="./assets/img/travel22.jpg" alt="Sunset in the mountains" />
             <div class="px-6 py-4">
@@ -333,7 +347,7 @@
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item owl_item">
           <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
             <img class="w-full" src="./assets/img/kasko.jpg" alt="Sunset in the mountains" />
             <div class="px-6 py-4">
@@ -342,6 +356,8 @@
           </div>
         </div>
       </section>
+      <!-- OWL FIRST END -->
+      <!-- ABOUT START -->
       <section class="my-32 w-full lg:max-w-full lg:flex py-3 px-4 md:px-10 lg:px-20 xl:px-36 bg-white dark:bg-gray-900">
         <article class="bg-white dark:bg-gray-800 p-6 flex flex-col justify-between leading-normal">
           <div>
@@ -364,6 +380,7 @@
           title="blue"
         ></div>
       </section>
+      <!-- ABOUT END -->
       <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-36">
         <div class="container mx-auto py-12 px-4">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -383,53 +400,77 @@
         </div>
       </section>
       <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-40">
-        <h3 class=" font-asap font-[800] text-[48px] leading-10 text-[#054f5d] text-center my-20">Xidmətlər</h3>
-         
+        <h3 class="font-asap font-[800] text-[48px] leading-10 text-[#054f5d] dark:text-slate-100 text-center my-20">
+          Xidmətlər
+        </h3>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="flip-card h-64 rounded-lg" id="card1">
-            <div class="flip-card-inner ">
-              <div class="flip-card-front bg-[#054f5d] text-white p-6 flex flex-col items-center justify-center bg-[url('./assets/img/insure.jpg')] ">
-                <i class="fa-solid fa-hand-holding-heart text-[3rem] mb-5"></i> 
-                <p class="text-2xl font-bold"> Həyat Sığortası</p>
-              </div>
-              <div class="flip-card-back bg-gray-200 text-gray-900 p-6 flex flex-col items-center justify-center">
-                <p>Səyahət Sığortası online almaq artıq sizin üçün çox rahatdır</p>
-                <button class="mt-4 py-2 px-4 bg-[#054f5d] text-white rounded">Daha ətraflı</button>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card shadow-lg rounded-lg" id="card2">
-            <div class="flip-card-inner">
-              <div class="flip-card-front bg-[#054f5d] text-white p-6 flex items-center justify-center">
-                <p class="text-2xl font-bold">Könüllü Tibbi Sığorta</p>
-              </div>
-              <div class="flip-card-back bg-gray-200 text-gray-900 p-6 flex flex-col items-center justify-center ">
-                <p>Könüllü Tibbi Sığorta haqqında məlumat</p>
-                <button class="mt-4 py-2 px-4 bg-gray-700 text-white rounded">Daha ətraflı</button>
-              </div>
-            </div>
-          </div>
-          <div class="flip-card shadow-lg rounded-lg" id="card3">
-            <div class="flip-card-inner">
-              <div class="flip-card-front bg-gray-700 text-white p-6 flex items-center justify-center ">
-                <p class="text-2xl font-bold">KASKO Sığorta</p>
-              </div>
-              <div class="flip-card-back bg-gray-200 text-gray-900 p-6 flex flex-col items-center justify-center">
-                <p>KASKO Sığorta haqqında məlumat</p>
-                <button class="mt-4 py-2 px-4 bg-gray-700 text-white rounded">Daha ətraflı</button>
-              </div>
-            </div>
-          </div>
-          <!-- Diğer kartlar buraya eklenebilir -->
-        </div>
+        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
       </section>
+      <!-- OWL SECOND START -->
+
+      <section class="relative_section">
+       <div class="py-8 my-6 bg-[#054F5D] px-4  md:px-10 lg:px-20 xl:px-40">
+        <div class="owl-carousel owl-theme image-slider ">
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta1.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta2.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta3.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta4.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta1.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta2.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta3.jpg" alt="1" />
+            </div>
+          </div>
+          <div class="item">
+            <div class="border-4 border-blue-200 w-[200px]">
+              <img class="object-cover" src="./assets/img/sigorta4.jpg" alt="1" />
+            </div>
+          </div>
+        </div>
+       </div>
+      </section>
+      <!-- OWL SECOND END -->
+     <!-- NEWS START -->
+     <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-40">
+      <h3 class="font-asap font-[800] text-[48px] leading-10 text-[#054f5d] dark:text-slate-100 text-center my-20">Xəbərlər</h3>
+
+      <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Dinamik olarak oluşturulacak kartlar buraya eklenecek -->
+      </div>
+    </section>
+     <!-- NEWS END -->
     </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/count.js"></script>
     <script src="js/flipCards.js"></script>
+    <script src="js/news.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

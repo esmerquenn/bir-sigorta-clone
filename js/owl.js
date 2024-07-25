@@ -1,7 +1,8 @@
-$(".owl-carousel").owlCarousel({
+$(".carousel-1").owlCarousel({
   loop: true,
   margin: 50,
-  nav: true,
+  dots:false,
+  nav: false,
   autoplay: true, // Enable autoplay
   autoplayTimeout: 2000, // Time in milliseconds (2000ms = 2 seconds)
   autoplayHoverPause: true,
@@ -13,7 +14,29 @@ $(".owl-carousel").owlCarousel({
       items: 2,
     },
     1000: {
+      items: 3,
+    },
+  },
+});
+$(".image-slider").owlCarousel({
+  loop: true,
+  margin: 50,
+  dots:false,
+  nav: true,
+  autoplay: true, // Enable autoplay
+  autoplayTimeout: 2000, // Time in milliseconds (2000ms = 2 seconds)
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 2,
+    },
+    600: {
+      items: 3,
+    },
+    1000: {
       items: 4,
     },
   },
 });
+
+
