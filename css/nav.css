@@ -15,11 +15,13 @@
   visibility: hidden;
   height: 0;
   transition: all 0.5s;
+
 }
 .dropdown {
   opacity: 1;
   height: 210px;
   visibility: visible;
+  z-index: 99999999;
 }
 /* tailwind.css or your custom CSS file */
 @layer base {

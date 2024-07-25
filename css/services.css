@@ -1,0 +1,46 @@
+.services{
+    background: url(./../assets/img/services.jpg)center/cover;
+    height: 70vh;
+}
+.about{
+    background: url(./../assets/img/about_us.jpg)center/cover;
+    height: 70vh;
+}
+.contact{
+    background: url(./../assets/img/contact.jpg)center/cover;
+    height: 70vh;
+}
+.ferdi{
+    background: url(./../assets/img/ferdi.jpg)center/cover;
+    height: 70vh;
+}
+.korporativ{
+    background: url(./../assets/img/korporativ.jpg)center/cover;
+    height: 70vh;
+}
+.title {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    position: absolute;
+    color: azure;
+    font-size: 3.5rem;
+    font-weight: bold;
+    animation: slideIn 1s ease-out forwards;
+   
+  }
+  
+  @keyframes slideIn {
+    0% {
+      bottom: 50%;
+      opacity: 0;
+    }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      bottom: 60%;
+      opacity: 1;
+    }
+  }

@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
-    <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/services.css">
     <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -138,40 +140,73 @@
           <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
         </div>
       </nav>
-
-      <div class="about">
-        <h1 class="title">Haqqımızda</h1>
+      <div class="contact">
+        <h1 class="title">Əlaqə</h1>
       </div>
     </header>
     <main>
-      <section class="my-10 py-3 px-4 md:px-10 lg:px-20 xl:px-40">
-        <h3 class="font-asap font-[800] text-[48px] leading-10 text-[#054f5d] dark:text-slate-100 text-center my-20">
-          Bir Sığorta Agenti LLC
-        </h3>
-        <p class="text-lg mb-4 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna vitae libero sollicitudin hendrerit. Phasellus in ultricies mauris, nec molestie libero. Suspendisse potenti.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Integer faucibus massa at turpis cursus, et cursus magna consequat. Ut viverra metus et tortor pretium, sed tempus ipsum placerat. Praesent aliquet suscipit lacus, vel tincidunt lorem tincidunt eu.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Aenean ut massa non sapien faucibus eleifend. Maecenas consequat, urna id vehicula fringilla, urna turpis tincidunt velit, id mollis neque nulla nec mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Vivamus scelerisque, velit vel tincidunt dapibus, libero ipsum bibendum nisi, non euismod lacus elit in turpis. Vivamus euismod magna eu urna bibendum, ac faucibus justo interdum.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Fusce quis nisi nec ligula placerat semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi tincidunt, magna nec luctus feugiat, metus augue suscipit mi, a cursus elit lectus ac urna.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Sed tincidunt vehicula eros, in laoreet ligula lacinia sit amet. Nunc lacinia, eros ac aliquet pharetra, turpis ligula bibendum libero, a ultricies sapien lectus sit amet dui. Vivamus eget ligula nec urna tempus condimentum.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Integer consectetur dui nec mi fermentum, in ultricies lectus efficitur. Quisque facilisis nisi et justo malesuada, sed pharetra purus cursus.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Curabitur id nisl vel felis posuere vehicula. Cras a diam nec sapien feugiat consectetur. Nullam posuere neque nec magna pharetra, at hendrerit lorem luctus.
-        </p>
+      <section class="py-12 px-4 lg:px-10 xl:px-20">
+        
+          <div class="grid grid-cols-3 bg-red-400">
+            <div>
+              <i class="fas fa-phone-alt text-4xl mb-4 text-[#054F5D]"></i>
+              <p class="text-lg font-semibold text-[#054F5D]">+994 50 286 25 85</p>
+            </div>
+            <div>
+              <i class="fas fa-envelope text-4xl mb-4 text-[#054F5D]"></i>
+              <p class="text-lg font-semibold text-[#054F5D]">office@qarantsigorta.az</p>
+            </div>
+            <div>
+              <i class="fas fa-map-marker-alt text-4xl mb-4 text-[#054F5D]"></i>
+              <p class="text-lg font-semibold text-[#054F5D]">Samed Vurgun Street 53, Word Business Center</p>
+            </div>
+          </div>
+       
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <form class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold mb-4 text-[#054F5D] dark:text-gray-100">Write to us</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="text"
+                placeholder="Name"
+                class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#054F5D]"
+              />
+              <input
+                type="text"
+                placeholder="Last name"
+                class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#054F5D]"
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <input
+                type="text"
+                placeholder="Number"
+                class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#054F5D]"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                class="p-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#054F5D]"
+              />
+            </div>
+            <textarea
+              placeholder="Message"
+              class="p-2 border rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-[#054F5D]"
+            ></textarea>
+            <button type="submit" class="bg-[#054F5D] text-white py-2 px-4 rounded w-full">Send</button>
+          </form>
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.89375413088!2d49.66798916942406!3d40.409261699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d51161cb4df%3A0x75d8f1001d1be02d!2s53%20Samad%20Vurgun%20Street%2C%20Baku%2C%20Azerbaijan!5e0!3m2!1sen!2sus!4v1644142297327!5m2!1sen!2sus"
+              width="100%"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            >
+            </iframe>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#054F5D] text-white dark:bg-gray-800 dark:text-gray-100">

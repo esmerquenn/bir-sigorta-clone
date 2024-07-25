@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/owl.css" />
+    <link rel="stylesheet" href="css/flip-card.css" />
     <link rel="stylesheet" href="css/services.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -139,80 +141,94 @@
         </div>
       </nav>
 
-      <div class="about">
-        <h1 class="title">Haqqımızda</h1>
+      <div class="ferdi">
+        <h1 class="title">Fərdi sığorta</h1>
       </div>
     </header>
     <main>
-      <section class="my-10 py-3 px-4 md:px-10 lg:px-20 xl:px-40">
-        <h3 class="font-asap font-[800] text-[48px] leading-10 text-[#054f5d] dark:text-slate-100 text-center my-20">
-          Bir Sığorta Agenti LLC
-        </h3>
-        <p class="text-lg mb-4 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non urna vitae libero sollicitudin hendrerit. Phasellus in ultricies mauris, nec molestie libero. Suspendisse potenti.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Integer faucibus massa at turpis cursus, et cursus magna consequat. Ut viverra metus et tortor pretium, sed tempus ipsum placerat. Praesent aliquet suscipit lacus, vel tincidunt lorem tincidunt eu.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Aenean ut massa non sapien faucibus eleifend. Maecenas consequat, urna id vehicula fringilla, urna turpis tincidunt velit, id mollis neque nulla nec mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Vivamus scelerisque, velit vel tincidunt dapibus, libero ipsum bibendum nisi, non euismod lacus elit in turpis. Vivamus euismod magna eu urna bibendum, ac faucibus justo interdum.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Fusce quis nisi nec ligula placerat semper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi tincidunt, magna nec luctus feugiat, metus augue suscipit mi, a cursus elit lectus ac urna.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Sed tincidunt vehicula eros, in laoreet ligula lacinia sit amet. Nunc lacinia, eros ac aliquet pharetra, turpis ligula bibendum libero, a ultricies sapien lectus sit amet dui. Vivamus eget ligula nec urna tempus condimentum.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Integer consectetur dui nec mi fermentum, in ultricies lectus efficitur. Quisque facilisis nisi et justo malesuada, sed pharetra purus cursus.
-        </p>
-        <p class="text-lg mb-4 text-center">
-            Curabitur id nisl vel felis posuere vehicula. Cras a diam nec sapien feugiat consectetur. Nullam posuere neque nec magna pharetra, at hendrerit lorem luctus.
-        </p>
+      <section class=" my-10 py-3 px-4 md:px-10 lg:px-20 xl:px-40"> 
+        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
       </section>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#054F5D] text-white dark:bg-gray-800 dark:text-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
+            <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
+                “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
+                sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
+                facere quos eum?
+            </p>
+            <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
+            <div class="mb-4">
+                <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    +994 50 286 25 85
+                </p>
+                <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+                    <i class="fas fa-envelope mr-2"></i>
+                    office@Birsigorta.az
+                </p>
+                <p class="flex justify-center items-center text-[#BCC0C2] dark:text-gray-400">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Səməd Vurğun küçəsi 53, World Business Center
+                </p>
+            </div>
+            <div class="flex justify-center space-x-6 my-6">
+                <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#054F5D] text-white">
       <div class="container mx-auto text-center">
         <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
-        <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
+        <p class="text-lg mb-4 text-[#BCC0C2]">
           “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
           sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
           facere quos eum?
         </p>
         <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
         <div class="mb-4">
-          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
             <i class="fas fa-phone-alt mr-2"></i>
             +994 50 286 25 85
           </p>
-          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
             <i class="fas fa-envelope mr-2"></i>
             office@Birsigorta.az
           </p>
-          <p class="flex justify-center items-center text-[#BCC0C2] dark:text-gray-400">
+          <p class="flex justify-center items-center text-[#BCC0C2]">
             <i class="fas fa-map-marker-alt mr-2"></i>
             Səməd Vurğun küçəsi 53, World Business Center
           </p>
         </div>
         <div class="flex justify-center space-x-6 my-6">
-          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px]">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px]">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px]">
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a href="#" class="text-2xl bg-[#fff] text-[#054F5D] p-2 w-12 h-12 rounded-[25px]">
             <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
-    </footer>
+    </footer> -->
+    <script src="js/flipCards.js"></script>
 
     <script src="js/nav.js"></script>
   </body>
