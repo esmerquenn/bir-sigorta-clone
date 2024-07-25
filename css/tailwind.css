@@ -618,6 +618,10 @@ video {
   z-index: 10;
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -690,6 +694,10 @@ video {
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -772,6 +780,14 @@ video {
   height: 75%;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
 .min-h-\[15vh\] {
   min-height: 15vh;
 }
@@ -810,6 +826,10 @@ video {
 
 .w-\[200px\] {
   width: 200px;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .max-w-sm {
@@ -852,6 +872,12 @@ video {
   gap: 2rem;
 }
 
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -890,6 +916,14 @@ video {
 
 .rounded-\[65px\] {
   border-radius: 65px;
+}
+
+.rounded-\[20px\] {
+  border-radius: 20px;
+}
+
+.rounded-\[25px\] {
+  border-radius: 25px;
 }
 
 .rounded-b {
@@ -1012,6 +1046,28 @@ video {
   background-color: rgb(5 79 93 / var(--tw-bg-opacity));
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#BCC0C2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(188 192 194 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#\#fff\] {
+  background-color: ##fff;
+}
+
+.bg-\[\#fff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#\] {
+  background-color: #;
+}
+
 .bg-\[url\(\)\] {
   background-image: url();
 }
@@ -1047,6 +1103,14 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-2 {
@@ -1122,6 +1186,16 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .pb-2 {
@@ -1216,6 +1290,11 @@ video {
 
 .text-\[48px\] {
   font-size: 48px;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-semibold {
@@ -1339,6 +1418,20 @@ video {
 .text-blue-900 {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
+.text-\[\#BCC0C2\] {
+  --tw-text-opacity: 1;
+  color: rgb(188 192 194 / var(--tw-text-opacity));
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.text-\[\#054F5D\] {
+  --tw-text-opacity: 1;
+  color: rgb(5 79 93 / var(--tw-text-opacity));
 }
 
 .shadow-lg {
