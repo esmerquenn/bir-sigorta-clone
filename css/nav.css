@@ -1,0 +1,57 @@
+[x-cloak] {
+  display: none !important;
+}
+
+.logo_img {
+  width: 80px !important;
+}
+.hidden_dropdown {
+  position: absolute;
+  background: white;
+  right: 0;
+  width: 100%;
+  top: 15vh;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  transition: all 0.5s;
+}
+.dropdown {
+  opacity: 1;
+  height: 210px;
+  visibility: visible;
+}
+/* tailwind.css or your custom CSS file */
+@layer base {
+  .dark .bg-red-100 {
+    background-color: #1a202c; /* Dark background color */
+  }
+
+  .dark .text-black {
+    color: #e2e8f0; /* Light text color for dark mode */
+  }
+
+  .dark .bg-yellow-300 {
+    background-color: #7e7230; /* Dark mode equivalent */
+  }
+
+  /* Add more custom dark mode styles here */
+}
+
+@media only screen and (min-width: 992px) {
+  .hidden_dropdown {
+    position: static;
+    background: initial;
+    width: initial;
+    opacity: 1;
+    visibility: visible;
+    height: initial;
+  }
+  .fa-bars{display: none !important; }
+  .dark .hidden_dropdown {
+    background-color: transparent; /* Dark mode background color */
+  }
+}
+
+
+

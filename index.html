@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/owl.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-red-100 dark:bg-gray-900 text-black dark:text-white">
+    <!-- <header>
+      <nav
+        class="min-h-[15vh] bg-[#27313566] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+      >
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div class="flex uppercase font-roboto cursor-pointer">
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white"
+          >
+            fərdi
+          </div>
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white"
+          >
+            KORPORATİV
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <ul class="hidden_dropdown lg:flex">
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white transition-all duration-300 hover:text-[#E2C445]"
+                href="/"
+                >ANA SƏHİFƏ
+              </a>
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white transition-all duration-300 hover:text-[#E2C445]"
+                href=""
+                >XİDMƏTLƏR</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white transition-all duration-300 hover:text-[#E2C445]"
+                href=""
+              >
+                HAQQIMIZDA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white transition-all duration-300 hover:text-[#E2C445]"
+                href=""
+              >
+                PREZENTASİYA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white transition-all duration-300 hover:text-[#E2C445]"
+                href=""
+                >ƏLAQƏ</a
+              >
+            </li>
+          </ul>
+          <div class="flex items-center justify-center">
+            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+              <button
+                @click="open = !open"
+                class="p-2 text-white rounded flex items-center justify-between"
+                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+              >
+                <span
+                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden"
+                  x-text="selected === '' ? 'AZ' : selected"
+                ></span>
+                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white"></i>
+              </button>
+
+              <div x-show="open" class="absolute mt-1 bg-white border rounded w-full z-10" x-cloak>
+                <ul
+                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 [&>li]:cursor-pointer"
+                >
+                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+        </div>
+      </nav>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-1">
+            <div class="text-white font-roboto title text-left">
+              <h1 class=" text-3xl md:text-[58px]  font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">Daşınmaz əmlakın <br> icbari siğortası</h1>
+              <button class=" py-1  md:py-3 px-3 md:px-7 bg-yellow-300 rounded">Müraciət et</button>
+            </div>
+          </div>
+          <div class="swiper-slide slide-2">
+            <div class="text-white font-roboto title text-left">
+              <h1 class=" text-3xl md:text-[58px]  font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">Daşınmaz əmlakın <br> icbari siğortası</h1>
+              <button class=" py-1  md:py-3 px-3 md:px-7 bg-yellow-300 rounded">Müraciət et</button>
+            </div>
+          </div>
+          <div class="swiper-slide slide-3">
+            <div class="text-white font-roboto title text-left">
+              <h1 class=" text-3xl md:text-[58px]  font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">Daşınmaz əmlakın <br> icbari siğortası</h1>
+              <button class=" py-1  md:py-3 px-3 md:px-7 bg-yellow-300 rounded">Müraciət et</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </header> -->
+    <header>
+      <nav
+        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+      >
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div class="flex uppercase font-roboto cursor-pointer">
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[#054f5d]"
+          >
+            fərdi
+          </div>
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[#054f5d]"
+          >
+            KORPORATİV
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="/"
+                >ANA SƏHİFƏ
+              </a>
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href=""
+                >XİDMƏTLƏR</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href=""
+              >
+                HAQQIMIZDA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href=""
+              >
+                PREZENTASİYA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#054f5d] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href=""
+                >ƏLAQƏ</a
+              >
+            </li>
+          </ul>
+          <div class="flex items-center justify-center">
+            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+              <button
+                @click="open = !open"
+                class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
+                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+              >
+                <span
+                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                  x-text="selected === '' ? 'AZ' : selected"
+                ></span>
+                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
+              </button>
+
+              <div
+                x-show="open"
+                class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[#054f5d] dark:border-gray-600"
+                x-cloak
+              >
+                <ul
+                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                >
+                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button>
+            <label class="switch">
+              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+                  <circle cx="6" cy="6" r="2" />
+                  <g stroke-dasharray="1.5 1.5">
+                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+                  </g>
+                </g>
+              </svg>
+              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+                  <path
+                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
+                  />
+                </g>
+              </svg>
+              <span class="switch__sr">Dark Mode</span>
+            </label>
+          </button>
+          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+        </div>
+      </nav>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-1">
+            <div class="text-white font-roboto title text-left">
+              <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">
+                Daşınmaz əmlakın <br />
+                icbari siğortası
+              </h1>
+              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 hover:bg-yellow-400 rounded dark:bg-yellow-400">
+                Müraciət et
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide slide-2">
+            <div class="text-white font-roboto title text-left">
+              <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">
+                Daşınmaz əmlakın <br />
+                icbari siğortası
+              </h1>
+              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400">Müraciət et</button>
+            </div>
+          </div>
+          <div class="swiper-slide slide-3">
+            <div class="text-white font-roboto title text-left">
+              <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5">
+                Daşınmaz əmlakın <br />
+                icbari siğortası
+              </h1>
+              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400">Müraciət et</button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </header>
+    <main>
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/car.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">Avtomobil sığortası</div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/life.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">Həyat sığortası</div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/home2.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">Əmlak sığortası</div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/travel22.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">Səyahət sığortası</div>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="max-w-sm bg-white dark:bg-[#054f5d] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/kasko.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2">KASKO sığorta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/owl.js"></script>
+    <script>
+      const toggleDarkMode = () => {
+        document.documentElement.classList.toggle("dark");
+      };
+
+      // Call this function to switch modes, e.g., on a button click
+   
+
+      const menu = document.querySelector(".hidden_dropdown");
+      function closeDropdown() {
+        if (window.innerWidth < 992) {
+          menu.classList.toggle("dropdown");
+        }
+      }
+
+    
+   </script>
+  </body>
+</html>
