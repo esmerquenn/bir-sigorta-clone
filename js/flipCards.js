@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
         cardElement.className = 'flip-card shadow-lg rounded-lg';
         cardElement.innerHTML = `
             <div class="flip-card-inner">
-                        <div id="card-${card.id}" class="flip-card-front bg-[#054f5d] dark:bg-gray-800 text-white dark:text-gray-100 p-6 flex flex-col items-center justify-center rounded-lg">
+                        <div id="card-${card.id}" class="flip-card-front bg-[rgb(2,1,142)] dark:bg-gray-800 text-white dark:text-gray-100 p-6 flex flex-col items-center justify-center rounded-lg">
                             <i class="fa-solid ${card.icon} text-[3rem] mb-5"></i>
                             <p class="text-2xl font-bold">${card.title}</p>
                         </div>
-                        <div class="flip-card-back bg-[#054f5d] dark:bg-gray-800 text-white dark:text-gray-100 p-6 flex flex-col items-center justify-center rounded-lg">
+                        <div class="flip-card-back bg-[rgb(2,1,142)] dark:bg-gray-800 text-white dark:text-gray-100 p-6 flex flex-col items-center justify-center rounded-lg">
                             <p class="text-2xl font-bold">${card.title}</p>
                             <p class="py-4">${card.description}</p>
-                            <button class="mt-4 py-2 px-4 bg-[#054f5d] dark:bg-gray-800 text-white dark:text-gray-100 border-2 border-white dark:border-gray-600 rounded">Daha ətraflı</button>
+                            <button class="mt-4 py-2 px-4 bg-[rgb(2,1,142)] dark:bg-gray-800 text-white dark:text-gray-100 border-2 border-white dark:border-gray-600 rounded">Daha ətraflı</button>
                         </div>
                     </div>
         `;
