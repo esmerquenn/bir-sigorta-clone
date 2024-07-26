@@ -1,21 +1,21 @@
 .services{
-    background: url(./../assets/img/services.jpg)center/cover;
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/services.jpg)center/cover;
     height: 70vh;
 }
 .about{
-    background: url(./../assets/img/about_us.jpg)center/cover;
+    background:linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/about_us.jpg)center/cover;
     height: 70vh;
 }
 .contact{
-    background: url(./../assets/img/contact.jpg)center/cover;
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/contact.jpg)center/cover;
     height: 70vh;
 }
 .ferdi{
-    background: url(./../assets/img/ferdi.jpg)center/cover;
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/ferd1.jpg)center/cover;
     height: 70vh;
 }
 .korporativ{
-    background: url(./../assets/img/korporativ.jpg)center/cover;
+    background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/pexels-negativespace-34092.jpg)center/cover;
     height: 70vh;
 }
 .title {
@@ -44,3 +44,13 @@
       opacity: 1;
     }
   }
+
+  
+@media only screen and (max-width: 992px) {
+  .title {
+    bottom: 10px;
+    font-size: 2rem;
+  
+   
+  }
+}
