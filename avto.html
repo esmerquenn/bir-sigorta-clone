@@ -603,7 +603,6 @@
 
         if (isValid) {
           alert("Form başarılı bir şekilde gönderildi!");
-          // Formu göndermek için buraya AJAX çağrısı ekleyebilirsiniz.
         } else {
           alert("Lütfen tüm alanları doldurun.");
         }
@@ -628,35 +627,6 @@
            img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet-fincode.png" : "assets/img/sexsiyyet-old-fincode.png"
         }
       }
-      // function imageChanger() {
-      //   return {
-      //     open: false,
-      //     selected: "AZE",
-      //     options: ["AZE", "AA"],
-      //     transitioning: false,
-      //     currentImage: "assets/img/sexsiyyet-old.png",
-      //     selectOption(option) {
-      //       this.transitioning = true;
-      //       setTimeout(() => {
-      //         this.selected = option;
-      //         this.updateImage(false);
-      //         this.transitioning = false;
-      //       }, 200);
-      //       this.open = false;
-      //     },
-      //     updateImage(fincode = false) {
-      //       this.currentImage =
-      //         this.selected === "AA"
-      //           ? fincode
-      //             ? "assets/img/sexsiyyet-fincode.png"
-      //             : "assets/img/sexsiyyet.png"
-      //           : fincode
-      //           ? "assets/img/sexsiyyet-old-fincode.png"
-      //           : "assets/img/sexsiyyet-old.png";
-      //     },
-      //   };
-      // }
-    
     </script>
   </body>
 </html>
