@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .selected {
+        background: #02018e;
+        color: white;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      .rotate-y-0 {
+        transform: rotateY(0deg);
+      }
+      .show_about {
+        height: 0;
+        visibility: hidden;
+      }
+      .show {
+        height: 100%;
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
+    <header>
+      <nav
+        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+      >
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div class="flex uppercase font-roboto cursor-pointer">
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="fərdi-sigorta.html">fərdi</a>
+          </div>
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="korporativ-sigorta.html">KORPORATİV</a>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="/"
+                >ANA SƏHİFƏ
+              </a>
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="services.html"
+                >XİDMƏTLƏR</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="about.html"
+              >
+                HAQQIMIZDA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="presentation.html"
+              >
+                PREZENTASİYA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="contact.html"
+                >ƏLAQƏ</a
+              >
+            </li>
+          </ul>
+          <div class="flex items-center justify-center">
+            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+              <button
+                @click="open = !open"
+                class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
+                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+              >
+                <span
+                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                  x-text="selected === '' ? 'AZ' : selected"
+                ></span>
+                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
+              </button>
+
+              <div
+                x-show="open"
+                class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                x-cloak
+              >
+                <ul
+                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                >
+                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button>
+            <label class="switch">
+              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+                  <circle cx="6" cy="6" r="2" />
+                  <g stroke-dasharray="1.5 1.5">
+                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+                  </g>
+                </g>
+              </svg>
+              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+                  <path
+                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
+                  />
+                </g>
+              </svg>
+              <span class="switch__sr">Dark Mode</span>
+            </label>
+          </button>
+          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+        </div>
+      </nav>
+
+      <div class="avto">
+        <h1 class="title">Icbari Avto Siğorta</h1>
+      </div>
+    </header>
+    <main>
+     
+      <h2 class="mt-5 font-bold font-roboto text-center text-[2.5rem]">İcbari Avto Sığorta</h2>
+      <div class="py-12 px-4 md:px-10 lg:px-20 xl:px-40">
+        <p class="text-gray-700 text-[1.1rem] dark:text-gray-300 mb-4 font-roboto">
+          Online İcbari Avto Sığorta almaq artıq BirSigorta.az icbari sigorta büsrosu ilə daha asandır. Bunun üçün sizə cəmi 1
+          dəqiqə kifayətdir ki, icbari avtomobil sığortanızı onlayn olaraq ala biləsiniz. Texnologiyanın inkişaf etməsi
+          nəticəsində online sığorta xidmətləri də yaranmağa başladı. Onlayn İcbari Avto Sığorta kimi digər sığorta xidmətləri də
+          sizə artıq onlayn şəkildə təqdim edirik. Sığorta qiymətlərini də onlayn şəkildə ödənişləri etmək imkan artıq çox sadə
+          bir şəkildə mümkündür. Evdən çıxmadan bütün sığorta işlərinizi həll edə bilərsiniz. İcbari sigorta bürosu sizə sığorta
+          şərtlərini ən uyğun şəkildə təqdim edir. Avtonəqliyyat vasitələrinin icbari sığortası yoxlamaq ximdətindən yararlana
+          bilərsiniz.
+        </p>
+        <h4 class="my-5 font-bold font-roboto text-center text-[1.7rem]">İcbari Sığorta Bürosu - BirSigorta.az</h4>
+        <p class="text-gray-700 text-[1.1rem] dark:text-gray-300 mb-4 font-roboto">
+          İcbari Sığorta Bürosu kimi BirSigorta.az icbari sığorta xidmətlərini indi çox asan bir formada, onlayn şəkildə cəmi 1
+          dəqiqə ərzində həyata keçirmək imkanı verir. İcbari sığorta bürosu əsas vəzifə olaraq icbari sığortalarla bağlı olan
+          bütün müraciətləri vaxtında və ya aydın bir şəkildə cavablayır, yaranan problemləri tez bir zamanda həll edir. İcbari
+          sığorta bürosu sizə bir çox sığorta şirkətlərinin xidmətlərini təqdim edir, uyğun olan xidmət növündən asanalıqla
+          istifadə edə bilərsiniz. İndi müraciət etmək çox asan və tez bir zamanda mümkündür.Avtonəqliyyat vasitələrinin icbari
+          sığortası yoxlamaq indi sığorta bürolarının ən əhəmiyyətli işlərindən birinə çevrilib. Zamanlar bu xidmət onlayn şəkildə
+          də təqdim edilməyə başlamışdır.
+        </p>
+
+        <div class="show_about">
+          <h4 class="my-5 font-bold font-roboto text-center text-[1.7rem]">İcbari Avtomobil Sığortası</h4>
+
+          <p class="text-gray-700 text-[1.1rem] dark:text-gray-300 mb-4 font-roboto">
+            İcbari Avtomobil Sığortası - Qanunvericiliklə tələb olunan və yol nəqliyyat hadisəsi nəticəsində üçüncü şəxslərə zərər
+            yetirildikdə sığorta kompensasiyasının verilməsini nəzərədə tutan sığorta növüdür. Icbari Avto Sığorta qəza zamanı
+            qarşı tərəfə verdiyiniz zərərə 5000 AZN-dək təminat verir. Avtonəqliyyat vasitələrinin icbari sığortası yoxlamaq üçün
+            hadisə zamanı siz sığorta mütəxəssisini və yol polisini hadisə yerinə dəvət edərək hadisəni müvafiq formatda
+            aktlaşdırırsınız. Daha sonra isə sığorta şirkətiniz sizin üçün dəymiş zərərin miqyasını müəyyən edərək avto nəqliyyat
+            vasitənizin təmiri üçün ödəniş edir və ya müvafiq avtomobil servisində təmir etdirərək sizə təhvil verir.
+          </p>
+          <h4 class="my-5 font-bold font-roboto text-center text-[1.7rem]">İcbari Sığorta Bürosu (İSB) və bonus-malus sistemi</h4>
+          <p class="text-gray-700 text-[1.1rem] dark:text-gray-300 mb-4 font-roboto">
+            İcbari Sığorta Bürosu bildiyiniz kimi icbari sığorta ödənişlərinə və bu ödənişlərin hesablanmasında istifadə olunan
+            bonus-malus sisteminə nəzarət edir. Bu sistem daxilində İSB tərəfindən sizin qəzasız keçirdiyiniz hər sığorta ilinə
+            görə bonus hesablanır sürücüyə. Nəticə etibarı ilə rəsmi şəkildə sizi mükafatlandırmış olur. Əks hal baş verəndə isə
+            sizə malus hesablanaraq cərimə kimi tətbiq olunur. İSB.az bununla da sürücüləri daha məsuliyyətli olmağa, qaydalara
+            riayət etməyə çağırmış olur.
+          </p>
+        </div>
+        <div class="w-full flex items-center justify-start">
+          <button
+            type="button"
+            class="p-2 text-[.8rem] border-2 mt-6 border-red-700 bg-red-400 dark:bg-blue-950 text-white dark:border-blue-500 dark:text-gray-100 transition duration-500"
+            onclick="showAbout(this)"
+          >
+            Ətraflı oxu
+          </button>
+        </div>
+      </div>
+      <form class="py-12 px-4 md:px-10 lg:px-20 xl:px-40" id="carForm">
+        <div class="bg-slate-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+          <h2 class="mb-5 font-bold font-roboto text-[1.5rem]">Avtomobil məlumatlarını daxil edin</h2>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Qeydiyyat nişanı
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-first-name"
+                type="text"
+                autofocus
+                maxlength="7"
+                placeholder="90XX123"
+              />
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                NV-nin qeydiyyat şəhadətnaməsi
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-last-name"
+                type="text"
+                maxlength="9"
+                placeholder="AC123456"
+              />
+            </div>
+          </div>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="mobile-number"
+              >
+                Mobil nömrə
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="mobile-number"
+                type="text"
+                placeholder="+994 (__) ___-__-__"
+                maxlength="18"
+              />
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="registration-date"
+              >
+                Avtomobilin qeydiyyat tarixi
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="registration-date"
+                type="text"
+                placeholder="01.01.1990"
+                maxlength="10"
+              />
+            </div>
+          </div>
+          <div>
+            <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold">Mühərrik həcmi</h2>
+            <div id="buttonGroup" class="grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+              <button
+                type="button"
+                class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100"
+                onclick="selectOption(event, this)"
+              >
+                Elektrik avtomobili
+              </button>
+              <button
+                type="button"
+                class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
+                onclick="selectOption(event, this)"
+              >
+                Motosiklet
+              </button>
+              <button
+                type="button"
+                class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
+                onclick="selectOption(event, this)"
+              >
+                1500-2000
+              </button>
+              <button
+                type="button"
+                class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
+                onclick="selectOption(event, this)"
+              >
+                2000 və üzəri
+              </button>
+              <button
+                type="button"
+                class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
+                onclick="selectOption(event, this)"
+              >
+                Yük avtomobili
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-slate-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+          <h2 class="mb-5 font-bold font-roboto text-[1.5rem]">Şəxsi məlumatlarınızı daxil edin</h2>
+          <div class="col-span-2 flex flex-wrap mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Ş/V Nömrəsi
+              </label>
+              <div class="flex items-center">
+                <div class="flex items-center justify-center">
+                  <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+                    <button
+                    type="button"
+                      @click="open = !open"
+                      class="p-2 py-[12.5px] bg-gray-200 text-gray-900 flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                        x-text="selected === '' ? 'AZE' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
+                    </button>
+
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li onclick="change(event,'AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
+                        <li onclick="change(event,'AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded-e py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                  placeholder="12345678"
+                  onclick="changeInput(event,'vesiqe')"
+                />
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Ş/V Fin kodu
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-last-name"
+                type="text"
+                maxlength="7"
+                placeholder="1234567"
+                onclick="changeInput(event,'fincode')"
+              />
+            </div>
+            <div class="w-full flex justify-center mt-6">
+              <div class="w-64 h-40 relative">
+                <img
+                  id="img_vesiqe"
+                  src="assets/img/sexsiyyet.png"
+                  alt="ID Card Image"
+                  class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+              for="mobile-number"
+            >
+              Sürücülük vəsiqənin seriya və nömrəsi
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+              id="driver-license"
+              type="text"
+              placeholder="AD123456"
+              maxlength="18"
+            />
+          </div>
+          <div class="w-full flex items-center justify-end">
+            <button
+              type="button"
+              class="py-2 px-4 border-2 rounded-lg mt-6 border-red-700 bg-red-400 text-white dark:border-blue-500 dark:text-gray-100 transition duration-500"
+              onclick="validateForm()"
+            >
+              davam edin
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="py-12 px-4 md:px-10 lg:px-20 xl:px-40 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4">Avtomobil Siğortası və İcbari siğorta</h2>
+        <p class="mb-6">
+          Avtomobil Siğortası siğorta şirkətləri tərəfindən bir neçə formada təklif edilir. Rəsmi qaydalara əsasən istənilən
+          nəqliyyat vasitəsinin İcbari Avto Siğortası olmaq məcburiyyəti vardır. Onlayn İcbari Avtomobil Siğortası olmadığı
+          təqdirdə siz qanunla müəyyən edilmiş məbləğdə cərimələnəcəksiniz. İcbari siğorta sizə 5000 manatadək təminat vəd edir.
+          Bu da sizin qarşılaşacağınız xoşa gəlməz hallarda daha rahat olmanız üçün dövlət tərəfindən yaradılmış imkandır.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Avto siğorta yoxlamaq onlayn formada</h2>
+        <p class="mb-6">
+          Avto siğorta yoxlamaq xidmətimizdən sizdə faydalana bilərsiniz. Avtonəqliyyat vasitələrinin icbari siğortası yoxlamaq
+          xidməti sizə əlverişli və münasib şərtlərlə təqdim edilir. Siğorta etdirdikdən sonra ən xırda detalları belə sizin üçün
+          onlayn yaranmış siğorta profilindən baxa və nəzarət edə bilərsiniz. Hər hansı bir dəyişiklik olsa, burada öz əksini
+          tapır. Şəxsiyyət vəsiqəsi və ya avtomobilin qeydiyyat nişanı kimi məlumatları daxil etməklə avto siğorta yoxlamaq
+          imkanından istifadə edə bilərsiniz. Çox asan bir formada, sayta daxil olaraq avto siğorta yoxlamaq əməliyyatını həyata
+          keçirə bilərsiniz. Mobil telefonlar vasitəsi ilə də çox asanlıqla avto siğorta işlərini həyata keçirə bilərsiniz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">İcbari Avto Siğorta ilə Gələcəyinizi Təmimat Altına Alın!</h2>
+        <p class="mb-6">
+          Avtomobillərin icbari siğortası haqqında bütün qanunlar “İcbari siğortalar haqqında” Azərbaycan Respublikası Qanununun
+          4-cü fəsilində qeyd olunmuşdur. Avtomobillərin siğorta olunması olduqca vacibdir. Çünki ölkədəki nəqliyyat sıxlığı
+          sayəsində tez-tez qəzalar baş verə bilir. Bu səbəbdən avtomobil sahibləri xeyli miqdarda məbləğ ödəyərək maddi ziyana
+          uğrayırlar. İcbari siğorta sayəsində siz təminat olaraq avtomobilinizə dəymiş ziyanı ödəməkdən azad ola bilirsiniz.
+          Həmçinin siğorta ödənişlərinizi unutduğunuz zaman saytımıza daxil olaraq burada yoxlaya bilmək imkanına da sahibsiniz.
+        </p>
+        <p class="mb-6">Avtonəqliyyat vasitəsi sahiblərinin mülki məsuliyyətinin icbari siğortası zamanı ödəniləcək məbləğlər:</p>
+        <ul class="list-disc list-inside mb-6">
+          <li>Bir fiziki şəxsin sağlamlığına dəyən zərər üzrə - 5 000 (beş min) AZN</li>
+          <li>Ümumi olaraq sağlamlığa dəyən zərər üzrə - 50 000 (əlli min) AZN</li>
+          <li>Üçüncü şəxslərin əmlakına dəyən zərər üzrə - 5 000 (beş min) AZN</li>
+          <li>Bir hadisə üzrə - 55 000 (əlli beş min) AZN</li>
+        </ul>
+        <p class="mb-6">
+          Adından da göründüyü kimi sizin üçün vacib olan bütün əmlaklarınızın siğortası gələcəyiniz üçün edə biləcəyiniz əsas
+          zəmanətlərdən biridir. Ona görə də avtomobilinizi siğorta etdirməyi unutmayın və insure.az kimi etibarlı siğorta
+          şirkətlərinə müraciət etməyinizi tövsiyə edirik.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Onlayn İcbari siğorta vaxt qazandırır</h2>
+        <p class="mb-6">
+          Onlayn icbari siğorta almaq sizin üçün əlavə vaxt qazandırır. Müxtəlif siğorta agentlərinin sizi zəng edib narahat
+          etməsindən narahat olmusunuzsa insure.az ilə onlayn icbari avto siğorta ala bilərsiniz. Bunun üçün sizə sadəcə şəxsi
+          məlumatlarınızın yəni - şəxsiyyət vəsiqəsi, sürücülük vəsiqəsi və texpassport lazım olacaq. Daha sonra siğorta şirkətini
+          seçərək icbari avto siğorta müqaviləniz üçün nəzərdə tutulmuş məbləği ödəyə biləcəksiniz. Siğorta ödənişini həyata
+          keçirdikdən sonra, sizin avtonəqliyyat vasitəniz siğorta edilmiş olacaq və rahatlıqla avtonəqliyyat vasitənizi idarə edə
+          bilərsiniz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Onlayn İcbari Avto Siğorta almağın üstünlükləri</h2>
+        <p class="mb-6">
+          Onlayn İcbari Avto Siğorta almağın üstünlükləri barədə deyə bilərik ki, cərimələr hazırda yollarda 
+          quraşdırılmış kameralar tərəfindən avtomatik olaraq edilir. Bunu nəzərə alaraq maksimum dərəcədə 
+          çalışmalısınız ki, maşın siğortası bitmədən siz yeni siğortanızı əldə edəsiniz. Əgər icbari siğorta 
+          bitibsə siğortanızı yeniləmədən nəqliyyat vasitənizi idarə etməməlisiniz. Hazırda isə icbari siğortanızı 
+          lazım olan anda yeniləyə bilməyiniz üçün insure.az onlayn siğorta platforması var. Siz insure.az saytı 
+          vasitəsi ilə maşın üçün icbari avto siğortanı 1 dəqiqə ərzində əldə edərək yolunuza rahatlıqla davam 
+          edə biləcəksiniz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">İcbari Siğorta Bürosu (İSB) nədir?</h2>
+        <p class="mb-6">
+          İcbari siğortalar haqqında Qanunla nəzərdə tutulanların yerinə yetirilməsi üçün həmin qanunun tələbləri 
+          nəzərə alınmaqla AR-ın Mülki Məcəlləsinə uyğun olaraq hüquqi şəxslərin ittifaqı kimi təsis edilib və 
+          fəaliyyət göstərir. İcbari Siğorta Bürosu (İSB) özlüyündə siğorta olunanların, zərərçəkən və zərər 
+          vurulan şəxslərin müdafiəsini, icbari siğorta ilə bağlı sisteminin sabitliyi və inkişafını təmin etmək 
+          üçün yaradılmışdır. Siz də ola biləcək hər hansı narahatçılığınız üçün birbaşa İSB-yə müraciət edə 
+          bilərsiniz. İcbari Siğorta Bürosu sizin müraciətinizi qeydə alaraq, araşdıracaq və hüquqi olaraq sizə 
+          yardımçı olacaqdır.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">İSB az fəaliyyəti nədən ibarətdir?</h2>
+        <p class="mb-6">
+          Siğorta şirkətləri birlikdə İSB az - ın təməlini qoymuş və formalaşdırmışdır. Bu da özündə o mənanı 
+          ifadə edir ki, İSB az həm dövlət qurumu olaraq nəzarət edici mövqeyə malikdir, həm də şirkətlərin 
+          ortaq marağını qoruyan fərdi qurum səlahiyyətlərinə malikdir.
+        </p>
+        <h3 class="text-xl font-semibold mb-4">İcbari Siğorta Sizə nə qazandırır?</h3>
+        <p class="mb-6">
+          İcbari Siğorta alışı artıq tam olaraq onlaynlaşıb. Bununla da siz öz avtonəqliyyat vasitənizə 5000 
+          AZN-dək təminat əldə edirsiniz. Əgər hər hansı qəza hadisəsi olarsa icbari siğorta sizin zərər çəkmiş 
+          tərəfə vurduğunuz ziyanın 5000 manatadək olan hissəsini qarşılayacaq. Beləliklə siz, icbari siğorta 
+          ilə çox az məbləğ ödəyərək böyük təminat əldə etmiş olursunuz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">İcbari siğorta Kalkulyatoru nə üçün lazımdır?</h2>
+        <p class="mb-6">
+          İcbari Siğorta Kalkulyatoru icbari siğortanı online yoxlamaq üçün istifadə edilən yeni bir funksiyadır. 
+          İcbari siğortanı online yoxlamaq üçün təqdim edilən, hesablayıcı icbari siğorta kalkulyatoru çox sadə və 
+          asan istifadə olunan bir alətdir. İcbari siğorta ilə bağlı hesablamalarınızı icbari siğorta kalkulyatoru 
+          vasitəsi ilə asanlıqla edə bilərsiniz.
+        </p>
+      </div>
+      
+    </main>
+    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
+        <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
+          “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
+          sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
+          facere quos eum?
+        </p>
+        <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
+        <div class="mb-4">
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-phone-alt mr-2"></i>
+            +994 50 286 25 85
+          </p>
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-envelope mr-2"></i>
+            office@Birsigorta.az
+          </p>
+          <p class="flex justify-center items-center text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            Səməd Vurğun küçəsi 53, World Business Center
+          </p>
+        </div>
+        <div class="flex justify-center space-x-6 my-6">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="js/nav.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
+      integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let flag = true;
+      function showAbout(button) {
+        flag = !flag;
+        button.textContent = !flag ? "Daha az" : " Ətraflı oxu";
+        document.querySelector(".show_about").classList.toggle("show");
+      }
+      function selectOption(e, button) {
+        event.preventDefault();
+        const buttons = document.querySelectorAll("#buttonGroup button");
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+        button.classList.add("selected");
+      }
+      function validateForm() {
+        const inputs = document.querySelectorAll("input");
+        let isValid = true;
+
+        inputs.forEach((input) => {
+          if (!input.value) {
+            input.classList.add("border-red-500");
+            isValid = false;
+          } else {
+            input.classList.remove("border-red-500");
+          }
+        });
+
+        if (isValid) {
+          alert("Form başarılı bir şekilde gönderildi!");
+          // Formu göndermek için buraya AJAX çağrısı ekleyebilirsiniz.
+        } else {
+          alert("Lütfen tüm alanları doldurun.");
+        }
+      }
+
+
+      let img_vesiqe = document.querySelector("#img_vesiqe");
+      let changeReturnValue = "AZE";
+      function change(event, deyer) {
+        event.preventDefault();
+
+        console.log(deyer, img_vesiqe.src);
+        img_vesiqe.src = deyer == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png";
+        changeReturnValue = deyer;
+      }
+      function changeInput(event, deyer) {
+        event.preventDefault();
+        console.log(deyer, changeReturnValue);
+        if (deyer == "vesiqe") {
+           img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png" 
+        } else if (deyer == "fincode") {
+           img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet-fincode.png" : "assets/img/sexsiyyet-old-fincode.png"
+        }
+      }
+      // function imageChanger() {
+      //   return {
+      //     open: false,
+      //     selected: "AZE",
+      //     options: ["AZE", "AA"],
+      //     transitioning: false,
+      //     currentImage: "assets/img/sexsiyyet-old.png",
+      //     selectOption(option) {
+      //       this.transitioning = true;
+      //       setTimeout(() => {
+      //         this.selected = option;
+      //         this.updateImage(false);
+      //         this.transitioning = false;
+      //       }, 200);
+      //       this.open = false;
+      //     },
+      //     updateImage(fincode = false) {
+      //       this.currentImage =
+      //         this.selected === "AA"
+      //           ? fincode
+      //             ? "assets/img/sexsiyyet-fincode.png"
+      //             : "assets/img/sexsiyyet.png"
+      //           : fincode
+      //           ? "assets/img/sexsiyyet-old-fincode.png"
+      //           : "assets/img/sexsiyyet-old.png";
+      //     },
+      //   };
+      // }
+    
+    </script>
+  </body>
+</html>

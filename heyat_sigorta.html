@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  </head>
+
+  <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
+    <header>
+      <nav
+        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+      >
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div class="flex uppercase font-roboto cursor-pointer">
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="fərdi-sigorta.html">fərdi</a>
+          </div>
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="korporativ-sigorta.html">KORPORATİV</a>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="/"
+                >ANA SƏHİFƏ
+              </a>
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="services.html"
+                >XİDMƏTLƏR</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="about.html"
+              >
+                HAQQIMIZDA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="presentation.html"
+              >
+                PREZENTASİYA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="contact.html"
+                >ƏLAQƏ</a
+              >
+            </li>
+          </ul>
+          <div class="flex items-center justify-center">
+            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+              <button
+                @click="open = !open"
+                class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
+                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+              >
+                <span
+                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                  x-text="selected === '' ? 'AZ' : selected"
+                ></span>
+                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
+              </button>
+
+              <div
+                x-show="open"
+                class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                x-cloak
+              >
+                <ul
+                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                >
+                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button>
+            <label class="switch">
+              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+                  <circle cx="6" cy="6" r="2" />
+                  <g stroke-dasharray="1.5 1.5">
+                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+                  </g>
+                </g>
+              </svg>
+              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+                  <path
+                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
+                  />
+                </g>
+              </svg>
+              <span class="switch__sr">Dark Mode</span>
+            </label>
+          </button>
+          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+        </div>
+      </nav>
+
+      <div class="avto">
+        <h1 class="title">Icbari Avto Siğorta</h1>
+      </div>
+    </header>
+    <main>
+      <div class="max-w-4xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
+        <div id="step-1" class="step active">
+          <h2 class="text-2xl font-bold mb-4">Şəxsi məlumatlarınızı daxil edin</h2>
+          <div class="grid md:gap-4 mb-6">
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Ad
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-first-name"
+                type="text"
+                autofocus
+                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+              />
+            </div>
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Soyad
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-last-name"
+                type="text"
+                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                autofocus
+              />
+            </div>
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-father-name"
+              >
+                Ata adı
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-father-name"
+                type="text"
+                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                autofocus
+              />
+            </div>
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Ünvan
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-first-name"
+                type="text"
+                autofocus
+                placeholder="Şəhər, rayon, küçə, ev"
+              />
+            </div>
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                for="datepicker"
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                >Doğum tarixi</label
+              >
+              <input
+                id="datepicker"
+                type="text"
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                placeholder="01.01.1990"
+              />
+            </div>
+            <div class="w-full px-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Mobil nömrə
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                id="grid-first-name"
+                type="text"
+                autofocus
+              />
+            </div>
+            <div class="col-span-2 flex flex-wrap mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >
+                  Ş/V Nömrəsi
+                </label>
+                <div class="flex items-center">
+                  <div class="flex items-center justify-center">
+                    <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+                      <button
+                        @click="open = !open"
+                        class="p-2 py-[12.5px] bg-gray-200 dark:bg-gray-700 text-gray-900 flex items-center justify-between dark:text-gray-300"
+                        :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                      >
+                        <span
+                          class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                          x-text="selected === '' ? 'AZE' : selected"
+                        ></span>
+                        <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
+                      </button>
+
+                      <div
+                        x-show="open"
+                        class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                        x-cloak
+                      >
+                        <ul
+                          class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                        >
+                          <li onclick="change('AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
+                          <li onclick="change('AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded-e py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                    placeholder="12345678"
+                    onclick="changeInput('vesiqe')"
+                  />
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3">
+                <label
+                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Ş/V Fin kodu
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
+                  id="grid-last-name"
+                  type="text"
+                  maxlength="7"
+                  placeholder="1234567"
+                  onclick="changeInput('fincode')"
+                />
+              </div>
+              <div class="w-full flex justify-center mt-6">
+                <div class="w-64 h-40 relative">
+                  <img
+                    id="img_vesiqe"
+                    src="assets/img/sexsiyyet.png"
+                    alt="ID Card Image"
+                    class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-span-2">
+              <label for="gender" class="block text-sm font-medium text-gray-700">Cins</label>
+              <select id="gender" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm">
+                <option>Kişi</option>
+                <option>Qadın</option>
+              </select>
+            </div>
+          </div>
+          <button onclick="nextStep(2)" class="bg-blue-500 text-white px-4 py-2 rounded">Növbəti</button>
+        </div>
+
+        <div id="step-2" class="step">
+          <h2 class="text-2xl font-bold mb-4">Şərtlər</h2>
+          <p class="mb-6">Həyat Siğortası aşağıdakı məlumatları təsdiq edir:</p>
+
+          <ul class="list-disc list-inside">
+            <li>Son 12 ayda müntəzəm olaraq heç bir dərman qəbul etməmişəm.</li>
+            <li>Son 5 ildə xəstəxanada müalicə almışam və hal-hazırda da heç bir müalicə planlaşdırmıram.</li>
+            <li>
+              Son 5 ildə səhəhtimdə aşağıda qeyd edilən hallar aşkarlanmayıb və bu hallardan heç bir müalicə almamışam:
+              epilepsiya, yuxu apnesi, başgicəllənmə, osteoporoz, hər hansı bir ruhi pozğunluqlar, görmə və ya eşitmə
+              qabiliyyətinin itirilməsi.
+            </li>
+            <li>Hal-hazırda əlil deyiləm və heç bir əlillik müavinəti üçün müraciət etməyi planlaşdırmıram.</li>
+            <li>Peşəkar və ya həvəskar kimi heç bir təhlükəli və ya ekstremal idmanla məşğul olmuram.</li>
+          </ul>
+          <button onclick="nextStep(3)" class="bg-blue-500 text-white px-4 py-2 rounded">Təsdiq edirəm!</button>
+        </div>
+
+        <div id="step-3" class="step">
+          <h2 class="text-2xl font-bold mb-4">Siğorta Məlumatları</h2>
+          <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+              <label for="start-date" class="block text-sm font-medium text-gray-700">Başlama Tarixi</label>
+              <input
+                type="text"
+                id="start-date"
+                value="28.07.2024"
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm"
+              />
+            </div>
+            <div>
+              <label for="promo-code" class="block text-sm font-medium text-gray-700">Promokod</label>
+              <input type="text" id="promo-code" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm" />
+            </div>
+            <div class="col-span-2">
+              <label class="block text-sm font-medium text-gray-700">Siğorta təminatı</label>
+              <div class="grid grid-cols-3 gap-4 mt-1">
+                <div class="flex items-center">
+                  <input type="radio" id="ekspres" name="insurance" class="h-4 w-4 text-blue-600 border-gray-300" />
+                  <label for="ekspres" class="ml-2 block text-sm text-gray-900">Ekspres</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="radio" id="ekspres-plus" name="insurance" class="h-4 w-4 text-blue-600 border-gray-300" />
+                  <label for="ekspres-plus" class="ml-2 block text-sm text-gray-900">Ekspres+</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="radio" id="ekspres-plus-plus" name="insurance" class="h-4 w-4 text-blue-600 border-gray-300" />
+                  <label for="ekspres-plus-plus" class="ml-2 block text-sm text-gray-900">Ekspres++</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="prevStep(2)" class="bg-gray-500 text-white px-4 py-2 rounded">Geri</button>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded">Tamamla</button>
+        </div>
+      </div>
+    </main>
+    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
+        <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
+          “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
+          sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
+          facere quos eum?
+        </p>
+        <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
+        <div class="mb-4">
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-phone-alt mr-2"></i>
+            +994 50 286 25 85
+          </p>
+          <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-envelope mr-2"></i>
+            office@Birsigorta.az
+          </p>
+          <p class="flex justify-center items-center text-[#BCC0C2] dark:text-gray-400">
+            <i class="fas fa-map-marker-alt mr-2"></i>
+            Səməd Vurğun küçəsi 53, World Business Center
+          </p>
+        </div>
+        <div class="flex justify-center space-x-6 my-6">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="js/nav.js"></script>
+    <script>
+      let img_vesiqe = document.querySelector("#img_vesiqe");
+      let changeReturnValue = "AZE";
+      function change(deyer) {
+        console.log(deyer, img_vesiqe.src);
+        img_vesiqe.src = deyer == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png";
+        changeReturnValue = deyer;
+      }
+      function changeInput(deyer) {
+        console.log(deyer, changeReturnValue);
+        if (deyer == "vesiqe") {
+           img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png" 
+        } else if (deyer == "fincode") {
+           img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet-fincode.png" : "assets/img/sexsiyyet-old-fincode.png"
+        }
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#datepicker", {
+          dateFormat: "d.m.Y",
+          defaultDate: "01.01.1990",
+          locale: {
+            weekdays: {
+              shorthand: ["BE", "ÇA", "Çə", "CA", "Cü", "Şə", "Bz"],
+              longhand: ["Bazar ertəsi", "Çərşənbə axşamı", "Çərşənbə", "Cümə axşamı", "Cümə", "Şənbə", "Bazar"],
+            },
+            months: {
+              shorthand: ["Yan", "Fev", "Mar", "Apr", "May", "İyn", "İyl", "Avq", "Sen", "Okt", "Noy", "Dek"],
+              longhand: [
+                "Yanvar",
+                "Fevral",
+                "Mart",
+                "Aprel",
+                "May",
+                "İyun",
+                "İyul",
+                "Avqust",
+                "Sentyabr",
+                "Oktyabr",
+                "Noyabr",
+                "Dekabr",
+              ],
+            },
+          },
+        });
+      });
+      function nextStep(step) {
+        document.querySelector(".step.active").classList.remove("active");
+        document.getElementById(`step-${step}`).classList.add("active");
+      }
+
+      function prevStep(step) {
+        document.querySelector(".step.active").classList.remove("active");
+        document.getElementById(`step-${step}`).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
