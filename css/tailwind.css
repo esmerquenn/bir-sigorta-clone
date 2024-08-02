@@ -779,10 +779,6 @@ video {
   width: 3rem;
 }
 
-.w-36 {
-  width: 9rem;
-}
-
 .w-4 {
   width: 1rem;
 }
@@ -801,6 +797,14 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.min-w-36 {
+  min-width: 9rem;
+}
+
+.max-w-44 {
+  max-width: 11rem;
 }
 
 .max-w-4xl {
@@ -1229,6 +1233,10 @@ video {
   font-size: 1.7rem;
 }
 
+.text-\[1\.9rem\] {
+  font-size: 1.9rem;
+}
+
 .text-\[15px\] {
   font-size: 15px;
 }
@@ -1283,22 +1291,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-\[1\.4rem\] {
-  font-size: 1.4rem;
-}
-
-.text-\[1\.9rem\] {
-  font-size: 1.9rem;
-}
-
-.text-\[2\.2rem\] {
-  font-size: 2.2rem;
-}
-
-.text-\[2\.4rem\] {
-  font-size: 2.4rem;
 }
 
 .font-\[400\] {
@@ -1424,18 +1416,14 @@ video {
   color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
-.text-\[\] {
-  color: ;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .shadow {

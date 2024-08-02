@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/darkLight.css" />
     <link rel="stylesheet" href="css/owl.css" />
     <link rel="stylesheet" href="css/flip-card.css" />
-    <link rel="stylesheet" href="css/scrollToTop.css">
+    <link rel="stylesheet" href="css/scrollToTop.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
@@ -48,188 +48,277 @@
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
-    <header >
-      <nav class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between">
-          <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
-          <div class="flex uppercase font-roboto cursor-pointer">
-              <div class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]">
-                  <a href="fərdi-sigorta.html" data-key="individual">fərdi</a>
-              </div>
-              <div class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]">
-                  <a href="korporativ-sigorta.html" data-key="corporate">KORPORATİV</a>
-              </div>
+    <header>
+      <nav
+        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+      >
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div class="flex uppercase font-roboto cursor-pointer">
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="fərdi-sigorta.html" data-key="individual">fərdi</a>
           </div>
-          <div class="flex justify-center items-center">
-              <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
-                  <li class="p-2 lg:p-0">
-                      <a class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]" href="/" data-key="home">ANA SƏHİFƏ</a>
-                  </li>
-                  <li class="p-2 lg:p-0">
-                      <a class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]" href="services.html" data-key="services">XİDMƏTLƏR</a>
-                  </li>
-                  <li class="p-2 lg:p-0">
-                      <a class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]" href="about.html" data-key="about">HAQQIMIZDA</a>
-                  </li>
-                  <li class="p-2 lg:p-0">
-                      <a class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]" href="presentation.html" data-key="presentation">PREZENTASİYA</a>
-                  </li>
-                  <li class="p-2 lg:p-0">
-                      <a class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]" href="contact.html" data-key="contact">ƏLAQƏ</a>
-                  </li>
-              </ul>
-              <div class="flex items-center justify-center">
-                  <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
-                      <button @click="open = !open" class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300" :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}">
-                          <span class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300" x-text="selected === '' ? 'AZ' : selected"></span>
-                          <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
-                      </button>
-                      <div x-show="open" class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600" x-cloak>
-                          <ul class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer">
-                              <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
-                              <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
-                              <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <button>
-                  <label class="switch">
-                      <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
-                      <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                          <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-                              <circle cx="6" cy="6" r="2" />
-                              <g stroke-dasharray="1.5 1.5">
-                                  <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-                                  <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
-                              </g>
-                          </g>
-                      </svg>
-                      <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                          <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-                              <path d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z" />
-                          </g>
-                      </svg>
-                      <span class="switch__sr">Dark Mode</span>
-                  </label>
+          <div
+            class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+          >
+            <a href="korporativ-sigorta.html" data-key="corporate">KORPORATİV</a>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="/"
+                data-key="home"
+                >ANA SƏHİFƏ</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="services.html"
+                data-key="services"
+                >XİDMƏTLƏR</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="about.html"
+                data-key="about"
+                >HAQQIMIZDA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="presentation.html"
+                data-key="presentation"
+                >PREZENTASİYA</a
+              >
+            </li>
+            <li class="p-2 lg:p-0">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="contact.html"
+                data-key="contact"
+                >ƏLAQƏ</a
+              >
+            </li>
+          </ul>
+          <div class="flex items-center justify-center">
+            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+              <button
+                @click="open = !open"
+                class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
+                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+              >
+                <span
+                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                  x-text="selected === '' ? 'AZ' : selected"
+                ></span>
+                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
               </button>
-              <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+              <div
+                x-show="open"
+                class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                x-cloak
+              >
+                <ul
+                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                >
+                  <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
+                </ul>
+              </div>
+            </div>
           </div>
+          <button>
+            <label class="switch">
+              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+                  <circle cx="6" cy="6" r="2" />
+                  <g stroke-dasharray="1.5 1.5">
+                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+                  </g>
+                </g>
+              </svg>
+              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+                  <path
+                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
+                  />
+                </g>
+              </svg>
+              <span class="switch__sr">Dark Mode</span>
+            </label>
+          </button>
+          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+        </div>
       </nav>
       <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide slide-1">
-                  <div class="text-white font-roboto title text-left">
-                      <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5" data-key="slide1_title">Mülkünüzün Dəyərini<br />İcbari Sığorta ilə Qoruyun</h1>
-                      <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 hover:bg-yellow-400 rounded dark:bg-yellow-400" data-key="apply">Müraciət et</button>
-                  </div>
-              </div>
-              <div class="swiper-slide slide-2">
-                  <div class="text-white font-roboto title text-left">
-                      <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5" data-key="slide2_title">Daşınmaz Əmlakınızın <br />İcbari Sığortası Bizimlə</h1>
-                      <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">Müraciət et</button>
-                  </div>
-              </div>
-              <div class="swiper-slide slide-3">
-                  <div class="text-white font-roboto title text-left">
-                      <h1 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5" data-key="slide3_title">KASKO Sığortasında<br />Etibarlı Tərəfdaşınız</h1>
-                      <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">Müraciət et</button>
-                  </div>
-              </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-1">
+            <div class="text-white font-roboto title text-left">
+             
+              <h1
+              class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
+              data-key="slide3_title"
+            >
+              KASKO Sığortasında<br />Etibarlı Tərəfdaşınız
+            </h1>
+              <button
+                class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 hover:bg-yellow-400 rounded dark:bg-yellow-400"
+                data-key="apply"
+              >
+                Müraciət et
+              </button>
+            </div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-slide slide-2">
+            <div class="text-white font-roboto title text-left">
+              <h1
+                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
+                data-key="slide2_title"
+              >
+                Daşınmaz Əmlakınızın <br />İcbari Sığortası Bizimlə
+              </h1>
+              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">
+                Müraciət et
+              </button>
+            </div>
+          </div>
+          <div class="swiper-slide slide-3">
+            <div class="text-white font-roboto title text-left">
+              <h1
+                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
+                data-key="slide3_title"
+              >
+                <!-- KASKO SığortasındaEtibarlı Tərəfdaşınız -->
+                Bize güvənin gələcəyinizi <br />  Heyat Sığortası ilə təmin edin!
+              </h1>
+              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">
+                Müraciət et
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
-  </header>
+    </header>
     <main>
       <!-- OWL FIRST START -->
       <section class="owl-carousel carousel-1 owl-theme my-10 py-3 px-4 lg:px-10 xl:px-20">
         <div class="item owl_item">
-            <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-                <a href="avto.html"><img class="w-full" src="./assets/img/car.jpg" alt="Sunset in the mountains" /></a>
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="car_insurance">Avtomobilin icbari sığortası</div>
-                </div>
+          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
+            <a href="avto.html"><img class="w-full" src="./assets/img/car.jpg" alt="Sunset in the mountains" /></a>
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="car_insurance">
+                Avtomobilin icbari sığortası
+              </div>
             </div>
+          </div>
         </div>
         <div class="item owl_item">
-            <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-                <a href="heyat_sigorta.html"><img class="w-full" src="./assets/img/life2.jpeg" alt="Sunset in the mountains" /></a>
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="life_insurance">Həyat sığortası</div>
-                </div>
+          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
+            <a href="heyat_sigorta.html"><img class="w-full" src="./assets/img/life2.jpeg" alt="Sunset in the mountains" /></a>
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="life_insurance">
+                Həyat sığortası
+              </div>
             </div>
+          </div>
         </div>
         <div class="item owl_item">
-            <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="./assets/img/home2.jpg" alt="Sunset in the mountains" />
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="property_insurance">Əmlak sığortası</div>
-                </div>
+          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/home2.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="property_insurance">
+                Əmlak sığortası
+              </div>
             </div>
+          </div>
         </div>
         <div class="item owl_item">
-            <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="./assets/img/travel22.jpg" alt="Sunset in the mountains" />
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="travel_insurance">Səyahət sığortası</div>
-                </div>
+          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/travel22.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="travel_insurance">
+                Səyahət sığortası
+              </div>
             </div>
+          </div>
         </div>
         <div class="item owl_item">
-            <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-                <img class="w-full" src="./assets/img/kasko.jpg" alt="Sunset in the mountains" />
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="casco_insurance">KASKO sığorta</div>
-                </div>
+          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="./assets/img/kasko.jpg" alt="Sunset in the mountains" />
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="casco_insurance">
+                KASKO sığorta
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-    <!-- OWL FIRST END -->
-    <!-- ABOUT START -->
-    <section class="my-32 w-full lg:max-w-full lg:flex py-3 px-4 md:px-10 lg:px-20 xl:px-36 bg-white dark:bg-gray-900">
+      </section>
+      <!-- OWL FIRST END -->
+      <!-- ABOUT START -->
+      <section class="my-32 w-full lg:max-w-full lg:flex py-3 px-4 md:px-10 lg:px-20 xl:px-36 bg-white dark:bg-gray-900">
         <article class="bg-white dark:bg-gray-800 p-6 flex flex-col justify-between leading-normal">
-            <div>
-                <p class="text-gray-900 dark:text-gray-100 text-[18px] font-[600] mb-4 leading-none" data-key="about">Haqqımızda</p>
-                <h3 class="text-[rgb(2,1,142)] dark:text-[#E2E8F0] font-[800] text-[39px] leading-6 mb-2">
-                    <span class="text-red-600 text-[3rem]">1</span><span data-key="company_name">Sığorta Agenti MMC</span>
-                </h3>
-            </div>
-            <p class="text-gray-700 dark:text-gray-300 text-[24px] font-[400] leading-6 mb-8" data-key="about_description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
-                Accusantium magni labore facere, nisi quod unde ut eveniet quisquam explicabo, <br />
-                laudantium iste corrupti aliquam eos nesciunt asperiores officiis, sapiente assumenda! Assumenda nemo <br />
-            </p>
-            <button class="py-2 px-10 w-36 bg-[rgb(2,1,142)] dark:bg-[#1E3A8A] text-white dark:text-gray-300 rounded-[35px] font-bold" data-key="more_info">
-                Ətraflı <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div>
+            <p class="text-gray-900 dark:text-gray-100 text-[18px] font-[600] mb-4 leading-none" data-key="about">Haqqımızda</p>
+            <h3 class="text-[rgb(2,1,142)] dark:text-[#E2E8F0] font-[800] text-[39px] leading-6 mb-2">
+              <span class="text-red-600 text-[3rem]">1</span><span data-key="company_name">Sığorta</span>
+            </h3>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 text-[24px] font-[400] leading-6 mb-8" data-key="about_description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+            Accusantium magni labore facere, nisi quod unde ut eveniet quisquam explicabo, <br />
+            laudantium iste corrupti aliquam eos nesciunt asperiores officiis, sapiente assumenda! Assumenda nemo <br />
+          </p>
+          <button
+            class="py-2 px-10 min-w-36 max-w-44 bg-[rgb(2,1,142)] dark:bg-[#1E3A8A] text-white dark:text-gray-300 rounded-[35px] font-bold"
+            data-key="more_info"
+          >
+            Ətraflı <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </article>
-        <div class="h-[400px] lg:w-[50%] flex-none bg-cover lg:rounded-[30px] overflow-hidden" style="background-image: url('./assets/img/insure.jpg')" title="blue"></div>
-    </section>
+        <div
+          class="h-[400px] lg:w-[50%] flex-none bg-cover lg:rounded-[30px] overflow-hidden"
+          style="background-image: url('./assets/img/insure.jpg')"
+          title="blue"
+        ></div>
+      </section>
       <!-- COUNT START -->
       <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-36">
         <div class="container mx-auto py-12 px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="450">
-                    <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter1">0</div>
-                    <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="satisfied_clients">Razı müştəri</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="11">
-                    <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter2">0</div>
-                    <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="years_experience">İl təcrübə</p>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="35">
-                    <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter3">0</div>
-                    <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="partners">Əməkdaş</p>
-                </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="450">
+              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter1">0</div>
+              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="satisfied_clients">Razı müştəri</p>
             </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="11">
+              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter2">0</div>
+              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="years_experience">İl təcrübə</p>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="35">
+              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter3">0</div>
+              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="partners">Əməkdaş</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
       <!-- COUNT END -->
       <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-40">
         <h3 class="font-asap font-[800] text-[48px] leading-10 text-[hsl(240,99%,28%)] dark:text-slate-100 text-center my-20">
@@ -301,10 +390,10 @@
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
       <div class="container mx-auto text-center">
-        <h2 class="text-[1.9rem] font-bold mb-6"><span class="text-red-600 text-[3rem]">1</span>Siğorta Agenti</h2>
+        <h2 class="text-[1.9rem] font-bold mb-6"><span class="text-red-600 text-[3rem]">1</span>Sığorta</h2>
         <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
-          "1sigorta Agenti" Məhdud Məsuliyyəti Cəmiyyəti, 000072 saylı lisenziya üzrə 23 iyul 2024-cü il tarixdən bəri sığorta
-          bazarında fəaliyyət göstərən universal bir milli sığortaçıdır.
+          "1sigorta" Məhdud Məsuliyyəti Cəmiyyəti, 000072 saylı lisenziya üzrə 23 iyul 2024-cü il tarixdən bəri sığorta bazarında
+          <br/>fəaliyyət göstərən universal bir milli sığortaçıdır.
         </p>
 
         <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
@@ -339,7 +428,8 @@
             href="#"
             class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
           >
-          <i class="fa-brands fa-x-twitter"></i></a>
+            <i class="fa-brands fa-x-twitter"></i
+          ></a>
           <a
             href="#"
             class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
@@ -351,40 +441,6 @@
     </footer>
     <button class="scrollToTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <!-- <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
-          <p class="text-lg mb-4 text-[#BCC0C2]">“Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta facere quos eum?</p>
-          <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
-          <div class="mb-4">
-              <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
-                  <i class="fas fa-phone-alt mr-2"></i>
-                  +994 50 286 25 85
-              </p>
-              <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
-                  <i class="fas fa-envelope mr-2"></i>
-                  office@Birsigorta.az
-              </p>
-              <p class="flex justify-center items-center text-[#BCC0C2]">
-                  <i class="fas fa-map-marker-alt mr-2"></i>
-                  Səməd Vurğun küçəsi 53, World Business Center
-              </p>
-          </div>
-          <div class="flex justify-center space-x-6 my-6">
-              <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-                <i class="fa-brands fa-facebook-f"></i>              </a>
-                <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-                  <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-                <i class="fab fa-youtube"></i>
-              </a>
-          </div>
-      </div>
-  </footer> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/translate.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

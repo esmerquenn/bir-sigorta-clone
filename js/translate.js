@@ -17,7 +17,7 @@ const translations = {
     property_insurance: "Əmlak sığortası",
     travel_insurance: "Səyahət sığortası",
     casco_insurance: "KASKO sığorta",
-    company_name: "Sığorta Agenti MMC",
+    company_name: "Sığorta",
     about_description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Accusantium magni labore facere, nisi quod unde ut eveniet quisquam explicabo,<br />laudantium iste corrupti aliquam eos nesciunt asperiores officiis, sapiente assumenda! Assumenda nemo<br />",
     more_info: "Ətraflı",
@@ -42,7 +42,7 @@ const translations = {
     property_insurance: "Страхование имущества",
     travel_insurance: "Страхование путешествий",
     casco_insurance: "КАСКО страхование",
-    company_name: "Сигорта Агент ММС",
+    company_name: "Сигорта",
     about_description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Accusantium magni labore facere, nisi quod unde ut eveniet quisquam explicabo,<br />laudantium iste corrupti aliquam eos nesciunt asperiores officiis, sapiente assumenda! Assumenda nemo<br />",
     more_info: "Подробнее",
@@ -67,7 +67,7 @@ const translations = {
     property_insurance: "Property Insurance",
     travel_insurance: "Travel Insurance",
     casco_insurance: "CASCO Insurance",
-    company_name: "Insurance Agent LLC",
+    company_name: "Insurance",
     about_description:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Accusantium magni labore facere, nisi quod unde ut eveniet quisquam explicabo,<br />laudantium iste corrupti aliquam eos nesciunt asperiores officiis, sapiente assumenda! Assumenda nemo<br />",
     more_info: "More Info",
