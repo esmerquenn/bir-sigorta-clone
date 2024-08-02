@@ -5,6 +5,9 @@
 .logo_img {
   width: 80px !important;
 }
+.logo_img_footer{
+  width: 100px !important;
+}
 .hidden_dropdown {
   position: absolute;
   background: white;

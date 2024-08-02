@@ -52,20 +52,26 @@
       <nav
         class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
       >
-       <div >
-        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
-        <a class=" text-white text-[.6rem]" href="tel:+994552009995">+994 55 200 99 95</a>
-       </div>
+        <div>
+          <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+          <a class="text-white text-[.6rem]" href="tel:+994552009995">+994 55 200 99 95</a>
+        </div>
         <div class="flex uppercase font-roboto cursor-pointer">
           <div
             class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
           >
-            <a href="fərdi-sigorta.html" data-key="individual">İcbari <br> siğorta</a>
+            <a href="fərdi-sigorta.html" data-key="individual"
+              >İcbari <br />
+              siğorta</a
+            >
           </div>
           <div
             class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
           >
-            <a href="korporativ-sigorta.html" data-key="corporate">siğorta <br> ödənişi</a>
+            <a href="korporativ-sigorta.html" data-key="corporate"
+              >siğorta <br />
+              ödənişi</a
+            >
           </div>
         </div>
         <div class="flex justify-center items-center">
@@ -139,7 +145,7 @@
               </div>
             </div>
           </div>
-          <button class=" fixed bottom-[20%] right-0 rotate-[90deg]">
+          <button class="fixed bottom-[20%] right-0 rotate-[90deg]">
             <label class="switch">
               <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
               <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
@@ -174,13 +180,12 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide slide-1">
             <div class="text-white font-roboto title text-left">
-             
               <h1
-              class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
-              data-key="slide3_title"
-            >
-              KASKO Sığortasında<br />Etibarlı Tərəfdaşınız
-            </h1>
+                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
+                data-key="slide3_title"
+              >
+                KASKO Sığortasında<br />Etibarlı Tərəfdaşınız
+              </h1>
               <button
                 class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 hover:bg-yellow-400 rounded dark:bg-yellow-400"
                 data-key="apply"
@@ -208,7 +213,8 @@
                 class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
                 data-key="slide1_title"
               >
-                Bize güvənin gələcəyinizi <br />  Heyat Sığortası ilə təmin edin!
+                Bize güvənin gələcəyinizi <br />
+                Heyat Sığortası ilə təmin edin!
               </h1>
               <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">
                 Müraciət et
@@ -282,7 +288,9 @@
             <h3 class="text-[rgb(2,1,142)] dark:text-[#E2E8F0] font-[800] text-[39px] leading-6 mb-2">
               <span class="text-red-600 text-[3rem]">1</span><span data-key="company_name">Sığorta</span>
             </h3>
-            <p class="text-gray-900  dark:text-gray-100 text-[18px] font-[600] my-6 leading-none" data-key="about_animals">Kiçik dostlarımızı qoruyaq onların bizə ehtiyaçları var</p>
+            <p class="text-gray-900 dark:text-gray-100 text-[18px] font-[600] my-6 leading-none" data-key="about_animals">
+              Kiçik dostlarımızı qoruyaq onların bizə ehtiyaçları var
+            </p>
           </div>
           <p class="text-gray-700 dark:text-gray-300 text-[24px] font-[400] leading-6 mb-8" data-key="about_description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
@@ -392,10 +400,16 @@
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
       <div class="container mx-auto text-center">
-        <h2 class="text-[1.9rem] font-bold mb-6"><span class="text-red-600 text-[3rem]">1</span>Sığorta</h2>
+        <div class=" flex justify-center items-end mb-6 gap-2">
+          <a class="logo_img_footer block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+          <div class=" flex flex-col justify-end items-start">
+            <h2 class="text-[1.9rem] font-bold m-0" ><b class="text-red-600 text-[3rem]">1</b>Sığorta.az</h2>
+            <p class="text-[1rem]">Siğortanız bir ünvanda</p>
+          </div>
+        </div>
         <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
           "1sigorta" Məhdud Məsuliyyəti Cəmiyyəti, 000072 saylı lisenziya üzrə 23 iyul 2024-cü il tarixdən bəri sığorta bazarında
-          <br/>fəaliyyət göstərən universal bir milli sığortaçıdır.
+          <br />fəaliyyət göstərən universal bir milli sığortaçıdır.
         </p>
 
         <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
