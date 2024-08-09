@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const content = {
     melumat: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1 class="text-3xl md:text-4xl font-bold text-white">
-          <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
-        </h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+   Məlumat
+  </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
           www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Mirəli oğlu Cəfərov tərəfindən təsis edilmiş, Azərbaycan
           Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə
@@ -21,11 +21,33 @@ document.addEventListener("DOMContentLoaded", function () {
           sığortalı həyat arzulayırıq.
         </p>
       </div>`,
-    rehberlik: "Bu, Rəhbərlik səhifəsidir.",
+    rehberlik: `<div class=" bg-slate-50 dark:bg-gray-900 container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
+  <h1 class="text-2xl font-semibold border-b-4 pb-3 border-red-600 text-center text-gray-900 dark:text-white mb-8">
+    Mircəfər Mirəli oğlu Cəfərov – <span class="text-2xl md:text-3xl text-[#EA1918]">1</span>sigorta.az saytının təsisçisi
+   
+  </h1>
+
+  <div class="md:flex md:items-start">
+    <div class="md:w-1/3 mb-6 md:mb-0">
+      <img src="./../assets/img/admin.jpg" alt="Mircəfər Cəfərov" class="w-full h-auto rounded">
+    </div>
+    <div class="md:w-2/3 md:pl-10">
+      <p class="text-lg text-gray-800 leading-8 dark:text-gray-400">
+        Mircəfər Cəfərov 28.06.1987-ci ildə Quba şəhərində anadan olmuşdur. Orta təhsilini Quba Özəl Türk Liseyindən almışdır.
+        2010-cu ildə Azərbaycan Dövlət İqtisad Universitetinin Beynəlxalq İqtisadi Münasibətlər fakültəsini bitirmişdir. Əmək
+        fəaliyyətinə 2007-ci ildə “Damirbank” ASC-də başlamışdır. 2011-ci ildən əmək fəaliyyətini “AXA MBASK” SŞ-də davam
+        etdirmişdir. 2017-ci ilin yanvar ayında “MeqaSığorta” ASC-nin Şimal bölgəsinin rəhbəri vəzifəsində çalışmışdır.
+        2017-ci ilin iyun ayında “AtaSığorta” ASC-nin İçəri Şəhər filialının müdiri vəzifəsinə təyin edilmişdir.
+      </p>
+    </div>
+  </div>
+</div>
+
+`,
     missiya: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1 class="text-3xl md:text-4xl font-bold text-white">
-          <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
-        </h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+    Missiya
+  </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
           www.1sigorta.az saytı müasir texnologiyalara əsaslanmaqla keyfiyyətli və etibarlı universal sığorta xidmətləri göstərən
           güvənli və ictimai əhəmiyyətli vasitəçi sayt olmağı özünün strateji baxışı hesab edir.
@@ -50,9 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </p>
       </div>`,
     biznes: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">
-              <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
-            </h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+    Biznesə yanaşma
+  </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
               www.1sigorta.az saytının biznesə yanaşması, bazarda uğur qazanmaq, müştəri bazasını genişləndirmək və effektiv fəaliyyət göstərmək üçün tətbiq etdiyi strategiyaları əhatə edir. 1sigorta.az saytı üçün biznes yanaşması aşağıdakı əsas aspektləri əhatə edir:
             </p>
@@ -106,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
             </p>
           </div>`,
     qanunvericilik: `<div class="container mx-auto py-10 px-5 md:px-20">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">
-              <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
-            </h1>
+           <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+    Qanun vericilik
+  </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
               Qanunvericilik
             </p>
@@ -124,8 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
             </ul>
           </div>`,
     vakansiya: `<div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-  <h1 class="text-3xl md:text-4xl font-bold text-white mb-8">
-    <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
+   <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+    Vakansiyalar
   </h1>
 
   <div class="mb-10">
