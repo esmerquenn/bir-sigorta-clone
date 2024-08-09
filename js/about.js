@@ -165,7 +165,89 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </div>
 `,
-    sual: `
+    sual: `<div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
+  <h1 class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+    Ən Çox Verilən Suallar
+  </h1>
+
+  <div class="mt-5 md:text-[1.2rem] text-[#f0f0f0] dark:text-gray-400">
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Sığorta Nədir?</h3>
+      <p>
+        Sığorta, risklərin başqasına ötürüldüyü və ya başqası ilə bölüşdürüldüyü bir mexanizmdir. Sığorta, hər hansı bir itkiyə məruz qalmış şəxsi, itkiyə səbəb olmuş hadisədən əvvəlki maliyyə vəziyyətinə qaytarmaq üçün təzminatla təmin edir.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Sığorta Müqaviləsi Nədir?</h3>
+      <p>
+        Sığorta müqaviləsi, sığortalı ilə sığortaçı arasında əldə edilən bir razılaşmadır. Bu razılaşmaya görə, sığortalı sığorta haqqını ödəməyi, sığortaçı isə göstərilən itkilər baş verdikdə zərəri — sığorta ödənişini ödəməyi öz üzərinə götürür.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Sığorta Haqqı Nədir?</h3>
+      <p>
+        Sığorta haqqı, sığorta müqaviləsində nəzərdə tutulmuş vaxtda və qaydada sığorta şirkətinə ödədiyiniz pul məbləğidir.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Sığortaçı Kimdir?</h3>
+      <p>
+        Sığortaçı, sığorta fəaliyyətini həyata keçirən sığorta şirkətidir.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Sığortalı Kimdir?</h3>
+      <p>
+        Sığortalı, sığorta müqaviləsi əsasında öz həyatını, sağlamlığını, əmlakını, məsuliyyətini sığorta etdirən və bunun qarşılığında sığortaçıya müəyyən məbləğ (sığorta haqqı) ödəyən şəxsdir.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Franşiza Nədir və O, Sığorta Haqqına Necə Təsir Edir?</h3>
+      <p>
+        Franşiza, sığorta hadisəsi baş verdiyi zaman dəymiş zərərin sığorta ilə təmin olunmayan və sizin tərəfinizdən ödənilməli olan hissəsidir. Tez-tez sığortaçıya müraciət etmədən də özünüzün ödəyə biləcəyiniz xırda zərərlərlə qarşılaşa bilərsiniz. Belə hallar üçün sığorta müqaviləsində azadolma məbləği nəzərdə tutulur. Sığorta hadisəsi nəticəsində dəymiş zərərin azadolma məbləğindən artıq hissəsi sığortaçı tərəfdən ödənilir.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Avtomobil Sığortası Hansı Riskləri Əhatə Edir?</h3>
+      <p>
+        Avtomobilinizi sığortalayarkən, siz təklif olunan üç təminat növündən hər hansı birini və ya hər üçünü seçə bilərsiniz:
+      </p>
+      <ul class="list-disc list-inside pl-4">
+        <li>Avtomobilin sığortası - Avtomobilinizə dəyən zərərin ödənilməsi (yol-nəqliyyatı hadisəsi, yanğın, partlayış, üçüncü şəxslərin qərəzli hərəkətləri, oğurluq və s.).</li>
+        <li>Sizin və sərnişinlərin sağlamlığına dəyən zərərin ödənilməsi - Avtomobildə olan sərnişinlərin sağlamlığına dəyən zərərin ödənilməsi.</li>
+        <li>Mülki məsuliyyətin sığortası - Sizin səhviniz nəticəsində ətrafdakılara dəyən zərərin sığortaçı tərəfindən ödənilməsi.</li>
+      </ul>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Avtomobilimi Sığorta Edərkən Avtomobilin Qiyməti Necə Müəyyən Olunur?</h3>
+      <p>
+        Avtomobilinizin sığortalanması zamanı onun bazar qiyməti əsas götürülür.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Avtomobil Sığortası Zamanı Müqavilə Hansı Müddətə Bağlanılır?</h3>
+      <p>
+        Adətən sığorta müqaviləsi 1 il müddətinə bağlanılır.
+      </p>
+    </article>
+
+    <article class="mb-6">
+      <h3 class="text-2xl font-semibold mb-2 text-[#f0f0f0] dark:text-gray-300">Etibarnamə Əsasında İdarə Etdiyim Avtomobili Sığorta Edə Bilərəmmi?</h3>
+      <p>
+        Bəli, siz etibarnamə əsasında idarə etdiyiniz avtomobili sığorta etdirə bilərsiniz.
+      </p>
+    </article>
+  </div>
+</div>
+
 `,
   };
   const images = {

@@ -1920,6 +1920,11 @@ video {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.text-\[\#f0f0f0\] {
+  --tw-text-opacity: 1;
+  color: rgb(240 240 240 / var(--tw-text-opacity));
+}
+
 .placeholder-transparent::-moz-placeholder {
   color: transparent;
 }
