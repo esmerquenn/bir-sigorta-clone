@@ -630,8 +630,8 @@ video {
   bottom: 50%;
 }
 
-.-right-1 {
-  right: -0.25rem;
+.-right-0 {
+  right: -0px;
 }
 
 .-right-4 {
@@ -2465,10 +2465,6 @@ video {
 
   .md\:leading-\[58px\] {
     line-height: 58px;
-  }
-
-  .md\:text-\[\] {
-    color: ;
   }
 }
 
