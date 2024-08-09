@@ -44,37 +44,19 @@
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
-    <button class="fixed bottom-[50%] z-10 right-0 rotate-[90deg]">
-      <label class="switch">
-        <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
-        <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-          <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-            <circle cx="6" cy="6" r="2" />
-            <g stroke-dasharray="1.5 1.5">
-              <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-              <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
-            </g>
-          </g>
-        </svg>
-        <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-          <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-            <path
-              d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
-            />
-          </g>
-        </svg>
-        <span class="switch__sr">Dark Mode</span>
-      </label>
+    <button class="fixed bottom-[50%] z-10 -right-7 rotate-[270deg]">
+      <div class="flex gap-2 text-[#bbbbbc] uppercase">
+        <span class=""> light</span>
+        <label class="switch">
+          <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+          <span class="switch__sr">Dark Mode</span>
+        </label>
+        dark
+      </div>
     </button>
     <header>
       <nav
-        class="min-h-[15vh] bg-[#02018e] dark:bg-[#273135] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+        class="min-h-[15vh] bg-[#02018e] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
       >
         <div>
           <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
@@ -113,7 +95,7 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="about"
-                >Məhsullarımız <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
+                >Məhsullarımız <i class="fa-solid fa-angle-down duration-500 pl-1"></i
               ></a>
               <div class="drop_div_product mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul>
@@ -160,14 +142,14 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="about"
-                >Şirkət haqqında <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
+                >Şirkət haqqında <i class="fa-solid fa-angle-down duration-500 pl-1"></i
               ></a>
               <div class="drop_div mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul>
                   <li class="pt-1">
                     <a
                       class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                      href=""
+                      href="melumat.html"
                       >Məlumat</a
                     >
                   </li>
@@ -181,22 +163,29 @@
                   <li class="pt-2">
                     <a
                       class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                      href=""
+                      href="missiya.html"
                       >Missiya</a
                     >
                   </li>
                   <li class="pt-2">
                     <a
                       class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                      href=""
+                      href="biznes.html"
                       >Biznesə yanaşma</a
                     >
                   </li>
                   <li class="pt-2">
                     <a
                       class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                      href=""
+                      href="qanunvericilik.html"
                       >Qanunvericilik</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="vakansiya.html"
+                      >Vakansiya</a
                     >
                   </li>
                   <li class="pt-2">
@@ -214,7 +203,7 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="presentation"
-                >servislər <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
+                >servislər <i class="fa-solid fa-angle-down duration-500 pl-1"></i
               ></a>
               <div class="drop_div_services mt-2 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul class="px-3">
@@ -301,12 +290,22 @@
     </header>
     <main class="mt-[17vh] min-h-[80vh] background-image">
       <div class="container mx-auto py-10 px-5 md:px-20">
-        <h1 class="text-3xl md:text-4xl font-bold text-white"><span class="text-4xl md:text-5xl text-[#EA1918]" >1</span>sigorta.az</h1>
-        <p class="mt-5 md:text-[1.2rem] text-white">www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Mirəli oğlu Cəfərov tərəfindən təsis edilmiş, Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır. Saytın təsis edilməsində məqsəd sığorta şirkətləri ilə müştərilər arasında sığorta vasitəçiliyi etməklə asan, operativ və peşəkar xidmət göstərməkdir. Əsas üstünlüyümüz Azərbaycanda fəaliyyət göstərən sığorta şirkətlərinin 20-dən artıq sığorta məhsullarını müştərilərə təqdim etmək və satışını həyata keçirmək imkanını yaratmaqdır.</p>
-        
-        <p class="mt-3 md:text-[1.2rem] text-white">Saytımızın 17 ilə yaxın sığorta sahəsində peşəkar iş təcrübəsinə malik olan əməkdaşları vardır. Peşəkarlar tərəfindən professional şəkildə hazırlanmış saytımız sizin vaxtınıza və enerjinizə qənaət etməyinizə kömək edəcək. Hər birinizə sığortalı həyat arzulayırıq.</p>
-    
-  
+        <h1 class="text-3xl md:text-4xl font-bold text-white">
+          <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
+        </h1>
+        <p class="mt-5 md:text-[1.2rem] text-white">
+          www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Mirəli oğlu Cəfərov tərəfindən təsis edilmiş, Azərbaycan
+          Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə
+          başlanmışdır. Saytın təsis edilməsində məqsəd sığorta şirkətləri ilə müştərilər arasında sığorta vasitəçiliyi etməklə
+          asan, operativ və peşəkar xidmət göstərməkdir. Əsas üstünlüyümüz Azərbaycanda fəaliyyət göstərən sığorta şirkətlərinin
+          20-dən artıq sığorta məhsullarını müştərilərə təqdim etmək və satışını həyata keçirmək imkanını yaratmaqdır.
+        </p>
+
+        <p class="mt-3 md:text-[1.2rem] text-white">
+          Saytımızın 17 ilə yaxın sığorta sahəsində peşəkar iş təcrübəsinə malik olan əməkdaşları vardır. Peşəkarlar tərəfindən
+          professional şəkildə hazırlanmış saytımız sizin vaxtınıza və enerjinizə qənaət etməyinizə kömək edəcək. Hər birinizə
+          sığortalı həyat arzulayırıq.
+        </p>
       </div>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
@@ -366,7 +365,22 @@
         </div>
       </div>
     </footer>
-    <button class="scrollToTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="progress-container">
+      <svg class="progress-ring w-15 h-15">
+        <circle
+          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
+          stroke-width="2"
+          fill="transparent"
+          r="28"
+          cx="30"
+          cy="30"
+        />
+        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
+      </svg>
+      <i
+        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
+      ></i>
+    </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
