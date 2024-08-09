@@ -17,7 +17,7 @@
   right: 10px !important;
 
 }
-.owl-nav{
+    .owl-nav{
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -26,4 +26,29 @@
     right: 0;
     left: 0;
 
+}
+.carousel-1 .owl-nav span{
+    color: #EA1918 !important;
+    font-size: 6rem !important;
+    padding-inline: 30px;
+   background: #F8FAFC;
+   border-top: 16px solid #F8FAFC;
+   border-bottom: 15px solid #F8FAFC;
+}
+.carousel-1 .owl-nav span:hover{background: #F8FAFC !important;}
+    .carousel-1 .owl-nav{
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .carousel-1 .owl-nav span{
+        color: #EA1918 !important;
+        font-size: 3rem !important;
+        padding-inline: 7px;
+       background: #F8FAFC;
+       border-top: 9px solid #F8FAFC;
+       border-bottom: 9px solid #F8FAFC;
+    }
 }

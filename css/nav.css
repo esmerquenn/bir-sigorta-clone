@@ -5,7 +5,7 @@
 .logo_img {
   width: 80px !important;
 }
-.logo_img_footer{
+.logo_img_footer {
   width: 100px !important;
 }
 .hidden_dropdown {
@@ -16,31 +16,37 @@
   top: 15vh;
   opacity: 0;
   visibility: hidden;
-  height: 0;
-  transition: all 0.5s;
-
+  max-height: 0;
+  transition: all 0.5s ease-out;
 }
 .dropdown {
   opacity: 1;
-  height: 210px;
   visibility: visible;
   z-index: 99999999;
+  max-height: 210px;
+  transition: all 0.5s ease-in;
 }
-/* tailwind.css or your custom CSS file */
+.drop_div,
+.drop_div_services {
+  transition: 0.5s ease-out;
+}
+.drop_active {
+  padding-block: 4px;
+  max-height: 500px;
+  transition: 0.5s ease-in;
+}
 @layer base {
   .dark .bg-red-100 {
-    background-color: #1a202c; /* Dark background color */
+    background-color: #1a202c;
   }
 
   .dark .text-black {
-    color: #e2e8f0; /* Light text color for dark mode */
+    color: #e2e8f0;
   }
 
   .dark .bg-yellow-300 {
-    background-color: #7e7230; /* Dark mode equivalent */
+    background-color: #7e7230;
   }
-
-  /* Add more custom dark mode styles here */
 }
 .font-asap {
   font-family: "Asap" !important;
@@ -48,6 +54,8 @@
 
 @media only screen and (min-width: 992px) {
   .hidden_dropdown {
+    display: flex;
+    align-items: center;
     position: static;
     background: initial;
     width: initial;
@@ -55,11 +63,10 @@
     visibility: visible;
     height: initial;
   }
-  .fa-bars{display: none !important; }
+  .fa-bars {
+    display: none !important;
+  }
   .dark .hidden_dropdown {
     background-color: transparent; /* Dark mode background color */
   }
 }
-
-
-

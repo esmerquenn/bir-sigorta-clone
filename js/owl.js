@@ -2,10 +2,9 @@ $(".carousel-1").owlCarousel({
   loop: true,
   margin: 50,
   dots:false,
-  nav: false,
+  nav: true,
   autoplay: true, // Enable autoplay
   autoplayTimeout: 2000, // Time in milliseconds (2000ms = 2 seconds)
-  autoplayHoverPause: true,
   responsive: {
     0: {
       items: 1,
@@ -25,7 +24,6 @@ $(".image-slider").owlCarousel({
   nav: true,
   autoplay: true, // Enable autoplay
   autoplayTimeout: 2000, // Time in milliseconds (2000ms = 2 seconds)
-  autoplayHoverPause: true,
   responsive: {
     0: {
       items: 2,

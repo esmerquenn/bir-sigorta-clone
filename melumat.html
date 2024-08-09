@@ -15,17 +15,7 @@
     <link rel="stylesheet" href="css/flip-card.css" />
     <link rel="stylesheet" href="css/scrollToTop.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -33,7 +23,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
 
     <style>
       #image-slider .item {
@@ -46,23 +35,46 @@
         max-width: 200px;
         border: 2px solid #00acc1;
       }
+      .background-image {
+        background: linear-gradient(rgba(3, 1, 48, 0.605), rgba(3, 1, 48, 0.605)), url("./assets/img/Vita_Internal\ \(1\).jpg");
+        background-size: cover;
+        background-position: center;
+      }
     </style>
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
-    <button class="fixed bottom-[50%] z-10 -right-7 rotate-[270deg]">
-      <div class="flex gap-2 text-[#bbbbbc] uppercase">
-        <span class=""> light</span>
-        <label class="switch">
-          <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
-          <span class="switch__sr">Dark Mode</span>
-        </label>
-        dark
-      </div>
+    <button class="fixed bottom-[50%] z-10 right-0 rotate-[90deg]">
+      <label class="switch">
+        <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+        <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+          <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
+            <circle cx="6" cy="6" r="2" />
+            <g stroke-dasharray="1.5 1.5">
+              <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
+              <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
+            </g>
+          </g>
+        </svg>
+        <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
+          <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
+            <path
+              d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
+            />
+          </g>
+        </svg>
+        <span class="switch__sr">Dark Mode</span>
+      </label>
     </button>
     <header>
       <nav
-        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+        class="min-h-[15vh] bg-[#02018e] dark:bg-[#273135] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
       >
         <div>
           <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
@@ -90,7 +102,7 @@
           <ul class="hidden_dropdown bg-blue-400 lg:flex dark:bg-gray-700">
             <li class="p-2 lg:p-0">
               <a
-                class="uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                class="uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[#02018e] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="/"
                 data-key="home"
                 >ANA SƏHİFƏ</a
@@ -101,7 +113,7 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="about"
-                >Məhsullarımız <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+                >Məhsullarımız <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
               ></a>
               <div class="drop_div_product mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul>
@@ -148,7 +160,7 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="about"
-                >Şirkət haqqında <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+                >Şirkət haqqında <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
               ></a>
               <div class="drop_div mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul>
@@ -202,7 +214,7 @@
                 class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="#"
                 data-key="presentation"
-                >servislər <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+                >servislər <i class="fa-solid fa-angle-up arrow duration-500 pl-1"></i
               ></a>
               <div class="drop_div_services mt-2 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
                 <ul class="px-3">
@@ -286,218 +298,24 @@
           <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
         </div>
       </nav>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide-1">
-            <div class="text-white font-roboto title text-left">
-              <h1
-                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
-                data-key="slide3_title"
-              >
-                KASKO Sığortasında<br />Etibarlı Tərəfdaşınız
-              </h1>
-              <button
-                class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 hover:bg-yellow-400 rounded dark:bg-yellow-400"
-                data-key="apply"
-              >
-                Müraciət et
-              </button>
-            </div>
-          </div>
-          <div class="swiper-slide slide-2">
-            <div class="text-white font-roboto title text-left">
-              <h1
-                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
-                data-key="slide2_title"
-              >
-                Daşınmaz Əmlakınızın <br />İcbari Sığortası Bizimlə
-              </h1>
-              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">
-                Müraciət et
-              </button>
-            </div>
-          </div>
-          <div class="swiper-slide slide-3">
-            <div class="text-white font-roboto title text-left">
-              <h1
-                class="text-3xl md:text-[58px] font-thin leading-8 md:leading-[58px] text-left mb-3 md:mb-5"
-                data-key="slide1_title"
-              >
-                Bize güvənin gələcəyinizi <br />
-                Heyat Sığortası ilə təmin edin!
-              </h1>
-              <button class="py-1 md:py-3 px-3 md:px-7 bg-yellow-300 rounded dark:bg-yellow-400" data-key="apply">
-                Müraciət et
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
     </header>
-    <main>
-      <!-- OWL FIRST START -->
-      <section class="owl-carousel carousel-1 owl-theme my-10 py-3 px-4 lg:px-10 xl:px-20">
-        <div class="item owl_item">
-          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-            <a href="avto.html"><img class="w-full" src="./assets/img/car.jpg" alt="Sunset in the mountains" /></a>
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="car_insurance">
-                Avtomobilin icbari sığortası
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item owl_item">
-          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-            <a href="heyat_sigorta.html"><img class="w-full" src="./assets/img/life2.jpeg" alt="Sunset in the mountains" /></a>
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="life_insurance">
-                Həyat sığortası
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item owl_item">
-          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="./assets/img/home2.jpg" alt="Sunset in the mountains" />
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="property_insurance">
-                Əmlak sığortası
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item owl_item">
-          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="./assets/img/travel22.jpg" alt="Sunset in the mountains" />
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="travel_insurance">
-                Səyahət sığortası
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item owl_item">
-          <div class="max-w-sm bg-white dark:bg-[rgb(2,1,142)] rounded overflow-hidden shadow-lg">
-            <img class="w-full" src="./assets/img/kasko.jpg" alt="Sunset in the mountains" />
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl text-center text-[#102d33] dark:text-slate-50 mb-2" data-key="casco_insurance">
-                KASKO sığorta
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- OWL FIRST END -->
-      <!-- ABOUT START -->
-      <section class="my-32 w-full lg:max-w-full lg:flex py-3 px-4 md:px-10 lg:px-20 xl:px-36 bg-white dark:bg-gray-900">
-        <article class="bg-white dark:bg-gray-800 p-6 flex flex-col justify-between leading-normal">
-          <div>
-            <h3 class="text-[rgb(2,1,142)] dark:text-[#E2E8F0] font-[800] text-[39px] leading-6 mb-2">
-              <span class="text-red-600 text-[3rem]">1</span><span data-key="company_name">sigorta.az</span>
-            </h3>
-            <p class="text-gray-700 dark:text-gray-100 text-[18px] font-[500] my-6 leading-none" data-key="about_animals">
-              Kiçik dostlarımızı qoruyaq onların bizə ehtiyaçları var
-            </p>
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 text-[18px] font-[400] leading-7 mb-8" data-key="about_description">
-            Kiçik dostlarınızın gözlənilməz hallarda qorunması üçün heyvan sığortası ideal bir həll yoludur. Bu sığorta növü
-            yalnız fövqəladə vəziyyətləri əhatə etməklə kifayətlənmir, həm də stasionar və ambulator müalicə, dərman təminatı,
-            görüntüləmə və müayinə kimi geniş xidmətlərdən faydalanma imkanı verir. Bu şəkildə, təcili yardımlarla yanaşı,
-            heyvanınızın sağlamlığını qorumaq üçün lazım olan bütün xidmətlərə rahatlıqla çıxış əldə edirsiniz.
-          </p>
-        </article>
-        <div
-          class="h-[250px] md:h-[400px] lg:w-[50%] flex-none bg-cover lg:rounded-[30px] overflow-hidden"
-          style="background: url('./assets/img/animals.jpg') 14% / cover"
-          title="blue"
-        ></div>
-      </section>
-      <!-- COUNT START -->
-      <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-36">
-        <div class="container mx-auto py-12 px-4">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="370">
-              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter1">0</div>
-              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="satisfied_clients">Razı müştəri</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="17">
-              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter2">0</div>
-              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="years_experience">İl təcrübə</p>
-            </div>
-            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center counter" data-target="27">
-              <div class="text-[6rem] font-bold text-[rgb(2,1,142)] dark:text-yellow-400" id="counter3">0</div>
-              <p class="text-gray-700 dark:text-gray-300 font-bold text-xl mt-2" data-key="partners">Əməkdaş</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- COUNT END -->
-      <section class="py-3 px-4 md:px-10 lg:px-20 xl:px-40">
-        <h3 class="font-asap font-[800] text-[48px] leading-10 text-[hsl(240,99%,28%)] dark:text-slate-100 text-center my-20">
-          Xidmətlər
-        </h3>
-
-        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
-      </section>
-      <!-- OWL SECOND START -->
-
-      <section class="relative_section">
-        <div class="py-8 my-6 bg-[rgb(2,1,142)] px-4 md:px-10 lg:px-20 xl:px-40">
-          <div class="owl-carousel owl-theme image-slider">
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta1.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta2.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta3.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta4.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta1.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta2.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta3.jpg" alt="1" />
-              </div>
-            </div>
-            <div class="item">
-              <div class="border-4 border-blue-200 w-[200px]">
-                <img class="object-cover" src="./assets/img/sigorta4.jpg" alt="1" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- OWL SECOND END -->
+    <main class="mt-[17vh] min-h-[80vh] background-image">
+      <div class="container mx-auto py-10 px-5 md:px-20">
+        <h1 class="text-3xl md:text-4xl font-bold text-white"><span class="text-4xl md:text-5xl text-[#EA1918]" >1</span>sigorta.az</h1>
+        <p class="mt-5 md:text-[1.2rem] text-white">www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Mirəli oğlu Cəfərov tərəfindən təsis edilmiş, Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır. Saytın təsis edilməsində məqsəd sığorta şirkətləri ilə müştərilər arasında sığorta vasitəçiliyi etməklə asan, operativ və peşəkar xidmət göstərməkdir. Əsas üstünlüyümüz Azərbaycanda fəaliyyət göstərən sığorta şirkətlərinin 20-dən artıq sığorta məhsullarını müştərilərə təqdim etmək və satışını həyata keçirmək imkanını yaratmaqdır.</p>
+        
+        <p class="mt-3 md:text-[1.2rem] text-white">Saytımızın 17 ilə yaxın sığorta sahəsində peşəkar iş təcrübəsinə malik olan əməkdaşları vardır. Peşəkarlar tərəfindən professional şəkildə hazırlanmış saytımız sizin vaxtınıza və enerjinizə qənaət etməyinizə kömək edəcək. Hər birinizə sığortalı həyat arzulayırıq.</p>
+    
+  
+      </div>
     </main>
-    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#02018e] text-white dark:bg-gray-800 dark:text-gray-100">
+    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
       <div class="container mx-auto text-center">
         <div class="flex justify-center items-end mb-6 gap-2">
-          <div class="flex flex-col justify-center items-center">
-            <h2 class="text-[1.9rem] font-bold m-0"><b class="text-red-600 text-[2.3rem]">1</b>sigorta.az</h2>
-            <p class="text-[.8rem]">Siğortanız bir ünvanda</p>
+          <a class="logo_img_footer block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+          <div class="flex flex-col justify-end items-start">
+            <h2 class="text-[1.9rem] font-bold m-0"><b class="text-red-600 text-[3rem]">1</b>Sığorta.az</h2>
+            <p class="text-[1rem]">Siğortanız bir ünvanda</p>
           </div>
         </div>
         <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
@@ -548,22 +366,7 @@
         </div>
       </div>
     </footer>
-    <div class="progress-container">
-      <svg class="progress-ring w-15 h-15">
-        <circle
-          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
-          stroke-width="2"
-          fill="transparent"
-          r="28"
-          cx="30"
-          cy="30"
-        />
-        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
-      </svg>
-      <i
-        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
-      ></i>
-    </div>
+    <button class="scrollToTopBtn" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
       integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="

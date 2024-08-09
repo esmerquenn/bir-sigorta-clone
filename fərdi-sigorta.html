@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bir sigorta</title>
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
@@ -20,6 +21,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      .iframe-container {
+        /* width: 800px; Adjust width as needed */
+        height: 400px; /* Adjust height as needed */
+        overflow: hidden;
+        position: relative;
+        border: 1px solid #ccc;
+      }
+      .iframe-container iframe {
+        position: absolute;
+        top: -200px; /* Adjust top position to show the desired part */
+        left: 0;
+        width: 100%;
+        height: 1000px; /* Ensure the iframe is tall enough to show the desired part */
+      }
+    </style>
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
@@ -142,13 +159,11 @@
       </nav>
 
       <div class="ferdi">
-        <h1 class="title">Fərdi sığorta</h1>
+        <h1 class="title">sigorta odenisi</h1>
       </div>
     </header>
-    <main>
-      <section class="my-10 py-3 px-4 md:px-10 lg:px-20 xl:px-40">
-        <div id="cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
-      </section>
+    <main class="iframe-container">
+      <iframe src="https://million.az/services/insurance/ISB" width="100%" height="700px" frameborder="0"></iframe>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
       <div class="container mx-auto text-center">
@@ -174,62 +189,40 @@
           </p>
         </div>
         <div class="flex justify-center space-x-6 my-6">
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100">
+          <a
+            href="#"
+            class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
+          >
             <i class="fab fa-youtube"></i>
           </a>
         </div>
       </div>
     </footer>
-    <!-- <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
-        <p class="text-lg mb-4 text-[#BCC0C2]">
-          “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
-          sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
-          facere quos eum?
-        </p>
-        <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
-        <div class="mb-4">
-          <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
-            <i class="fas fa-phone-alt mr-2"></i>
-            +994 50 286 25 85
-          </p>
-          <p class="flex justify-center items-center mb-2 text-[#BCC0C2]">
-            <i class="fas fa-envelope mr-2"></i>
-            office@Birsigorta.az
-          </p>
-          <p class="flex justify-center items-center text-[#BCC0C2]">
-            <i class="fas fa-map-marker-alt mr-2"></i>
-            Səməd Vurğun küçəsi 53, World Business Center
-          </p>
-        </div>
-        <div class="flex justify-center space-x-6 my-6">
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-            <i class="fa-brands fa-facebook-f"></i>
-          </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px]">
-            <i class="fab fa-youtube"></i>
-          </a>
-        </div>
-      </div>
-    </footer> -->
     <script src="js/flipCards.js"></script>
-
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
+    integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
     <script src="js/nav.js"></script>
   </body>
 </html>

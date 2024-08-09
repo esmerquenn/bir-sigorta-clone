@@ -1,37 +1,26 @@
-body {
-  font-family: Arial, sans-serif;
-}
-
-.content {
-  height: 2000px; 
-  padding: 20px;
-}
-
-.scrollToTopBtn {
+.progress-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  color: #f31a14;
-  background-color: #02018e;
-  cursor: pointer;
-  padding: 15px 20px;
-  border-radius: 10px;
-  transition:  all 0.6s;
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-100px);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.scrollToTopBtn:hover {
-  background-color: #f31a14;
-  color: #02018e;
+
+
+.progress-ring {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
 }
-.active_scroll_button{
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
 }
