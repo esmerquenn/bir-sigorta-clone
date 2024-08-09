@@ -123,130 +123,53 @@ document.addEventListener("DOMContentLoaded", function () {
               <li>Fiziki şəxslərə təqdim edilən avtomobil nəqliyyatı vasitələrinin tam sığortası üzrə sığorta qaydaları</li>
             </ul>
           </div>`,
-    vakansiya: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-8">
-              <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
-            </h1>
-          
-            <div class="mb-10">
-              <h2 class="text-2xl md:text-3xl font-semibold text-[#EA1918] border-b-2 border-[#EA1918] inline-block pb-1">Sığorta Satış və Müştəri Xidmətləri</h2>
-              <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
-                <li>Sığorta Agentləri: Müştərilərlə əlaqə qurur və sığorta məhsullarını təqdim edir.</li>
-                <li>Müştəri Xidmətləri Meneceri: Müştəri şikayətlərini idarə edir, müştəri məmnuniyyətini artırır və müştəri sorğularını cavablandırır.</li>
-              </ul>
-            </div>
-          
-            <div class="mb-10">
-              <h2 class="text-2xl md:text-3xl font-semibold text-[#EA1918] border-b-2 border-[#EA1918] inline-block pb-1">Maliyyə və İqtisadiyyat</h2>
-              <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
-                <li>Maliyyə Analitiki: Saytın maliyyə vəziyyətini təhlil edir, büdcə hazırlayır və maliyyə hesabatları təqdim edir.</li>
-                <li>Maliyyə Meneceri: Saytın maliyyə strategiyalarını planlaşdırır və icra edir.</li>
-              </ul>
-            </div>
-          
-            <div class="mb-10">
-              <h2 class="text-2xl md:text-3xl font-semibold text-[#EA1918] border-b-2 border-[#EA1918] inline-block pb-1">İnformasiya Texnologiyaları (İT)</h2>
-              <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
-                <li>İT Dəstək Mütəxəssisi: Saytın İT sistemlərini dəstəkləyir və texniki problemləri həll edir.</li>
-                <li>Sistem İnkişafçısı: Saytın proqram təminatını inkişaf etdirir və mövcud sistemləri təkmilləşdirir.</li>
-              </ul>
-            </div>
-          
-            <div class="mb-10">
-              <h2 class="text-2xl md:text-3xl font-semibold text-[#EA1918] border-b-2 border-[#EA1918] inline-block pb-1">Marketinq və Kommunikasiya</h2>
-              <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
-                <li>Marketinq Meneceri: Saytın marketinq strategiyalarını hazırlayır və icra edir, reklam və tanıtım fəaliyyətlərini həyata keçirir.</li>
-                <li>Kommunikasiya Mütəxəssisi: Sayt ilə müştərilər və ictimaiyyət arasında effektiv kommunikasiya qurur.</li>
-              </ul>
-            </div>
-          </div>`,
-    sual: `<div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-  <h1 class="text-3xl md:text-4xl font-bold text-white">
-   Ən Çox Verilən Suallar
+    vakansiya: `<div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
+  <h1 class="text-3xl md:text-4xl font-bold text-white mb-8">
+    <span class="text-4xl md:text-5xl text-[#EA1918]">1</span>sigorta.az
   </h1>
 
-  <div class="mt-5 md:text-[1.2rem] text-white">
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Sığorta Nədir?</h3>
-      <p>
-        Sığorta, risklərin başqasına ötürüldüyü və ya başqası ilə bölüşdürüldüyü bir mexanizmdir. Sığorta, hər hansı bir itkiyə məruz qalmış şəxsi, itkiyə səbəb olmuş hadisədən əvvəlki maliyyə vəziyyətinə qaytarmaq üçün təzminatla təmin edir.
-      </p>
-    </article>
+  <div class="mb-10">
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-2">Sığorta Satış və Müştəri Xidmətləri</h2>
+    <div class="h-1 bg-[#EA1918] w-full mb-4"></div>
+    <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
+      <li>Sığorta Agentləri: Müştərilərlə əlaqə qurur və sığorta məhsullarını təqdim edir.</li>
+      <li>Müştəri Xidmətləri Meneceri: Müştəri şikayətlərini idarə edir, müştəri məmnuniyyətini artırır və müştəri sorğularını cavablandırır.</li>
+    </ul>
+  </div>
 
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Sığorta Müqaviləsi Nədir?</h3>
-      <p>
-        Sığorta müqaviləsi, sığortalı ilə sığortaçı arasında əldə edilən bir razılaşmadır. Bu razılaşmaya görə, sığortalı sığorta haqqını ödəməyi, sığortaçı isə göstərilən itkilər baş verdikdə zərəri — sığorta ödənişini ödəməyi öz üzərinə götürür.
-      </p>
-    </article>
+  <div class="mb-10">
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-2">Maliyyə və İqtisadiyyat</h2>
+    <div class="h-1 bg-[#EA1918] w-full mb-4"></div>
+    <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
+      <li>Maliyyə Analitiki: Saytın maliyyə vəziyyətini təhlil edir, büdcə hazırlayır və maliyyə hesabatları təqdim edir.</li>
+      <li>Maliyyə Meneceri: Saytın maliyyə strategiyalarını planlaşdırır və icra edir.</li>
+    </ul>
+  </div>
 
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Sığorta Haqqı Nədir?</h3>
-      <p>
-        Sığorta haqqı, sığorta müqaviləsində nəzərdə tutulmuş vaxtda və qaydada sığorta şirkətinə ödədiyiniz pul məbləğidir.
-      </p>
-    </article>
+  <div class="mb-10">
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-2">İnformasiya Texnologiyaları (İT)</h2>
+    <div class="h-1 bg-[#EA1918] w-full mb-4"></div>
+    <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
+      <li>İT Dəstək Mütəxəssisi: Saytın İT sistemlərini dəstəkləyir və texniki problemləri həll edir.</li>
+      <li>Sistem İnkişafçısı: Saytın proqram təminatını inkişaf etdirir və mövcud sistemləri təkmilləşdirir.</li>
+    </ul>
+  </div>
 
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Sığortaçı Kimdir?</h3>
-      <p>
-        Sığortaçı, sığorta fəaliyyətini həyata keçirən sığorta şirkətidir.
-      </p>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Sığortalı Kimdir?</h3>
-      <p>
-        Sığortalı, sığorta müqaviləsi əsasında öz həyatını, sağlamlığını, əmlakını, məsuliyyətini sığorta etdirən və bunun qarşılığında sığortaçıya müəyyən məbləğ (sığorta haqqı) ödəyən şəxsdir.
-      </p>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Franşiza Nədir və O, Sığorta Haqqına Necə Təsir Edir?</h3>
-      <p>
-        Franşiza, sığorta hadisəsi baş verdiyi zaman dəymiş zərərin sığorta ilə təmin olunmayan və sizin tərəfinizdən ödənilməli olan hissəsidir. Tez-tez sığortaçıya müraciət etmədən də özünüzün ödəyə biləcəyiniz xırda zərərlərlə qarşılaşa bilərsiniz. Belə hallar üçün sığorta müqaviləsində azadolma məbləği nəzərdə tutulur. Sığorta hadisəsi nəticəsində dəymiş zərərin azadolma məbləğindən artıq hissəsi sığortaçı tərəfdən ödənilir.
-      </p>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Avtomobil Sığortası Hansı Riskləri Əhatə Edir?</h3>
-      <p>
-        Avtomobilinizi sığortalayarkən, siz təklif olunan üç təminat növündən hər hansı birini və ya hər üçünü seçə bilərsiniz:
-      </p>
-      <ul class="list-disc list-inside pl-4">
-        <li>Avtomobilin sığortası - Avtomobilinizə dəyən zərərin ödənilməsi (yol-nəqliyyatı hadisəsi, yanğın, partlayış, üçüncü şəxslərin qərəzli hərəkətləri, oğurluq və s.).</li>
-        <li>Sizin və sərnişinlərin sağlamlığına dəyən zərərin ödənilməsi - Avtomobildə olan sərnişinlərin sağlamlığına dəyən zərərin ödənilməsi.</li>
-        <li>Mülki məsuliyyətin sığortası - Sizin səhviniz nəticəsində ətrafdakılara dəyən zərərin sığortaçı tərəfindən ödənilməsi.</li>
-      </ul>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Avtomobilimi Sığorta Edərkən Avtomobilin Qiyməti Necə Müəyyən Olunur?</h3>
-      <p>
-        Avtomobilinizin sığortalanması zamanı onun bazar qiyməti əsas götürülür.
-      </p>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Avtomobil Sığortası Zamanı Müqavilə Hansı Müddətə Bağlanılır?</h3>
-      <p>
-        Adətən sığorta müqaviləsi 1 il müddətinə bağlanılır.
-      </p>
-    </article>
-
-    <article class="mb-6">
-      <h3 class="text-2xl font-semibold mb-2">Etibarnamə Əsasında İdarə Etdiyim Avtomobili Sığorta Edə Bilərəmmi?</h3>
-      <p>
-        Bəli, siz etibarnamə əsasında idarə etdiyiniz avtomobili sığorta etdirə bilərsiniz.
-      </p>
-    </article>
+  <div class="mb-10">
+    <h2 class="text-2xl md:text-3xl font-semibold text-white mb-2">Marketinq və Kommunikasiya</h2>
+    <div class="h-1 bg-[#EA1918] w-full mb-4"></div>
+    <ul class="mt-4 md:text-[1.2rem] text-white list-disc pl-5">
+      <li>Marketinq Meneceri: Saytın marketinq strategiyalarını hazırlayır və icra edir, reklam və tanıtım fəaliyyətlərini həyata keçirir.</li>
+      <li>Kommunikasiya Mütəxəssisi: Sayt ilə müştərilər və ictimaiyyət arasında effektiv kommunikasiya qurur.</li>
+    </ul>
   </div>
 </div>
-
+`,
+    sual: `
 `,
   };
   const images = {
-    melumat: "lmelumat.jpg",
+    melumat: "melumat.jpg",
     rehberlik: "Bu, Rəhbərlik səhifəsidir.",
     missiya: "mission.jpg",
     biznes: "biznes.webp",
