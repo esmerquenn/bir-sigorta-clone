@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bir sigorta</title>
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
     <link rel="stylesheet" href="css/services.css" />
+    <link rel="stylesheet" href="css/scrollToTop.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
 
@@ -43,59 +45,213 @@
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
+    <button class="fixed bottom-[50%] z-10 -right-14 rotate-[270deg]">
+      <div class="flex gap-2 text-[#bbbbbc] uppercase">
+        <span class=""> light</span>
+        <label class="switch">
+          <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
+          <span class="switch__sr">Dark Mode</span>
+        </label>
+        dark
+      </div>
+    </button>
     <header>
       <nav
         class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
       >
-        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+        <div>
+          <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
+          <a class="text-white text-[.6rem]" href="tel:+994552009995">+994 55 200 99 95</a>
+        </div>
         <div class="flex uppercase font-roboto cursor-pointer">
           <div
             class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
           >
-            <a href="fərdi-sigorta.html">fərdi</a>
+            <a href="avto.html" data-key="individual"
+              >İcbari <br />
+              siğorta</a
+            >
           </div>
           <div
             class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
           >
-            <a href="korporativ-sigorta.html">KORPORATİV</a>
+            <a href="odenis.html" data-key="corporate"
+              >siğorta <br />
+              ödənişi</a
+            >
           </div>
         </div>
         <div class="flex justify-center items-center">
-          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
+          <ul class="hidden_dropdown bg-blue-400 lg:flex dark:bg-gray-700">
             <li class="p-2 lg:p-0">
               <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                class="uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="/"
-                >ANA SƏHİFƏ
-              </a>
-            </li>
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="services.html"
-                >XİDMƏTLƏR</a
+                data-key="home"
+                >ANA SƏHİFƏ</a
               >
             </li>
-            <li class="p-2 lg:p-0">
+            <li class="p-2 lg:p-0 relative dropdown_li_product bg-white md:bg-transparent">
               <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="about.html"
-              >
-                HAQQIMIZDA</a
-              >
+                class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="#"
+                data-key="about"
+                >Məhsullarımız <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+              ></a>
+              <div class="drop_div_product mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
+                <ul>
+                  <li class="pt-1">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="heyat_sigorta.html"
+                      >Həyat siğortası</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="avto.html"
+                      >Kasko siğortası</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Əmlak siğortası</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Avtomobilin icbari siğortası</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Səyahət siğortası</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li class="p-2 lg:p-0">
+            <li class="p-2 lg:p-0 relative dropdown_li bg-white md:bg-transparent">
               <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="presentation.html"
-              >
-                PREZENTASİYA</a
-              >
+                class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="#"
+                data-key="about"
+                >Şirkət haqqında <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+              ></a>
+              <div class="drop_div mt-2 px-3 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
+                <ul>
+                  <li class="pt-1">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=melumat"
+                      >Məlumat</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=rehberlik"
+                      >Rəhbərlik</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=missiya"
+                      >Missiya</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=biznes"
+                      >Biznesə yanaşma</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=qanunvericilik"
+                      >Qanunvericilik</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=vakansiya"
+                      >Vakansiya</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href="about.html?page=sual"
+                      >Ən çox verilən suallar</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </li>
-            <li class="p-2 lg:p-0">
+            <li class="p-2 lg:p-0 relative dropdown_li_services bg-white md:bg-transparent">
               <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                href="#"
+                data-key="presentation"
+                >servislər <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+              ></a>
+              <div class="drop_div_services mt-2 bg-white overflow-hidden max-h-0 min-w-[200px] md:absolute">
+                <ul class="px-3">
+                  <li class="pt-1">
+                    <a
+                      class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Şəhadətnamə yoxlama <span class="text-[.6rem]">(icbari siğortanın yoxlanışı)</span></a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Siğorta ödənişi</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Cərimə yoxla</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Cərimə ödənişi</a
+                    >
+                  </li>
+                  <li class="pt-2">
+                    <a
+                      class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#02018e] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                      href=""
+                      >Gömrük kalkulyatoru</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="p-2 lg:p-0 bg-white md:bg-transparent">
+              <a
+                class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
                 href="contact.html"
+                data-key="contact"
                 >ƏLAQƏ</a
               >
             </li>
@@ -113,7 +269,6 @@
                 ></span>
                 <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
               </button>
-
               <div
                 x-show="open"
                 class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
@@ -122,55 +277,28 @@
                 <ul
                   class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
                 >
-                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
-                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
-                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
+                  <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
+                  <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
+                  <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
                 </ul>
               </div>
             </div>
           </div>
-          <button>
-            <label class="switch">
-              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
-              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-                  <circle cx="6" cy="6" r="2" />
-                  <g stroke-dasharray="1.5 1.5">
-                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
-                  </g>
-                </g>
-              </svg>
-              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-                  <path
-                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
-                  />
-                </g>
-              </svg>
-              <span class="switch__sr">Dark Mode</span>
-            </label>
-          </button>
+
           <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
         </div>
       </nav>
 
       <div class="avto">
-        <h1 class="title">Icbari Avto Siğorta</h1>
+        <h1 class="title">Həyat Siğortası</h1>
       </div>
     </header>
     <main>
-      <div class="max-w-4xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
-        <div id="step-1" class="step active">
+      <div class="container  mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
+        <!-- <div id="step-1" class="step active">
           <h2 class="text-2xl font-bold mb-4">Şəxsi məlumatlarınızı daxil edin</h2>
           <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-first-name"
@@ -185,7 +313,7 @@
                 pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-last-name"
@@ -200,7 +328,7 @@
                 autofocus
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-father-name"
@@ -215,7 +343,7 @@
                 autofocus
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-first-name"
@@ -230,7 +358,7 @@
                 placeholder="Şəhər, rayon, küçə, ev"
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 for="datepicker"
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
@@ -243,7 +371,7 @@
                 placeholder="01.01.1990"
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-first-name"
@@ -257,7 +385,7 @@
                 autofocus
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-first-name"
@@ -358,6 +486,215 @@
           <div class="flex justify-end">
             <button onclick="nextStep(2)" class="bg-blue-500 text-white px-4 py-2 rounded">Növbəti</button>
           </div>
+        </div> -->
+        <div id="step-1" class="step active">
+          <h2 class="text-2xl font-bold mb-4">Şəxsi məlumatlarınızı daxil edin</h2>
+          <div class="flex flex-wrap mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-first-name"
+                  type="text"
+                  autofocus
+                  pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                  placeholder=" "
+                />
+                <label
+                  for="grid-first-name"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Ad
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-last-name"
+                  type="text"
+                  pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                  autofocus
+                  placeholder=" "
+                />
+                <label
+                  for="grid-last-name"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Soyad
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-father-name"
+                  type="text"
+                  pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                  autofocus
+                  placeholder=" "
+                />
+                <label
+                  for="grid-father-name"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Ata adı
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-address"
+                  type="text"
+                  placeholder=" "
+                  autofocus
+                />
+                <label
+                  for="grid-address"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Ünvan
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  id="datepicker"
+                  type="text"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
+                />
+                <label
+                  for="datepicker"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Doğum tarixi
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-phone-number"
+                  type="text"
+                  placeholder=" "
+                  autofocus
+                />
+                <label
+                  for="grid-phone-number"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Mobil nömrə
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
+              <div class="relative flex items-center">
+                <div class="flex items-center justify-center">
+                  <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+                    <button
+                      @click="open = !open"
+                      class="p-2 py-[12.5px] bg-gray-200 dark:bg-gray-700 text-gray-900 flex items-center justify-between dark:text-gray-300"
+                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                    >
+                      <span
+                        class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                        x-text="selected === '' ? 'AZE' : selected"
+                      ></span>
+                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                    <div
+                      x-show="open"
+                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                      x-cloak
+                    >
+                      <ul
+                        class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                      >
+                        <li onclick="change('AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
+                        <li onclick="change('AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
+                  onclick="changeInput('vesiqe')"
+                />
+                <label
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Ş/V Nömrəsi
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="grid-last-name"
+                  type="text"
+                  maxlength="7"
+                  placeholder=" "
+                  onclick="changeInput('fincode')"
+                />
+                <label
+                  for="grid-last-name"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Ş/V Fin kodu
+                </label>
+              </div>
+            </div>
+            <div class="w-full flex justify-center mt-6">
+              <div class="w-64 h-40 relative">
+                <img
+                  id="img_vesiqe"
+                  src="assets/img/sexsiyyet.png"
+                  alt="ID Card Image"
+                  class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
+                />
+              </div>
+            </div>
+            <div class="col-span-2">
+              <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
+                Cins
+              </label>
+              <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                  <input
+                    id="male"
+                    name="gender"
+                    type="radio"
+                    value="Kişi"
+                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
+                </div>
+                <div class="flex items-center">
+                  <input
+                    id="female"
+                    name="gender"
+                    type="radio"
+                    value="Qadın"
+                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-end">
+            <button onclick="nextStep(2)" class="bg-blue-500 text-white px-4 py-2 rounded">Növbəti</button>
+          </div>
         </div>
 
         <div id="step-2" class="step mt-6">
@@ -383,7 +720,7 @@
         <div id="step-3" class="step mt-6">
           <h2 class="text-2xl font-bold mb-4">Siğorta Məlumatları</h2>
           <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 for="datepicker"
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
@@ -396,7 +733,7 @@
                 placeholder="01.01.1990"
               />
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/2 px-3 mb-6 ">
               <label
                 class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                 for="grid-first-name"
@@ -476,15 +813,13 @@
           </div>
           <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-             
               <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                 <!-- Pricing Card -->
                 <div
                   class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
                   <h3 class="mb-4 text-2xl font-semibold">Starter</h3>
-                 
-                  
+
                   <!-- List -->
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -583,8 +918,7 @@
                   class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
                   <h3 class="mb-4 text-2xl font-semibold">Company</h3>
-                 
-                  
+
                   <!-- List -->
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -683,8 +1017,7 @@
                   class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
                   <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
-                
-                 
+
                   <!-- List -->
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
@@ -786,28 +1119,33 @@
         </div>
       </div>
     </main>
-  
-    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[rgb(2,1,142)] text-white dark:bg-gray-800 dark:text-gray-100">
+
+    <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#02018e] text-white dark:bg-gray-800 dark:text-gray-100">
       <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Bir Sığorta Agenti</h2>
+        <div class="flex justify-center items-end mb-6 gap-2">
+          <div class="flex flex-col justify-center items-center">
+            <h2 class="text-[1.9rem] font-bold m-0"><b class="text-red-600 text-[2.3rem]">1</b>sigorta.az</h2>
+            <p class="text-[.8rem]">Siğortanız bir ünvanda</p>
+          </div>
+        </div>
         <p class="text-lg mb-4 text-[#BCC0C2] dark:text-gray-400">
-          “Bir Sığorta Agenti” Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro molestias nam voluptatem animi
-          sequi dicta nesciunt alias cupiditate iure odio. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat dicta
-          facere quos eum?
+          "1sigorta" Məhdud Məsuliyyəti Cəmiyyəti, 000072 saylı lisenziya üzrə 23 iyul 2024-cü il tarixdən bəri sığorta bazarında
+          <br />fəaliyyət göstərən universal bir milli sığortaçıdır.
         </p>
+
         <h3 class="text-2xl font-bold mb-5">Əlaqə</h3>
         <div class="mb-4">
           <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
             <i class="fas fa-phone-alt mr-2"></i>
-            +994 50 286 25 85
+            <a href="tel:+994552009995">+994 55 200 99 95</a>
           </p>
           <p class="flex justify-center items-center mb-2 text-[#BCC0C2] dark:text-gray-400">
             <i class="fas fa-envelope mr-2"></i>
-            office@Birsigorta.az
+            Office@1sigorta.az
           </p>
           <p class="flex justify-center items-center text-[#BCC0C2] dark:text-gray-400">
             <i class="fas fa-map-marker-alt mr-2"></i>
-            Səməd Vurğun küçəsi 53, World Business Center
+            Bakı ş. Səməd Vurğun küçəsi 34. (AF MALL, 3-cü mərtəbə)
           </p>
         </div>
         <div class="flex justify-center space-x-6 my-6">
@@ -827,21 +1165,38 @@
             href="#"
             class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
           >
-            <i class="fab fa-twitter"></i>
-          </a>
+            <i class="fa-brands fa-x-twitter"></i
+          ></a>
           <a
             href="#"
             class="text-2xl bg-[#fff] text-[rgb(2,1,142)] p-2 w-12 h-12 rounded-[25px] dark:bg-gray-700 dark:text-gray-100"
           >
-            <i class="fab fa-youtube"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
           </a>
         </div>
       </div>
     </footer>
+    <div class="progress-container">
+      <svg class="progress-ring w-15 h-15">
+        <circle
+          class="progress-ring__background stroke-current text-gray-300 dark:text-gray-600"
+          stroke-width="2"
+          fill="transparent"
+          r="28"
+          cx="30"
+          cy="30"
+        />
+        <circle class="progress-ring__circle stroke-[#02018e]" stroke-width="2" fill="transparent" r="28" cx="30" cy="30" />
+      </svg>
+      <i
+        class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
+      ></i>
+    </div>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script src="js/nav.js"></script>
+    <script src="js/scrollToTop.js"></script>
     <script>
       function selectOption(e, button) {
         event.preventDefault();
