@@ -289,208 +289,16 @@
         </div>
       </nav>
 
-      <div class="avto">
+      <div class="life">
         <h1 class="title">Həyat Siğortası</h1>
       </div>
     </header>
     <main>
-      <div class="container  mx-auto bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md">
-        <!-- <div id="step-1" class="step active">
-          <h2 class="text-2xl font-bold mb-4">Şəxsi məlumatlarınızı daxil edin</h2>
-          <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                Ad
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-first-name"
-                type="text"
-                autofocus
-                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-last-name"
-              >
-                Soyad
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-last-name"
-                type="text"
-                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
-                autofocus
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-father-name"
-              >
-                Ata adı
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-father-name"
-                type="text"
-                pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
-                autofocus
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                Ünvan
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-first-name"
-                type="text"
-                autofocus
-                placeholder="Şəhər, rayon, küçə, ev"
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                for="datepicker"
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                >Doğum tarixi</label
-              >
-              <input
-                id="datepicker"
-                type="text"
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                placeholder="01.01.1990"
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                Mobil nömrə
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-first-name"
-                type="text"
-                autofocus
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                Ş/V Nömrəsi
-              </label>
-              <div class="flex items-center">
-                <div class="flex items-center justify-center">
-                  <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
-                    <button
-                      @click="open = !open"
-                      class="p-2 py-[12.5px] bg-gray-200 dark:bg-gray-700 text-gray-900 flex items-center justify-between dark:text-gray-300"
-                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
-                    >
-                      <span
-                        class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
-                        x-text="selected === '' ? 'AZE' : selected"
-                      ></span>
-                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
-                    </button>
-
-                    <div
-                      x-show="open"
-                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
-                      x-cloak
-                    >
-                      <ul
-                        class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
-                      >
-                        <li onclick="change('AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
-                        <li onclick="change('AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded-e py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                  placeholder="12345678"
-                  onclick="changeInput('vesiqe')"
-                />
-              </div>
-            </div>
-            <div class="w-full md:w-1/2 px-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-last-name"
-              >
-                Ş/V Fin kodu
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-last-name"
-                type="text"
-                maxlength="7"
-                placeholder="1234567"
-                onclick="changeInput('fincode')"
-              />
-            </div>
-            <div class="w-full flex justify-center mt-6">
-              <div class="w-64 h-40 relative">
-                <img
-                  id="img_vesiqe"
-                  src="assets/img/sexsiyyet.png"
-                  alt="ID Card Image"
-                  class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
-                />
-              </div>
-            </div>
-            <div class="col-span-2">
-              <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
-                Cins
-              </label>
-              <div class="flex items-center gap-2">
-                <div class="flex items-center">
-                  <input
-                    id="male"
-                    name="gender"
-                    type="radio"
-                    value="Kişi"
-                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
-                </div>
-                <div class="flex items-center">
-                  <input
-                    id="female"
-                    name="gender"
-                    type="radio"
-                    value="Qadın"
-                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                  />
-                  <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex justify-end">
-            <button onclick="nextStep(2)" class="bg-blue-500 text-white px-4 py-2 rounded">Növbəti</button>
-          </div>
-        </div> -->
-        <div id="step-1" class="step active">
-          <h2 class="text-2xl font-bold mb-4">Şəxsi məlumatlarınızı daxil edin</h2>
-          <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+      <form class="py-12 px-4 md:px-10 lg:px-20 xl:px-40" id="carForm">
+        <div class="bg-slate-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+          <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">Şəxsi məlumatlarınızı daxil edin</h2>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
@@ -508,7 +316,7 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
@@ -526,7 +334,7 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
@@ -544,7 +352,7 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
@@ -561,7 +369,7 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   id="datepicker"
@@ -577,7 +385,7 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
+            <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
                   class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
@@ -594,13 +402,22 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <div class="relative flex items-center">
+          </div>
+          <div class="flex flex-wrap mb-6">
+            <div class="w-full md:w-1/2 md:pr-3 mb-6 md:mb-0">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                şəxsiyyət Vəsiqəsinin Nömrəsi
+              </label>
+              <div class="flex items-center">
                 <div class="flex items-center justify-center">
                   <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
                     <button
+                      type="button"
                       @click="open = !open"
-                      class="p-2 py-[12.5px] bg-gray-200 dark:bg-gray-700 text-gray-900 flex items-center justify-between dark:text-gray-300"
+                      class="border-2 border-e-0 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-900 flex items-center justify-between dark:text-gray-300"
                       :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
                     >
                       <span
@@ -609,6 +426,7 @@
                       ></span>
                       <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
                     </button>
+
                     <div
                       x-show="open"
                       class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
@@ -617,42 +435,35 @@
                       <ul
                         class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
                       >
-                        <li onclick="change('AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
-                        <li onclick="change('AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                        <li onclick="change(event,'AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
+                        <li onclick="change(event,'AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <input
                   type="text"
-                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                  placeholder=" "
-                  onclick="changeInput('vesiqe')"
+                  class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 rounded-s leading-tight focus:outline-none focus:border-black dark:focus:border-white"
+                  placeholder="12345678"
+                  onclick="changeInput(event,'vesiqe')"
                 />
-                <label
-                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Ş/V Nömrəsi
-                </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3">
-              <div class="relative">
-                <input
-                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                  id="grid-last-name"
-                  type="text"
-                  maxlength="7"
-                  placeholder=" "
-                  onclick="changeInput('fincode')"
-                />
-                <label
-                  for="grid-last-name"
-                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Ş/V Fin kodu
-                </label>
-              </div>
+            <div class="w-full md:w-1/2 md:pl-3">
+              <label
+                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Fərdi indentifikasiya Nömrəsi
+              </label>
+              <input
+                class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 leading-tight focus:outline-none focus:border-gray-800 dark:focus:border-white"
+                id="grid-last-name"
+                type="text"
+                maxlength="7"
+                placeholder="1234567"
+                onclick="changeInput(event,'fincode')"
+              />
             </div>
             <div class="w-full flex justify-center mt-6">
               <div class="w-64 h-40 relative">
@@ -664,166 +475,103 @@
                 />
               </div>
             </div>
-            <div class="col-span-2">
-              <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
-                Cins
-              </label>
-              <div class="flex items-center gap-2">
-                <div class="flex items-center">
+          </div>
+          <div class="col-span-2">
+            <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
+              Cins
+            </label>
+            <div class="flex items-center gap-2">
+              <div class="flex items-center">
+                <input
+                  id="male"
+                  name="gender"
+                  type="radio"
+                  value="Kişi"
+                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
+              </div>
+              <div class="flex items-center">
+                <input
+                  id="female"
+                  name="gender"
+                  type="radio"
+                  value="Qadın"
+                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                />
+                <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h2 class="text-2xl font-bold mb-4">Şərtlər</h2>
+            <h5 class="mb-6 text-[1.2rem] font-semibold">Həyat Siğortası aşağıdakı məlumatları təsdiq edir:</h5>
+
+            <ul class="list-disc list-inside">
+              <li>Son 12 ayda müntəzəm olaraq heç bir dərman qəbul etməmişəm.</li>
+              <li>Son 5 ildə xəstəxanada müalicə almışam və hal-hazırda da heç bir müalicə planlaşdırmıram.</li>
+              <li>
+                Son 5 ildə səhəhtimdə aşağıda qeyd edilən hallar aşkarlanmayıb və bu hallardan heç bir müalicə almamışam:
+                epilepsiya, yuxu apnesi, başgicəllənmə, osteoporoz, hər hansı bir ruhi pozğunluqlar, görmə və ya eşitmə
+                qabiliyyətinin itirilməsi.
+              </li>
+              <li>Hal-hazırda əlil deyiləm və heç bir əlillik müavinəti üçün müraciət etməyi planlaşdırmıram.</li>
+              <li>Peşəkar və ya həvəskar kimi heç bir təhlükəli və ya ekstremal idmanla məşğul olmuram.</li>
+            </ul>
+            <div class="flex justify-start mt-3">
+              <button type="button" class="border-b-2 border-blue-500 text-blue-700 px-4 py-2">Təsdiq edirəm!</button>
+            </div>
+          </div>
+          <div>
+            <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">Siğorta məlumatları</h2>
+
+            <div class="flex flex-wrap mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
                   <input
-                    id="male"
-                    name="gender"
-                    type="radio"
-                    value="Kişi"
-                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    id="datepicker"
+                    type="text"
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    placeholder=" "
                   />
-                  <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
+                  <label
+                    for="datepicker"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Başlama tarixi
+                  </label>
                 </div>
-                <div class="flex items-center">
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
                   <input
-                    id="female"
-                    name="gender"
-                    type="radio"
-                    value="Qadın"
-                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="grid-promo"
+                    type="text"
+                    autofocus
+                    pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                    placeholder=" "
                   />
-                  <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
+                  <label
+                    for="grid-promo"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    promo kod
+                  </label>
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex justify-end">
-            <button onclick="nextStep(2)" class="bg-blue-500 text-white px-4 py-2 rounded">Növbəti</button>
-          </div>
-        </div>
-
-        <div id="step-2" class="step mt-6">
-          <h2 class="text-2xl font-bold mb-4">Şərtlər</h2>
-          <h5 class="mb-6 text-[1.2rem] font-semibold">Həyat Siğortası aşağıdakı məlumatları təsdiq edir:</h5>
-
-          <ul class="list-disc list-inside">
-            <li>Son 12 ayda müntəzəm olaraq heç bir dərman qəbul etməmişəm.</li>
-            <li>Son 5 ildə xəstəxanada müalicə almışam və hal-hazırda da heç bir müalicə planlaşdırmıram.</li>
-            <li>
-              Son 5 ildə səhəhtimdə aşağıda qeyd edilən hallar aşkarlanmayıb və bu hallardan heç bir müalicə almamışam:
-              epilepsiya, yuxu apnesi, başgicəllənmə, osteoporoz, hər hansı bir ruhi pozğunluqlar, görmə və ya eşitmə
-              qabiliyyətinin itirilməsi.
-            </li>
-            <li>Hal-hazırda əlil deyiləm və heç bir əlillik müavinəti üçün müraciət etməyi planlaşdırmıram.</li>
-            <li>Peşəkar və ya həvəskar kimi heç bir təhlükəli və ya ekstremal idmanla məşğul olmuram.</li>
-          </ul>
-          <div class="flex justify-end mt-3">
-            <button onclick="nextStep(3)" class="bg-blue-500 text-white px-4 py-2 rounded">Təsdiq edirəm!</button>
-          </div>
-        </div>
-
-        <div id="step-3" class="step mt-6">
-          <h2 class="text-2xl font-bold mb-4">Siğorta Məlumatları</h2>
-          <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                for="datepicker"
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                >başlama tarixi</label
-              >
-              <input
-                id="datepicker"
-                type="text"
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                placeholder="01.01.1990"
-              />
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6 ">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                promo kod
-              </label>
-              <input
-                class="appearance-none block w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:focus:bg-gray-800"
-                id="grid-first-name"
-                type="text"
-                autofocus
-              />
-            </div>
-
-            <div class="my-4 px-3 w-full">
-              <label class="block text-xs uppercase mb-2 font-bold text-gray-700">Siğorta təminatı</label>
-              <div id="buttonGroup" class="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100"
-                  onclick="selectOption(event, this)"
-                >
-                  1000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  2000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  3000 ₼
-                </button>
-
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  5000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  10000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  15000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  20000 ₼
-                </button>
-                <button
-                  type="button"
-                  class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100 transition duration-500"
-                  onclick="selectOption(event, this)"
-                >
-                  25000 ₼
-                </button>
-              </div>
-            </div>
-          </div>
-          <section class="bg-white dark:bg-gray-900">
+          <section class="dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
               <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-                <!-- Pricing Card -->
                 <div
-                  class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
                 >
-                  <h3 class="mb-4 text-2xl font-semibold">Starter</h3>
+                  <h3 class="mb-4 text-2xl font-semibold">Express</h3>
 
-                  <!-- List -->
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -836,7 +584,8 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Individual configuration</span>
+
+                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
                       <!-- Icon -->
@@ -852,77 +601,57 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>No setup, or hidden fees</span>
+                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Team size: <span class="font-semibold">1 developer</span></span>
+                      <span> I/II qrup əlillik (100%/75%)</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Premium support: <span class="font-semibold">6 months</span></span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Free updates: <span class="font-semibold">6 months</span></span>
+                      <span> Bədən xəsarəti</span>
                     </li>
                   </ul>
-                  <a
-                    href="#"
-                    class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                    >Get started</a
-                  >
-                  <div class="flex justify-center items-baseline my-8">
-                    <span class="mr-2 text-3xl font-extrabold">$29</span>
-                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                  <div class="flex flex-col justify-center items-center my-8">
+                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
+                    <span class="my-4 text-2xl font-normal">170 AZN</span>
                   </div>
+                  <button
+                    type="button"
+                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                  >
+                    Seçin
+                  </button>
                 </div>
-                <!-- Pricing Card -->
                 <div
-                  class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
                 >
-                  <h3 class="mb-4 text-2xl font-semibold">Company</h3>
+                  <h3 class="mb-4 text-2xl font-semibold">Express+</h3>
 
-                  <!-- List -->
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -935,7 +664,8 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Individual configuration</span>
+
+                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
                       <!-- Icon -->
@@ -951,10 +681,9 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>No setup, or hidden fees</span>
+                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -967,61 +696,43 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Team size: <span class="font-semibold">10 developers</span></span>
+                      <span> I/II qrup əlillik (100%/75%)</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Premium support: <span class="font-semibold">24 months</span></span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Free updates: <span class="font-semibold">24 months</span></span>
+                      <span> Bədən xəsarəti</span>
                     </li>
                   </ul>
-                  <a
-                    href="#"
-                    class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                    >Get started</a
-                  >
-                  <div class="flex justify-center items-baseline my-8">
-                    <span class="mr-2 text-3xl font-extrabold">$99</span>
-                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                  <div class="flex flex-col justify-center items-center my-8">
+                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
+                    <span class="my-4 text-2xl font-normal">260 AZN</span>
                   </div>
+                  <button
+                    type="button"
+                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                  >
+                    Seçin
+                  </button>
                 </div>
-                <!-- Pricing Card -->
-                <div
-                  class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
-                >
-                  <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
 
-                  <!-- List -->
+                <div
+                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
+                >
+                  <h3 class="mb-4 text-2xl font-semibold">Express++</h3>
+
                   <ul role="list" class="mb-8 space-y-4 text-left">
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -1034,10 +745,10 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Individual configuration</span>
+
+                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -1050,10 +761,9 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>No setup, or hidden fees</span>
+                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -1066,10 +776,9 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                      <span> I/II qrup əlillik (100%/75%)</span>
                     </li>
                     <li class="flex items-center space-x-3">
-                      <!-- Icon -->
                       <svg
                         class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                         fill="currentColor"
@@ -1082,41 +791,52 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Premium support: <span class="font-semibold">36 months</span></span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Free updates: <span class="font-semibold">36 months</span></span>
+                      <span> Bədən xəsarəti</span>
                     </li>
                   </ul>
-                  <a
-                    href="#"
-                    class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                    >Get started</a
-                  >
-                  <div class="flex justify-center items-baseline my-8">
-                    <span class="mr-2 text-3xl font-extrabold">$499</span>
-                    <span class="text-gray-500 dark:text-gray-400">/month</span>
+                  <div class="flex flex-col justify-center items-center my-8">
+                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
+                    <span class="my-4 text-2xl font-normal">300 AZN</span>
                   </div>
+                  <button
+                    type="button"
+                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                  >
+                    Seçin
+                  </button>
                 </div>
               </div>
             </div>
           </section>
-          <button onclick="prevStep(2)" class="bg-gray-500 text-white px-4 py-2 rounded">Geri</button>
-          <button class="bg-blue-500 text-white px-4 py-2 rounded">Tamamla</button>
+          <div class="w-full flex items-center justify-end">
+            <button
+              type="button"
+              class="py-2 px-4 border-2 rounded-lg mt-6 border-green-700 bg-green-400 hover:bg-green-700 text-white dark:border-blue-500 dark:text-gray-100 transition duration-500"
+              onclick="validateForm()"
+            >
+              davam edin
+            </button>
+          </div>
         </div>
+      </form>
+      <div
+        class="py-12 px-4 md:px-10 lg:px-20 xl:px-40 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md"
+      >
+        <h2 class="text-2xl font-bold mb-4">Həyat sığortası hansı öhdəliyi daşıyır?</h2>
+        <p class="mb-6">
+          <b>"Həyat sığortası"</b> müqaviləsinə görə Sığortaçı müqavilə ilə razılaşdırılmış və sığortalının ödədiyi sığorta haqqı
+          müqabilində sığortalının müqavilədə göstərilmiş sığorta riskləri üzrə sığorta hadisəsinin baş verdiyi halda müqavilə ilə
+          razılaşdırılmış həyat sığortası məbləğini faydalanan şəxsə ödəməyi öhdəsinə götürür. Sığorta müqaviləsində başqa cür
+          nəzərdə tutulmamışdırsa, sığorta haqqının ilk hissəsinin və ya tam ödənilməsi halında, sığorta təminatının müddəti
+          sığorta müqaviləsini bağlandığı gün saat iyirmi dörddən başlanır və sığorta müqaviləsinə əsasən həmin müqavilənin
+          qüvvədə olduğu sonuncu gün saat iyirmi dörddə başa çatır.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Həyat Sığortası Sahəsi Könüllü Sığorta</h2>
+        <p class="mb-6">
+          <b>"Həyat Sığortası"</b> sığorta növü sığorta olunan bədbəxt hadisə, yaxud xəstəlik nəticəsində öldükdə, ümumi, yaxud
+          peşə əmək qabiliyyətini tam və ya qismən itirdikdə, yaxud bədbəxt hadisə nəticəsində sağlamlığına başqa cür xəsarət
+          dəydikdə, müqavilədə müəyyən edilən məbləğdə sığorta ödənişinin həyata keçirilməsini nəzərdə tutur.
+        </p>
       </div>
     </main>
 
@@ -1197,29 +917,8 @@
 
     <script src="js/nav.js"></script>
     <script src="js/scrollToTop.js"></script>
+    <script src="js/vesiqe.js"></script>
     <script>
-      function selectOption(e, button) {
-        event.preventDefault();
-        const buttons = document.querySelectorAll("#buttonGroup button");
-        buttons.forEach((btn) => btn.classList.remove("selected"));
-        button.classList.add("selected");
-      }
-      let img_vesiqe = document.querySelector("#img_vesiqe");
-      let changeReturnValue = "AZE";
-      function change(deyer) {
-        console.log(deyer, img_vesiqe.src);
-        img_vesiqe.src = deyer == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png";
-        changeReturnValue = deyer;
-      }
-      function changeInput(deyer) {
-        console.log(deyer, changeReturnValue);
-        if (deyer == "vesiqe") {
-          img_vesiqe.src = changeReturnValue == "AZE" ? "assets/img/sexsiyyet.png" : "assets/img/sexsiyyet-old.png";
-        } else if (deyer == "fincode") {
-          img_vesiqe.src =
-            changeReturnValue == "AZE" ? "assets/img/sexsiyyet-fincode.png" : "assets/img/sexsiyyet-old-fincode.png";
-        }
-      }
       document.addEventListener("DOMContentLoaded", function () {
         flatpickr("#datepicker", {
           dateFormat: "d.m.Y",
@@ -1249,15 +948,6 @@
           },
         });
       });
-      function nextStep(step) {
-        document.querySelector(".step.active").classList.remove("active");
-        document.getElementById(`step-${step}`).classList.add("active");
-      }
-
-      function prevStep(step) {
-        document.querySelector(".step.active").classList.remove("active");
-        document.getElementById(`step-${step}`).classList.add("active");
-      }
     </script>
   </body>
 </html>
