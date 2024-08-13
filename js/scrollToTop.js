@@ -22,3 +22,7 @@ function setProgress(percent) {
     setProgress(scrolled);
   });
   
+
+  document.querySelector('.progress-container').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
