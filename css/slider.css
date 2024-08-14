@@ -17,7 +17,7 @@ body {
   align-items: center;
 }
 .slide-1{
-  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/bg5.avif) 66% / cover;
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/bg5.png) 66% / cover;
 
 }
 .slide-2{

@@ -290,15 +290,49 @@
         </div>
       </nav>
 
-      <div class="life">
-        <h1 class="title">Həyat Siğortası</h1>
+      <div class="travel">
+        <h1 class="title">Səyahət Siğortası</h1>
       </div>
     </header>
     <main class="mb-5">
       <form class="py-12 px-4 md:px-10 lg:px-20 xl:px-40" id="carForm">
         <div class="bg-slate-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
           <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">Şəxsi məlumatlarınızı daxil edin</h2>
+
           <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6">
+              <div class="relative">
+                <input
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  id="pasport"
+                  type="text"
+                  autofocus
+                  placeholder=" "
+                />
+                <label
+                  for="pasport"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Pasport nömrəsi
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3 mb-6">
+              <div class="relative">
+                <input
+                  id="datepicker"
+                  type="text"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
+                />
+                <label
+                  for="datepicker"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Doğum tarixi
+                </label>
+              </div>
+            </div>
             <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
@@ -335,55 +369,77 @@
                 </label>
               </div>
             </div>
-            <div class="w-full md:w-1/2 px-3 mb-6">
-              <div class="relative">
-                <input
-                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                  id="grid-father-name"
-                  type="text"
-                  pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
-                  autofocus
-                  placeholder=" "
-                />
+            <div class="w-full flex px-3 flex-wrap mb-7">
+              <div class="w-full md:w-1/2 md:pr-3 mb-6 md:mb-0">
                 <label
-                  for="grid-father-name"
-                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  for="grid-first-name"
                 >
-                  Ata adı
+                  şəxsiyyət Vəsiqəsinin Nömrəsi
                 </label>
+                <div class="flex items-center">
+                  <div class="flex items-center justify-center">
+                    <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+                      <button
+                        type="button"
+                        @click="open = !open"
+                        class="border-2 border-e-0 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-900 flex items-center justify-between dark:text-gray-300"
+                        :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+                      >
+                        <span
+                          class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                          x-text="selected === '' ? 'AZE' : selected"
+                        ></span>
+                        <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
+                      </button>
+
+                      <div
+                        x-show="open"
+                        class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+                        x-cloak
+                      >
+                        <ul
+                          class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+                        >
+                          <li onclick="change(event,'AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
+                          <li onclick="change(event,'AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 rounded-s leading-tight focus:outline-none focus:border-black dark:focus:border-white"
+                    placeholder="12345678"
+                    onclick="changeInput(event,'vesiqe')"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6">
-              <div class="relative">
-                <input
-                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                  id="grid-address"
-                  type="text"
-                  placeholder=" "
-                  autofocus
-                />
+              <div class="w-full md:w-1/2 md:pl-3">
                 <label
-                  for="grid-address"
-                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  for="grid-last-name"
                 >
-                  Ünvan
+                  Fərdi indentifikasiya Nömrəsi
                 </label>
+                <input
+                  class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 leading-tight focus:outline-none focus:border-gray-800 dark:focus:border-white"
+                  id="grid-last-name"
+                  type="text"
+                  maxlength="7"
+                  placeholder="1234567"
+                  onclick="changeInput(event,'fincode')"
+                />
               </div>
-            </div>
-            <div class="w-full md:w-1/2 px-3 mb-6">
-              <div class="relative">
-                <input
-                  id="datepicker"
-                  type="text"
-                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                  placeholder=" "
-                />
-                <label
-                  for="datepicker"
-                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                >
-                  Doğum tarixi
-                </label>
+              <div class="w-full flex justify-center mt-6">
+                <div class="w-64 h-40 relative">
+                  <img
+                    id="img_vesiqe"
+                    src="assets/img/sexsiyyet.png"
+                    alt="ID Card Image"
+                    class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
+                  />
+                </div>
               </div>
             </div>
             <div class="w-full md:w-1/2 px-3 mb-6">
@@ -403,405 +459,163 @@
                 </label>
               </div>
             </div>
-          </div>
-          <div class="flex flex-wrap mb-6">
-            <div class="w-full md:w-1/2 md:pr-3 mb-6 md:mb-0">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-first-name"
-              >
-                şəxsiyyət Vəsiqəsinin Nömrəsi
+            <div class="w-full md:w-1/2 px-3 mb-6">
+              <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
+                Cins
               </label>
-              <div class="flex items-center">
-                <div class="flex items-center justify-center">
-                  <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
-                    <button
-                      type="button"
-                      @click="open = !open"
-                      class="border-2 border-e-0 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-900 flex items-center justify-between dark:text-gray-300"
-                      :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
-                    >
-                      <span
-                        class="text-gray-700 text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
-                        x-text="selected === '' ? 'AZE' : selected"
-                      ></span>
-                      <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
-                    </button>
-
-                    <div
-                      x-show="open"
-                      class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
-                      x-cloak
-                    >
-                      <ul
-                        class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
-                      >
-                        <li onclick="change(event,'AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
-                        <li onclick="change(event,'AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
-                      </ul>
-                    </div>
-                  </div>
+              <div class="flex items-center gap-2">
+                <div class="flex items-center">
+                  <input
+                    id="male"
+                    name="gender"
+                    type="radio"
+                    value="Kişi"
+                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
                 </div>
+                <div class="flex items-center">
+                  <input
+                    id="female"
+                    name="gender"
+                    type="radio"
+                    value="Qadın"
+                    class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                  />
+                  <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">Səfər məlumatlarınızı daxil edin</h2>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/3 px-3 mb-6">
+              <div class="relative">
                 <input
+                  id="datepicker"
                   type="text"
-                  class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 rounded-s leading-tight focus:outline-none focus:border-black dark:focus:border-white"
-                  placeholder="12345678"
-                  onclick="changeInput(event,'vesiqe')"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
                 />
-              </div>
-            </div>
-            <div class="w-full md:w-1/2 md:pl-3">
-              <label
-                class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
-                for="grid-last-name"
-              >
-                Fərdi indentifikasiya Nömrəsi
-              </label>
-              <input
-                class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 leading-tight focus:outline-none focus:border-gray-800 dark:focus:border-white"
-                id="grid-last-name"
-                type="text"
-                maxlength="7"
-                placeholder="1234567"
-                onclick="changeInput(event,'fincode')"
-              />
-            </div>
-            <div class="w-full flex justify-center mt-6">
-              <div class="w-64 h-40 relative">
-                <img
-                  id="img_vesiqe"
-                  src="assets/img/sexsiyyet.png"
-                  alt="ID Card Image"
-                  class="w-full h-full object-contain absolute backface-hidden transition-transform duration-1000"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="col-span-2">
-            <label class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2" for="gender">
-              Cins
-            </label>
-            <div class="flex items-center gap-2">
-              <div class="flex items-center">
-                <input
-                  id="male"
-                  name="gender"
-                  type="radio"
-                  value="Kişi"
-                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                <label for="male" class="ml-2 block text-sm font-medium text-gray-700">Kişi</label>
-              </div>
-              <div class="flex items-center">
-                <input
-                  id="female"
-                  name="gender"
-                  type="radio"
-                  value="Qadın"
-                  class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                <label for="female" class="ml-2 block text-sm font-medium text-gray-700">Qadın</label>
-              </div>
-            </div>
-          </div>
-          <div class="mt-6">
-            <h2 class="text-2xl font-bold mb-4">Şərtlər</h2>
-            <h5 class="mb-6 text-[1.2rem] font-semibold">Həyat Siğortası aşağıdakı məlumatları təsdiq edir:</h5>
-
-            <ul class="list-disc list-inside">
-              <li>Son 12 ayda müntəzəm olaraq heç bir dərman qəbul etməmişəm.</li>
-              <li>Son 5 ildə xəstəxanada müalicə almışam və hal-hazırda da heç bir müalicə planlaşdırmıram.</li>
-              <li>
-                Son 5 ildə səhəhtimdə aşağıda qeyd edilən hallar aşkarlanmayıb və bu hallardan heç bir müalicə almamışam:
-                epilepsiya, yuxu apnesi, başgicəllənmə, osteoporoz, hər hansı bir ruhi pozğunluqlar, görmə və ya eşitmə
-                qabiliyyətinin itirilməsi.
-              </li>
-              <li>Hal-hazırda əlil deyiləm və heç bir əlillik müavinəti üçün müraciət etməyi planlaşdırmıram.</li>
-              <li>Peşəkar və ya həvəskar kimi heç bir təhlükəli və ya ekstremal idmanla məşğul olmuram.</li>
-            </ul>
-            <div class="flex justify-start mt-3">
-              <button type="button" class="border-b-2 border-blue-500 text-blue-700 px-4 py-2">Təsdiq edirəm!</button>
-            </div>
-          </div>
-          <div>
-            <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">Siğorta məlumatları</h2>
-
-            <div class="flex flex-wrap mb-6">
-              <div class="w-full md:w-1/2 px-3 mb-6">
-                <div class="relative">
-                  <input
-                    id="datepicker"
-                    type="text"
-                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                    placeholder=" "
-                  />
-                  <label
-                    for="datepicker"
-                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Başlama tarixi
-                  </label>
-                </div>
-              </div>
-              <div class="w-full md:w-1/2 px-3 mb-6">
-                <div class="relative">
-                  <input
-                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
-                    id="grid-promo"
-                    type="text"
-                    autofocus
-                    pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
-                    placeholder=" "
-                  />
-                  <label
-                    for="grid-promo"
-                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    promo kod
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <section class="dark:bg-gray-900">
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-              <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-                <div
-                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
+                <label
+                  for="datepicker"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  <h3 class="mb-4 text-2xl font-semibold">Express</h3>
+                  Səfər başlanğıcı
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6">
+              <div class="relative">
+                <input
+                  id="datepicker"
+                  type="text"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
+                />
+                <label
+                  for="datepicker"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Səfər sonu
+                </label>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-3 mb-6">
+              <div class="relative">
+                <input
+                  id="promo"
+                  type="text"
+                  class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                  placeholder=" "
+                />
+                <label
+                  for="promo"
+                  class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >
+                  Promo kod
+                </label>
+              </div>
+            </div>
+            <!-- Groups -->
+            <section>
+              <div class="w-full px-3 my-6">
+                <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold">Şablon günlər</h2>
+                <div id="buttonGroup" class="grid md:grid-cols-2 lg:grid-cols-5 gap-3"></div>
+              </div>
 
-                  <ul role="list" class="mb-8 space-y-4 text-left">
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
+              <div class="w-full px-3 my-6">
+                <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold">Səfərin zonası</h2>
+                <div id="travelGroup" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+              </div>
+              <div class="w-full px-3 my-6">
+                <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold">Səfərin zonası</h2>
+                <div id="travelGroup2" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6"></div>
+              </div>
+            </section>
+            <!-- Groups -->
+          </div>
 
-                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> I/II qrup əlillik (100%/75%)</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> Bədən xəsarəti</span>
-                    </li>
-                  </ul>
-                  <div class="flex flex-col justify-center items-center my-8">
-                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
-                    <span class="my-4 text-2xl font-normal">170 AZN</span>
-                  </div>
+          <section class="my-10">
+            <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]">
+              Sığorta şirkətləri barədə reytinq və rəylərlə tanış olduqdan sonra seçim etməyinizi tövsiyə edirik
+            </h2>
+            <div class="space-y-4">
+              <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+                <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
+                  <img src="./assets/img/qala.png" alt="Qala Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                   <button
                     type="button"
-                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                    class="py-2 px-4 w-[120px] text-blue-800 dark:text-gray-100 font-bold border-2 border-blue-700 dark:border-blue-500 transition duration-300 hover:bg-[#02018E] hover:text-white"
                   >
                     Seçin
                   </button>
                 </div>
-                <div
-                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
-                >
-                  <h3 class="mb-4 text-2xl font-semibold">Express+</h3>
-
-                  <ul role="list" class="mb-8 space-y-4 text-left">
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-
-                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> I/II qrup əlillik (100%/75%)</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-red-500 dark:text-red-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10 8.586l3.293-3.293a1 1 0 011.414 1.414L11.414 10l3.293 3.293a1 1 0 01-1.414 1.414L10 11.414l-3.293 3.293a1 1 0 01-1.414-1.414L8.586 10 5.293 6.707a1 1 0 011.414-1.414L10 8.586z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> Bədən xəsarəti</span>
-                    </li>
-                  </ul>
-                  <div class="flex flex-col justify-center items-center my-8">
-                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
-                    <span class="my-4 text-2xl font-normal">260 AZN</span>
-                  </div>
+              </div>
+              <!-- Paşa Sığorta -->
+              <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+                <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
+                  <img src="./assets/img/pasha.png" alt="Paşa Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                   <button
                     type="button"
-                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                    class="py-2 px-4 w-[120px] text-blue-800 dark:text-gray-100 font-bold border-2 border-blue-700 dark:border-blue-500 transition duration-300 hover:bg-[#02018E] hover:text-white"
                   >
                     Seçin
                   </button>
                 </div>
-
-                <div
-                  class="flex flex-col items-center justify-between p-3 pt-5 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-4 xl:pt-6 dark:bg-gray-800 dark:text-white"
-                >
-                  <h3 class="mb-4 text-2xl font-semibold">Express++</h3>
-
-                  <ul role="list" class="mb-8 space-y-4 text-left">
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-
-                      <span>Bədbəxt hadisə nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Peşə xəstəliyi nəticəsində ölüm</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> I/II qrup əlillik (100%/75%)</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span> Bədən xəsarəti</span>
-                    </li>
-                  </ul>
-                  <div class="flex flex-col justify-center items-center my-8">
-                    <img class="w-1/2" src="./assets/img/megalife.png" alt="img" />
-                    <span class="my-4 text-2xl font-normal">300 AZN</span>
-                  </div>
+              </div>
+              <!-- Bakı Sığorta -->
+              <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+                <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
+                  <img src="./assets/img/baki.png" alt="Bakı Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                   <button
                     type="button"
-                    class="py-2 px-4 w-full text-blue-800 font-bold border-2 border-blue-700 transition duration-300 hover:bg-[#02018E] hover:text-white dark:border-blue-500 dark:text-gray-100"
+                    class="py-2 px-4 w-[120px] text-blue-800 dark:text-gray-100 font-bold border-2 border-blue-700 dark:border-blue-500 transition duration-300 hover:bg-[#02018E] hover:text-white"
+                  >
+                    Seçin
+                  </button>
+                </div>
+              </div>
+              <!-- Xalq Sığorta -->
+              <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+                <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
+                  <img src="./assets/img/xalq.png" alt="Xalq Sığorta" class="w-[100px] md:w-[130px] object-cover" />
+                  <button
+                    type="button"
+                    class="py-2 px-4 w-[120px] text-blue-800 dark:text-gray-100 font-bold border-2 border-blue-700 dark:border-blue-500 transition duration-300 hover:bg-[#02018E] hover:text-white"
+                  >
+                    Seçin
+                  </button>
+                </div>
+              </div>
+              <!-- Mega Sığorta -->
+              <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+                <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
+                  <img src="./assets/img/mega.png" alt="Mega Sığorta" class="w-[100px] md:w-[130px] object-cover" />
+                  <button
+                    type="button"
+                    class="py-2 px-4 w-[120px] text-blue-800 dark:text-gray-100 font-bold border-2 border-blue-700 dark:border-blue-500 transition duration-300 hover:bg-[#02018E] hover:text-white"
                   >
                     Seçin
                   </button>
@@ -809,6 +623,7 @@
               </div>
             </div>
           </section>
+
           <div class="w-full flex items-center justify-end">
             <button
               type="button"
@@ -823,20 +638,91 @@
       <div
         class="py-12 px-4 md:px-10 lg:px-20 xl:px-40 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md"
       >
-        <h2 class="text-2xl font-bold mb-4">Həyat sığortası hansı öhdəliyi daşıyır?</h2>
+        <h2 class="text-2xl font-bold mb-4">Səyahət sığortası nedir?</h2>
         <p class="mb-6">
-          <b>"Həyat sığortası"</b> müqaviləsinə görə Sığortaçı müqavilə ilə razılaşdırılmış və sığortalının ödədiyi sığorta haqqı
-          müqabilində sığortalının müqavilədə göstərilmiş sığorta riskləri üzrə sığorta hadisəsinin baş verdiyi halda müqavilə ilə
-          razılaşdırılmış həyat sığortası məbləğini faydalanan şəxsə ödəməyi öhdəsinə götürür. Sığorta müqaviləsində başqa cür
-          nəzərdə tutulmamışdırsa, sığorta haqqının ilk hissəsinin və ya tam ödənilməsi halında, sığorta təminatının müddəti
-          sığorta müqaviləsini bağlandığı gün saat iyirmi dörddən başlanır və sığorta müqaviləsinə əsasən həmin müqavilənin
-          qüvvədə olduğu sonuncu gün saat iyirmi dörddə başa çatır.
+          Səyahət sığortası, səyahət edərkən və ya tətildə olduğunuz zaman müəyyən problemlərlə qarşılaşsanız, maliyyə köməkliyi
+          ilə sizi təmin edir. O, baqajın itirilməsindən tutmuş xəstələndiyiniz və ya qəzaya düşdüyünüz zaman tibbi xidmətin
+          dəyərinə qədər bir sıra imkanları əhatə edir. Onunn necə işlədiyini, niyə bu qədər vacib olduğunu və ondan istifadə
+          edərkən nələrə diqqət etmək lazım olduğunu bilmək çox zəruridir.
         </p>
-        <h2 class="text-2xl font-bold mb-4">Həyat Sığortası Sahəsi Könüllü Sığorta</h2>
+        <h2 class="text-2xl font-bold mb-4">Səyahət sığortasına nələr daxildir?</h2>
+        <div>
+          <p class="mb-6">
+            Sığortasız səyahət, bir şey səhv olarsa, sizi ağır qiymətə başa gələ bilər. Vəziyyətdən asılı olaraq, səyahət
+            sığortası geniş imkanlara malikdir.
+            <br />
+            Aşağıdakı imkanlar daxildir:
+          </p>
+          <ul class="list-disc list-inside">
+            <li>itirilmiş və ya oğurlanmış çantalar (bəzi müddəalarda baqaj örtüyü ilə əlavə)</li>
+            <li>müalicə xərcləri və sizi evə çatdırmaq kimi təcili tibbi xərclər</li>
+            <li>
+              səfərinizin ləğvi, təxirə salınması və ya qısaldılması xərcləri (ləğv olunması ilə bağlı sığorta bəzən əlavə
+              ödənişlə)
+            </li>
+            <li>gecikmələr, ləğvlər kimi səyahət və ya yerləşmə ilə bağlı problemlər</li>
+            <li>əmlaka ziyan vurmaq və ya xəsarət yetirmək üçün məhkəməyə verildiyiniz halda hüquqi xərclər.</li>
+          </ul>
+          <p class="mb-6">
+            Mövcud olan sığorta qiymətləri müxtəlif sığortaçılar və şirkətlər arasında əhəmiyyətli dərəcədə dəyişəcək. Buna görə
+            satın almadan öncə daha ətraflı araşdırma etmək və səyahət sığortası qaydaları ilə yaxından tanış olmaq çox zəruridir.
+          </p>
+        </div>
+        <h2 class="text-2xl font-bold mb-4">Səyahət Sığortası online almaq imkanı</h2>
         <p class="mb-6">
-          <b>"Həyat Sığortası"</b> sığorta növü sığorta olunan bədbəxt hadisə, yaxud xəstəlik nəticəsində öldükdə, ümumi, yaxud
-          peşə əmək qabiliyyətini tam və ya qismən itirdikdə, yaxud bədbəxt hadisə nəticəsində sağlamlığına başqa cür xəsarət
-          dəydikdə, müqavilədə müəyyən edilən məbləğdə sığorta ödənişinin həyata keçirilməsini nəzərdə tutur.
+          <b>"Səyahət sığortası online"</b> almaq sizin güvənli səfəriniz üçün ən vacib amillərdən biridir. Bildiyiniz kimi
+          avropa, amerika və digər inkişaf etmiş ölkələrdə sığorta sistemi ola biləcək xoşa gəlməz hadisələr üçün ən vacib
+          nüansdır. Səyahət zamanı sığortalanmaq sizi eyni zamanda xoşa gəlməz hadisələr zamanı çıxacaq ödənişlərdən də
+          sığortalayır. Bununla da siz hadisə zamanı ilkin yardımı rahatlıqla səyahət sığortası online aldığınız sığorta
+          şirkətiniz tərəfindən yönləndirilərək ala biləcəksiniz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Səfər Sığortası almağın üstünlükləri</h2>
+        <p class="mb-6">
+          <b>" Səfər sığortası"</b> almağın üstünlükləri olaraq ilkin olaraq sizə qeyd edə bilərik ki, xaricə səfər edən zaman
+          sizin üçün sefer sigortasi ən vacib sənədlərdən biridir. Səfər sığortası alaraq siz özünüzü sığortalamış olursunuz.
+          Beləliklə isə baş verən hər bir hadisə zamanı əlavə pul ödəməkdən azad olursunuz. Bununla yanaşı unutmayın ki, viza üçün
+          səfər sığortası sənəd toplayarkən ən vacib tələb edilən sənəddir.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Seyahat sigortasi qiymetleri</h2>
+        <p class="mb-6">
+          Seyahat sigortasi qiymetleri bizim portal vasitəsilə rahatlıqla öyrənmək mümkündür. Sadəcə lazım olan parametrləri
+          dolduraraq 6 şirkətin seyahat sigortasi qiymetleri ilə tanış ola bilərsiniz. Qiymətlər sığorta şirkətinə görə dəyişir və
+          ən əsası Covid19 riskini qarşılayan şirkətlər də mövcuddur. Məsələn, Mega Sığorta şirkəti təminat məbləği üzrə tam
+          təminat verir, ancaq Qala Sığorta şirkəti isə təminatın yalnızca bir hissəsi Covid19 riskini qarşılamağı öz öhdəsinə
+          götürür. Səyahət sığortası qiymətləri formalaşmasında təminatın hansı formada olması buna görə önəmli nüasndır.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Səyahət Sığortası online almaq çox asandır!</h2>
+        <p class="mb-6">
+          Seyahet Sigortasi online almaq 1sigorta.az ilə artıq çox asandır. Bunun üçün siz ilkin olaraq şəxsi məlumatlarınızı
+          daxil edib daha sonra səfər sığortası üçün aralığını və məqsədini seçərək istədiyiniz sığorta şirkəti ilə səyahət
+          sığortanızı online ala biləcəksiniz.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Səyahət Sığortası online əldə edən zamanı izləyəcəyiniz addımlar</h2>
+        <p class="mb-6">
+          Səyahət Sığortası online alan zamanda siz sığorta şirkətinizi seçərkən qarşısında olan düymələrə tıklayaraq müvafiq
+          sığorta şirkətinin reytinqini və onun haqqında gələn müsbət və ya mənfi rəyləri oxuya biləcəksiniz. Bununla da siz
+          səyahət sığortanız ilə gələcəkdə baş verə biləcək sığorta hadisəsi zamanı hansı şirkətdən daha asanlıqla yardım ala
+          biləcəyinizə əmin olacaqsınız. Hazırda davam edən Covid-19 pandemiyası ilə əlaqədar olaraq sığorta alarkən şərtlərlə
+          diqqətlə tanış olmağınız çox önəmlidir. Çünki bir sıra səfirliklər artıq səyahət sığortanızı alarkən sığorta
+          müqavilənizdə belə bir bəndin olub olmamasını yoxlamaqdadır artıq. Səfər Sığortası almadan öncə bizim müştəri
+          xidmətlərimizlə də əlaqə saxlayaraq geniş məlumat əldə edə bilərsiniz. İnsure.az olaraq daim sizin viza üçün səfər
+          sığortanızı online almağınıza yardımçı ola bilərik
+        </p>
+        <h2 class="text-2xl font-bold mb-4">Səyahət sığortası qiymətləri</h2>
+        <p class="mb-6">
+          Səyahət sığortası qiymətləri seçdiyiniz səyahət formatına görə dəyişə bilir. Eyni zamanda 1sigorta.az ilə siz seçdiyiniz
+          səyahət formatı üzrə müxtəlif şirkətlərin qiymətlərini eyni anda görə biləcəksiniz. Bu da sizə sığotanızı daha sərfəli
+          hansı şirkətdən əldə edə bilərsinizsə onu rahat bir formada görmək imkanı yaradır. Səyahət sığortası qiymətləri ilə
+          birlikdə səyahət sığortası alacağınız şirkətin reytinqləri də sizin üçün vacib amil olmalıdır. Bu əgər hər hansı
+          xoşagəlməz hadisə baş versə sığorta şirkətinin sizə göstərəcəyi xidmətin əyani formasıdır.
+        </p>
+        <h2 class="text-2xl font-bold mb-4">1 illik səyahət sığortası almaq imkanı</h2>
+        <p class="mb-6">
+          1 illik səyahət sığortası almaq istəyənlər də eyni ilə yuxarıda qeyd etdiyimiz kimi saytımıza daxil olaraq müvafiq
+          bölmələri ardıcıllıqla doldurması lazımdır. Daha sonra səyahət koridorunu seçərək 1 illik səyahət sığortası üçün ödəməli
+          olduğu qiyməti rahatlıqla görə bilər. Şirkətlər arasındakı qiymət və reytinq fərqliliklərini analiz edərək özü üçün ən
+          uyğun seçimi edə bilərsiniz. 1 illik səyahət sığortası almaq 1sigorta.az ilə çox asandır.
         </p>
       </div>
     </main>
@@ -927,5 +813,7 @@
     <script src="js/scrollToTop.js"></script>
     <script src="js/vesiqe.js"></script>
     <script src="js/datePicker.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/travelCards.js"></script>
   </body>
 </html>

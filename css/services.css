@@ -26,6 +26,7 @@
   background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/life-wall.jpg)center/cover;
   height: 70vh;
 }
+
 .check{
   background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/check.webp)center/cover;
   height: 60vh;
@@ -33,6 +34,10 @@
 .cerime{
   background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/cerime.jpg)center/cover;
   height: 70vh;
+}
+.travel{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/travellll.webp)60%/cover;
+  height: 80vh;
 }
 .title {
     bottom: 10px;

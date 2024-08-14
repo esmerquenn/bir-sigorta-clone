@@ -25,121 +25,238 @@
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
     <header>
       <nav
-        class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
-      >
-        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/birs.png" alt="birS" /></a>
-        <div class="flex uppercase font-roboto cursor-pointer">
-            <div
-              class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
-            >
-              <a href="fərdi-sigorta.html">fərdi</a>
-            </div>
-            <div
-              class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
-            >
-              <a href="korporativ-sigorta.html">KORPORATİV</a>
-            </div>
-          </div>
-        <div class="flex justify-center items-center">
-          <ul class="hidden_dropdown lg:flex dark:bg-gray-700">
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="/"
-                >ANA SƏHİFƏ
-              </a>
-            </li>
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="services.html"
-                >XİDMƏTLƏR</a
-              >
-            </li>
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="about.html"
-              >
-                HAQQIMIZDA</a
-              >
-            </li>
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="presentation.html"
-              >
-                PREZENTASİYA</a
-              >
-            </li>
-            <li class="p-2 lg:p-0">
-              <a
-                class="py-[13px] px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
-                href="contact.html"
-                >ƏLAQƏ</a
-              >
-            </li>
-          </ul>
-          <div class="flex items-center justify-center">
-            <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
-              <button
-                @click="open = !open"
-                class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
-                :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
-              >
-                <span
-                  class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
-                  x-text="selected === '' ? 'AZ' : selected"
-                ></span>
-                <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
-              </button>
-
-              <div
-                x-show="open"
-                class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
-                x-cloak
-              >
-                <ul
-                  class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
-                >
-                  <li @click="selected = 'AZ'; open = false;" value="1">AZ</li>
-                  <li @click="selected = 'RU'; open = false;" value="2">RU</li>
-                  <li @click="selected = 'EN'; open = false;" value="3">EN</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <button>
-            <label class="switch">
-              <input onclick="toggleDarkMode()" class="switch__input" type="checkbox" role="switch" />
-              <svg class="switch__icon switch__icon--light" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                <g fill="none" stroke="#fff" stroke-width="1" stroke-linecap="round">
-                  <circle cx="6" cy="6" r="2" />
-                  <g stroke-dasharray="1.5 1.5">
-                    <polyline points="6 10,6 11.5" transform="rotate(0,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(45,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(90,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(135,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(180,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(225,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(270,6,6)" />
-                    <polyline points="6 10,6 11.5" transform="rotate(315,6,6)" />
-                  </g>
-                </g>
-              </svg>
-              <svg class="switch__icon switch__icon--dark" viewBox="0 0 12 12" width="12px" height="12px" aria-hidden="true">
-                <g fill="none" stroke="#fff" stroke-width="1" stroke-linejoin="round" transform="rotate(-45,6,6)">
-                  <path
-                    d="m9,10c-2.209,0-4-1.791-4-4s1.791-4,4-4c.304,0,.598.041.883.105-.995-.992-2.367-1.605-3.883-1.605C2.962.5.5,2.962.5,6s2.462,5.5,5.5,5.5c1.516,0,2.888-.613,3.883-1.605-.285.064-.578.105-.883.105Z"
-                  />
-                </g>
-              </svg>
-              <span class="switch__sr">Dark Mode</span>
-            </label>
-          </button>
-          <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+      class="min-h-[15vh] bg-[#27313566] dark:bg-[#273135be] py-3 px-4 lg:px-10 xl:px-20 fixed top-0 left-0 w-full z-10 flex items-center justify-between"
+    >
+      <div>
+        <a class="logo_img block" href="/"><img class="w-full" src="assets/img/logo11.png" alt="birS" /></a>
+        <a class="text-white text-[.6rem]" href="tel:+994552009995">+994 55 200 99 95</a>
+      </div>
+      <div class="flex uppercase font-roboto cursor-pointer">
+        <div
+          class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] border-r-2 border-white font-semibold leading-[20px] text-white dark:border-gray-600 dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+        >
+          <a href="avto.html" data-key="individual"
+            >İcbarİ <br />
+            sİğorta</a
+          >
         </div>
-      </nav>
+        <div
+          class="py-2 sm:py-[13px] px-2 sm:px-[22px] text-[.8rem] sm:text-[15px] font-semibold leading-[20px] text-white dark:text-gray-300 transition-all duration-300 hover:text-[rgb(5,79,93)] hover:bg-white dark:hover:bg-[rgb(2,1,142)]"
+        >
+          <a href="odenis.html" data-key="corporate"
+            >sİğorta <br />
+            ödənİşİ</a
+          >
+        </div>
+      </div>
+      <div class="flex justify-center items-center">
+        <ul class="hidden_dropdown bg-blue-400 lg:flex dark:bg-gray-700">
+          <li class="p-2 lg:p-0">
+            <a
+              class="uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+              href="/"
+              data-key="home"
+              >ANA SƏHİFƏ</a
+            >
+          </li>
+          <li class="p-2 lg:p-0 relative dropdown_li_product bg-white md:bg-transparent">
+            <a
+              class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+              href="#"
+              data-key="about"
+              >Məhsullarımız <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+            ></a>
+            <div class="drop_div_product mt-2 px-3 bg-[#272b3566] overflow-hidden max-h-0 min-w-[200px] md:absolute">
+              <ul>
+                <li class="pt-1">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="heyat_sigorta.html"
+                    >Həyat siğortası</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href=""
+                    >Kasko siğortası</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href=""
+                    >Əmlak siğortası</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="avto.html"
+                    >Avtomobilin icbari siğortası</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="seyahət.html"
+                    >Səyahət siğortası</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-2 lg:p-0 relative dropdown_li bg-white md:bg-transparent">
+            <a
+              class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+              href="#"
+              data-key="about"
+              >Şİrkət haqqında <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+            ></a>
+            <div class="drop_div mt-2 px-3 bg-[#272b3566] overflow-hidden max-h-0 min-w-[200px] md:absolute">
+              <ul>
+                <li class="pt-1">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=melumat"
+                    >Məlumat</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=rehberlik"
+                    >Rəhbərlik</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=missiya"
+                    >Missiya</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=biznes"
+                    >Biznesə yanaşma</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=qanunvericilik"
+                    >Qanunvericilik</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=vakansiya"
+                    >Vakansiya</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="about.html?page=sual"
+                    >Ən çox verilən suallar</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="p-2 lg:p-0 relative dropdown_li_services bg-white md:bg-transparent">
+            <a
+              class="py-4 uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+              href="#"
+              data-key="presentation"
+              >servİslər <i class="fa-solid fa-angle-down duration-500 pl-1"></i
+            ></a>
+            <div class="drop_div_services mt-2 bg-[#272b3566] overflow-hidden max-h-0 min-w-[200px] md:absolute">
+              <ul class="px-3">
+                <li class="pt-1">
+                  <a
+                    class="capitalize inline-block border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="check.html"
+                    >Şəhadətnamə yoxlama <span class="text-[.6rem]">(icbari siğortanın yoxlanışı)</span></a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="odenis.html"
+                    >Siğorta ödənişi</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="cerime_yoxla.html"
+                    >Cərimə yoxla</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="cerime_odenis.html"
+                    >Cərimə ödənişi</a
+                  >
+                </li>
+                <li class="pt-2">
+                  <a
+                    class="capitalize pb-[2px] border-b-2 border-[#EA1918] font-semibold text-[#fff] dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+                    href="https://customs.gov.az/az/ferdler-ucun/avtomobillerin-getirilmesi"
+                    target="_blank"
+                    >Gömrük kalkulyatoru</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="p-2 lg:p-0 bg-white md:bg-transparent">
+            <a
+              class="py-[13px] uppercase px-2 xl:px-[15px] text-[15px] font-semibold leading-[20px] text-[rgb(2,1,142)] lg:text-white dark:text-gray-300 transition-all duration-300 hover:text-[#E2C445] dark:hover:text-[#E2C445]"
+              href="contact.html"
+              data-key="contact"
+              >ƏLAQƏ</a
+            >
+          </li>
+        </ul>
+        <div class="flex items-center justify-center">
+          <div x-data="{ open: false, selected: '' }" @click.away="open = false" class="relative">
+            <button
+              @click="open = !open"
+              class="p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
+              :class="{'text-black': selected !== '', 'text-gray-500': selected === ''}"
+            >
+              <span
+                class="text-white text-[15px] font-semibold leading-[20px] overflow-hidden dark:text-gray-300"
+                x-text="selected === '' ? 'AZ' : selected"
+              ></span>
+              <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-white dark:text-gray-300"></i>
+            </button>
+            <div
+              x-show="open"
+              class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
+              x-cloak
+            >
+              <ul
+                class="overflow-auto [&>li]:text-gray-500 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
+              >
+                <li @click="selected = 'AZ'; open = false;" value="1" onclick="changeLanguage('az')">AZ</li>
+                <li @click="selected = 'RU'; open = false;" value="2" onclick="changeLanguage('ru')">RU</li>
+                <li @click="selected = 'EN'; open = false;" value="3" onclick="changeLanguage('en')">EN</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <i onclick="closeDropdown()" class="fa-solid fa-bars text-[2rem] text-white ml-2 lg:hidden"></i>
+      </div>
+    </nav>
       <div class="contact">
         <h1 class="title">Əlaqə</h1>
       </div>
