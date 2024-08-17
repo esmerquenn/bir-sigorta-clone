@@ -64,9 +64,9 @@ const translations = {
 
     insurance_tagline: "Sığortanız bir ünvanda",
     website_info:
-      "www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Mirəli oğlu Cəfərov tərəfindən <br/> təsis edilmiş,  Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 <br/> saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır.",
+      "www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Cəfərov tərəfindən <br/> təsis edilmiş,  Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 <br/> saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır.",
     contact: "Əlaqə",
-    phone_number: "+994 55 200 99 95",
+    phone_number_footer: "+994 55 200 99 95",
     email: "Office@1sigorta.az",
     address: "Bakı ş. Səməd Vurğun küçəsi 34. (AF MALL, 3-cü mərtəbə)",
     car_info_heading: "Avtomobil məlumatlarını daxil edin",
