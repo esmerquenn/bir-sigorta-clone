@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Bir sigorta</title>
     <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/scrollToTop.css" />
     <link rel="stylesheet" href="css/services.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="css/scrollToTop.css" />
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -21,8 +24,37 @@
       referrerpolicy="no-referrer"
     />
     <style>
-      .iframe-container {
-        height: 700px;
+      .selected {
+        background: #02018e;
+        color: white;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      .rotate-y-0 {
+        transform: rotateY(0deg);
+      }
+      .show_about {
+        height: 0;
+        visibility: hidden;
+      }
+      .show {
+        height: 100%;
+        visibility: visible;
+      }
+      .grid_me {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      .grid_me2 {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+      }
+      .grid_me3 {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 200px));
+        justify-content: center;
+      }
+      .grid_me4 {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 200px));
+        justify-content: center;
       }
     </style>
   </head>
@@ -259,11 +291,7 @@
             </li>
           </ul>
           <div class="flex items-center justify-center uppercase">
-            <div
-              x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
-              @click.away="open = false"
-              class="relative"
-            >
+            <div  x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }" @click.away="open = false" class="relative">
               <button
                 @click="open = !open"
                 class="p-1 md:p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
@@ -295,54 +323,223 @@
         </div>
       </nav>
 
-      <div class="ferdi">
-        <h1 class="title capitalize" data-key="paymentTitle">Sığorta Ödənişi</h1>
+      <div class="kasko">
+        <h1 class="title" data-key="casko_insurance">Kasko Sığortası</h1>
       </div>
     </header>
-    <main>
-      <div class="w-full px-3 my-10">
-        <h2
-          data-key="payment_choose"
-          class="mb-10 uppercase tracking-wide text-center text-gray-700 dark:text-gray-200 text-2xl font-bold"
-        >
-          ÖDƏNİŞİ SEÇİN
+    <main class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+      <form class="py-12 px-4 md:px-10 lg:px-20 xl:px-40" id="carForm">
+        <section class="bg-slate-100 dark:bg-gray-900 p-4 rounded-lg shadow-md">
+          <div class="personal_info">
+            <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]" data-key="car_info_heading">
+              Şəxsi məlumatlarınızı daxil edin
+            </h2>
+            <div class="flex flex-wrap -mx-3 mb-6">
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="grid-first-name"
+                    type="text"
+                    autofocus
+                    pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                    placeholder=" "
+                  />
+                  <label
+                    for="grid-first-name"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    data-key="first_name"
+                  >
+                    Ad
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="grid-last-name"
+                    type="text"
+                    pattern="[A-Za-zÇçĞğİıƏəÖöŞşÜü]+"
+                    autofocus
+                    placeholder=" "
+                  />
+                  <label
+                    for="grid-last-name"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    data-key="last_name"
+                  >
+                    Soyad
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="tecrube"
+                    type="text"
+                    autofocus
+                    placeholder=" "
+                  />
+                  <label
+                    for="tecrube"
+                    data-key="driving_experience"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Sürücülük təcrübəsi
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    id="datepicker"
+                    type="text"
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    placeholder=" "
+                  />
+                  <label
+                    for="datepicker"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                    data-key="birth_date"
+                  >
+                    Doğum tarixi
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="grid-phone-number"
+                    type="text"
+                    placeholder=" "
+                    autofocus
+                  />
+                  <label
+                    for="grid-phone-number"
+                    data-key="phone_number"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Mobil nömrə
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="bazar"
+                    type="number"
+                    autofocus
+                    placeholder=" "
+                  />
+                  <label
+                    for="bazar"
+                    data-key="current_market_value"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Cari bazar dəyəri
+                  </label>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-3 mb-6">
+                <div class="relative">
+                  <input
+                    class="peer block w-full appearance-none border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 focus:outline-none focus:ring-0 focus:border-black dark:focus:border-white"
+                    id="hecm"
+                    type="number"
+                    autofocus
+                    placeholder=" "
+                  />
+                  <label
+                    for="hecm"
+                    data-key="engine_capacity"
+                    class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >
+                    Mühərrik həcmi
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]" data-key="car_info_heading">
+              Avtomobil məlumatlarını daxil edin
+            </h2>
+            <div class="w-full px-3 my-6">
+              <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold" data-key="release_year">
+                Buraxılış İLİ
+              </h2>
+              <div id="buttonGroup" class="grid grid_me gap-6"></div>
+            </div>
+            <div class="w-full px-3 my-6">
+              <h2 class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold" data-key="brand">
+                Marka
+              </h2>
+              <div id="alfabe" class="grid_me2 gap-3 hidden"></div>
+            </div>
+            <div class="w-full px-3 my-6">
+              <div id="markas" class="grid grid_me3 gap-5"></div>
+            </div>
+            <div class="w-full px-3 my-6">
+              <div id="models" class="grid grid_me4 gap-5"></div>
+            </div>
+            <div class="w-full px-3 my-6">
+              <div id="fran" class="grid grid_me4 gap-5"></div>
+            </div>
+          </div>
+          <div class="w-full flex items-center justify-end">
+            <button
+              type="button"
+              class="py-2 px-4 border-2 rounded-lg mt-6 border-green-700 bg-green-400 hover:bg-green-700 text-white dark:border-blue-500 dark:text-gray-100 transition duration-500"
+              onclick="validateForm()"
+              data-key="continue_button"
+            >
+              davam edin
+            </button>
+          </div>
+        </section>
+      </form>
+      <div
+        class="py-12 px-4 md:px-10 lg:px-20 xl:px-40 bg-white dark:bg-gray-800 text-black dark:text-white rounded-lg shadow-md"
+      >
+        <h2 class="text-2xl font-bold mb-4" data-key="kasko_protection">
+          Kasko Sığortası adətən avtomobil sahiblərini hansı hallardan qoruyur?
         </h2>
-        <div id="logoGroup" class="md:flex justify-around items-center gap-10 md:w-[70%] mx-auto">
-          <div
-            class="w-[60%] mx-auto md:mx-0 mb-10 md:mb-0 shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="./assets/img/million.jpg"
-              alt="Bir Sigorta 1"
-              class="cursor-pointer w-full"
-              onclick="showIframe('iframe1')"
-            />
-          </div>
-          <div
-            class="w-[60%] mx-auto md:mx-0 shadow-lg bg-white transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          >
-            <img src="./assets/img/epul.png" alt="Bir Sigorta 2" class="cursor-pointer w-full" onclick="showIframe('iframe2')" />
-          </div>
-        </div>
-      </div>
+        <p class="mb-6" data-key="kasko_protection_text">
+          Kasko sığorta əldə edən zaman sizə verilən təminatlara diqqət yetirməlisiniz. Çünki sığorta təminatları kasko sigorta
+          sığorta şirkətindən və əldə etdiyiniz sığorta paketlərindən asılı olaraq dəyişə bilir. Adətən Kasko sığorta sizin
+          avtomobilinizi sığorta edən sığorta növüdür. Yəni hər hansı hadisə baş verdikdə sizin avtomobilinizə dəyən ziyanı
+          qarşılamaq üçün yaradılmış sığorta növüdür kasko sigorta. Ancaq unutmayın ki, icbari sığorta ilə kasko sığortanı
+          qarışdırmaq olmaz. İcbari sığorta sizin avto məsuliyyət sığortanız olduğu üçün bu hadisə zamanı qarşı tərəfin xərclərini
+          ödəmək üçün nəzərdə tutulub. Amma ki, KASKO sigorta növü isə eyni hadisədə sizin öz avtomobilinizə dəyən zərəri
+          qarşılamaq üçündür.
+        </p>
+        <h2 class="text-2xl font-bold mb-4" data-key="online_kasko_opportunity">
+          Onlayn Kasko sigorta əldə etmək imkanını qaçırma!
+        </h2>
+        <p class="mb-6" data-key="online_kasko_opportunity_text">
+          Onlayn Kasko sığorta sizin maşınınızı tam olaraq sigorta edir. Kasko sigorta paketlərini əldə etmək üçün sizə ən rahat
+          üsul olaraq insure.az portalını təklif edirik. Siz Parking kasko sığorta paketindən əlavə tam kasko sığorta paketlərini
+          də bizə müraciət edərək əldə edə bilərsiniz.
+        </p>
 
-      <div class="iframe-container">
-        <iframe
-          id="iframe1"
-          src="https://million.az/services/insurance/ISB"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="display: none"
-        ></iframe>
-        <iframe
-          id="iframe2"
-          src="https://www.e-pul.az/epay/az/category/insurance/icbari_insurance"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="display: none"
-        ></iframe>
+        <h2 class="text-2xl font-bold mb-4" data-key="kasko_pricing">KASKO sığortasının qiymətinini müəyyən edilməsi:</h2>
+        <p class="mb-6" data-key="kasko_pricing_text">
+          Kasko sığorta alışı zamanı sığorta şirkətləri tərəfindən avtomobilin mühərrik həcmi, real bazar dəyəri, vəziyyəti, marka
+          və modeli dəyərləndirilərək qiymət təyin edilir. Hətta bu qiymət təyin etmə mexanizminə sizin sürücülük təcrübənizin də
+          təsiri mövcuddur. İnsure.az sizin üçün müxtəlif sığorta şirkətləri ilə əməkdaşlıq etdiyi üçün ən uyğun kasko sığorta
+          paketlərini və müxtləif formatlı kasko sığorta paketlərini təklif edə bilir. Bunun üçün sadəcə bizimlə əlaqə saxlamanız
+          yetərlidir. Biz sizin üçün Paşa Sığorta, Atəşgah sığorta, Bakı Sığorta, Xalq Sığorta və digər şirkətlərin təkliflərini
+          bir gün ərzində verə bilirik.
+        </p>
+        <h2 class="text-2xl font-bold mb-4" data-key="kasko_easy_purchase">Kasko Sığorta Almaq artıq daha asandır!</h2>
+        <p class="mb-6" data-key="kasko_easy_purchase_text">
+          Kasko sığorta almaq üçün bizə zəng etməyiniz kifayətdir. Biz sizə ən sərfəli paketi ən qısa zamanda təmin edə bilirik.
+          Eyni zamanda sizə kasko sigorta ödənişi üçün hissəli ödəniş şərtləri də təklif edə bilirik.
+        </p>
       </div>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#02018e] text-white dark:bg-gray-800 dark:text-gray-100">
@@ -424,26 +621,20 @@
         class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
       ></i>
     </div>
-    <script src="js/flipCards.js"></script>
-    <script src="js/translate.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
       integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/nav.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="js/scrollToTop.js"></script>
-    <script>
-      function showIframe(iframeId) {
-        const iframes = document.querySelectorAll(".iframe-container iframe");
-
-        iframes.forEach((iframe) => {
-          iframe.style.display = "none";
-        });
-
-        document.getElementById(iframeId).style.display = "block";
-      }
-    </script>
+    <script src="js/nav.js"></script>
+    <script src="js/kasko.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/datePicker.js"></script>
   </body>
 </html>

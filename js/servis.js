@@ -3,6 +3,7 @@ const metin = [
     name: "sehadetname_yoxlama",
     className: "check",
     title: "Şəhadətnamə Yoxlama",
+    dataKey: "certificate_check_title",
     iframe:
       ' <iframe class="bg-red-50 w-full h-[600px] overflow-hidden" scrolling="no" src="https://services.isb.az/cmtpl/checkValidity" frameborder="0"></iframe>',
   },
@@ -10,6 +11,7 @@ const metin = [
     name: "cerime_yoxla",
     className: "cerime",
     title: "Cərimə Yoxlama",
+    dataKey: "penalty_check",
     iframe: ` <div class="py-12 px-4 md:px-10 lg:px-20 xl:px-40">
         <iframe
           class="bg-red-50 w-full h-[900px] overflow-hidden"
@@ -100,6 +102,7 @@ const metin = [
     name: "cerime_odenisi",
     className: "cerime",
     title: "Cərimə Ödənişi",
+    dataKey: "penalty_payment",
     iframe: ` <div class="py-12 px-4 md:px-10 lg:px-20 xl:px-40">
         <iframe
           class="w-full h-[1800px] md:h-[1500px] overflow-hidden"
@@ -123,8 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
     content.innerHTML = `
         ${selectedMetin.iframe}
       `;
-    servic_pages.innerHTML = `<h1 class="title">${selectedMetin.title}</h1>`;
-    servic_pages.classList.add(`${selectedMetin.className}`)
+    servic_pages.innerHTML = `<h1 data-key="${selectedMetin.dataKey}" class="title">${selectedMetin.title}</h1>`;
+    servic_pages.classList.add(`${selectedMetin.className}`);
   } else {
     content.innerHTML = "<p>Seçilen səhifə mövcud deyil.</p>";
   }

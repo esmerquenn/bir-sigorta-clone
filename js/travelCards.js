@@ -35,7 +35,7 @@ travel_arr.map(
   ({ i, text }, index) =>
     (travelGroup2.innerHTML += `<div
     class="border-2 travel_div py-5 flex justify-center flex-col items-center border-blue-700 dark:border-blue-500 dark:text-gray-100"
-    onclick="selectOptionTravel(event, this)"
+    onclick="selectOption( this, 'travelGroup2')"
   >
     <i class="fa-solid ${i} text-[2.4rem] sm:text-[4rem] text-gray-400 "></i>
     <h6 class=" font-bold text-gray-400">${text}</h6>
@@ -46,7 +46,7 @@ map_arr.forEach(
   (img) =>
     (travelGroup.innerHTML += ` <div
     class="border-2 travel_div flex p-4 justify-center items-center border-blue-700 dark:border-blue-500 dark:text-gray-100"
-    onclick="selectOptionCount(event, this)"
+    onclick="selectOption( this, 'travelGroup')"
   >
     <img class="w-1/2" src="./assets/img/${img}" alt="mdb" />
   </div>`)
@@ -57,7 +57,7 @@ btns.forEach(
     (buttonGroup.innerHTML += ` <button
     type="button"
     class="py-2 px-4 border-2 border-blue-700 dark:border-blue-500 dark:text-gray-100"
-    onclick="selectOption(event, this)"
+    onclick="selectOption(this, 'buttonGroup')"
   >
     ${btn}
   </button>`)

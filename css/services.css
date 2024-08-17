@@ -22,6 +22,14 @@
   background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/car1.jpg)center/cover;
   height: 70vh;
 }
+.emlak{
+  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/emlak.jpg)center/cover;
+  height: 70vh;
+}
+.kasko{
+  background: linear-gradient(rgba(1, 4, 66, 0.223), rgba(1, 4, 66, 0.223)), url(./../assets/img/red-car.jpg)center/cover;
+  height: 80vh;
+}
 .life{
   background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/life-wall.jpg)center/cover;
   height: 70vh;
@@ -72,7 +80,7 @@
 @media only screen and (max-width: 992px) {
   .title {
     bottom: 10px;
-    font-size: 2rem;
+    font-size: 1.8rem;
   
    
   }

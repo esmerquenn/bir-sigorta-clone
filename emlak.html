@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Bir sigorta</title>
     <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/tailwind.css" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/darkLight.css" />
+    <link rel="stylesheet" href="css/scrollToTop.css" />
     <link rel="stylesheet" href="css/services.css" />
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="css/scrollToTop.css" />
     <link href="https://fonts.googleapis.com/css2?family=Asap:wght@800&display=swap" rel="stylesheet" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -20,11 +22,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      .iframe-container {
-        height: 700px;
-      }
-    </style>
   </head>
 
   <body class="bg-slate-50 font-roboto dark:bg-gray-900 text-black dark:text-white">
@@ -259,11 +256,7 @@
             </li>
           </ul>
           <div class="flex items-center justify-center uppercase">
-            <div
-              x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }"
-              @click.away="open = false"
-              class="relative"
-            >
+            <div  x-data="{ open: false, selected: localStorage.getItem('selectedLanguage') || 'AZ' }" @click.away="open = false" class="relative">
               <button
                 @click="open = !open"
                 class="p-1 md:p-2 text-white rounded flex items-center justify-between dark:text-gray-300"
@@ -295,54 +288,43 @@
         </div>
       </nav>
 
-      <div class="ferdi">
-        <h1 class="title capitalize" data-key="paymentTitle">Sığorta Ödənişi</h1>
+      <div class="emlak">
+        <h1 class="title" data-key="property_insurance_mandatory">Daşınmaz Əmlakın İcbari Sığortası</h1>
       </div>
     </header>
-    <main>
-      <div class="w-full px-3 my-10">
-        <h2
-          data-key="payment_choose"
-          class="mb-10 uppercase tracking-wide text-center text-gray-700 dark:text-gray-200 text-2xl font-bold"
-        >
-          ÖDƏNİŞİ SEÇİN
-        </h2>
-        <div id="logoGroup" class="md:flex justify-around items-center gap-10 md:w-[70%] mx-auto">
-          <div
-            class="w-[60%] mx-auto md:mx-0 mb-10 md:mb-0 shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          >
-            <img
-              src="./assets/img/million.jpg"
-              alt="Bir Sigorta 1"
-              class="cursor-pointer w-full"
-              onclick="showIframe('iframe1')"
-            />
+    <main class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-12 px-4 md:px-10 lg:px-20 xl:px-40">
+      <div class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-10 justify-between items-start">
+          <div class="md:w-1/2">
+            <h1 data-key="property_insurance_mandatory" class="text-4xl font-bold mb-4 text-[#02018e]">Daşınmaz əmlakın icbari sığortası</h1>
+            <p class="mb-4">
+              Daşınmaz əmlakın icbari sığortası “İcbari sığortalar haqqında” Azərbaycan Respublikası Qanununun Xüsusi bölməsinin
+              2-ci fəsilində nəzərdə tutulmuşdur. Daşınmaz əmlakın icbari sığortası daşınmaz əmlakın yanğın və ya digər hadisələr
+              nəticəsində zədələnməsi, məhv olması, yaxud hər hansı formada itkisi ilə bağlı dəyən zərərin əvəzinin ödənilməsi
+              məqsədi ilə tətbiq edilir.
+            </p>
+            <p class="mb-4">
+              Bu məqsədlər üçün hüquqi və fiziki şəxslərə məxsus tikililərin, yaşayış və qeyri-yaşayış sahələrinin, yaşayış
+              evləri, binaların və mənzillərin, habelə dövlət əmlakının sığortası icbaridir.
+            </p>
+            <p class="mb-4">
+              Yaşayış binalarının, yaşayış evlərinin və mənzillərin icbari sığortası onların konstruktiv elementlərinə,
+              otaqlarına, o cümlədən şüşələr də daxil olmaqla qapı və pəncərə konstruksiyalarına, su, kanalizasiya və qaz
+              təchizatına, habelə istilik sisteminə aid borulara, rabitə, elektrik və digər naqillərinə, bəzək elementlərinə, o
+              cümlədən bütün növ xarici, yaxud daxili malalar və suvaq işlərinə, divar, tavan və döşəməyə dəyən zərərlərə təminat
+              verir.
+            </p>
+            <p class="mb-4">
+              Azərbaycan Respublikası Mülki Məcəlləsinin 180-ci maddəsinə uyğun olaraq özbaşına tikinti sayılan daşınmaz əmlak,
+              Azərbaycan Respublikasının Mülki Məcəlləsinə və Azərbaycan Respublikasının Şəhərsalma və Tikinti Məcəlləsinə uyğun
+              olaraq sökülməsi barədə qərar qəbul edilmiş əmlak, eləcə də, tikintisi başa çatmayan və qəzalı vəziyyətdə olan
+              daşınmaz əmlak icbari sığortaya cəlb olunmur.
+            </p>
           </div>
-          <div
-            class="w-[60%] mx-auto md:mx-0 shadow-lg bg-white transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-xl"
-          >
-            <img src="./assets/img/epul.png" alt="Bir Sigorta 2" class="cursor-pointer w-full" onclick="showIframe('iframe2')" />
+          <div class="md:w-1/2 mt-6 md:mt-0">
+            <img src="./assets/img/Homeowner-insurance.jpg" alt="House Insurance" class="rounded-lg shadow-lg" />
           </div>
         </div>
-      </div>
-
-      <div class="iframe-container">
-        <iframe
-          id="iframe1"
-          src="https://million.az/services/insurance/ISB"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="display: none"
-        ></iframe>
-        <iframe
-          id="iframe2"
-          src="https://www.e-pul.az/epay/az/category/insurance/icbari_insurance"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="display: none"
-        ></iframe>
       </div>
     </main>
     <footer class="py-20 px-4 lg:px-10 xl:px-20 bg-[#02018e] text-white dark:bg-gray-800 dark:text-gray-100">
@@ -408,6 +390,7 @@
         </div>
       </div>
     </footer>
+
     <div class="progress-container">
       <svg class="progress-ring w-15 h-15">
         <circle
@@ -424,26 +407,18 @@
         class="fa-solid fa-arrow-up text-[24px] text-[#3A3D4F] py-[11px] px-[13px] rounded-[50%] bg-[#d3d3d4] absolute dark:bg-gray-600 dark:text-gray-300"
       ></i>
     </div>
-    <script src="js/flipCards.js"></script>
-    <script src="js/translate.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.14.1/cdn.min.js"
       integrity="sha512-ytM6hP1K9BkRTjUQZpxZKFjJ2TvE4QXaK7phVymsm7NimaI5H09TWWW6f2JMbonLp4ftYU6xfwQGoe3C8jta9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="js/nav.js"></script>
+    <script src="js/translate.js"></script>
+
     <script src="js/scrollToTop.js"></script>
-    <script>
-      function showIframe(iframeId) {
-        const iframes = document.querySelectorAll(".iframe-container iframe");
+    <script src="js/nav.js"></script>
 
-        iframes.forEach((iframe) => {
-          iframe.style.display = "none";
-        });
-
-        document.getElementById(iframeId).style.display = "block";
-      }
-    </script>
+    <script></script>
   </body>
 </html>

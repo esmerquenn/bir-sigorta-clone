@@ -9,36 +9,4 @@
   position: relative !important;
 }
 
-.carousel-1 .owl-nav span:hover {
-  background: #f8fafc !important;
-}
 
-/* Dark mode */
-.dark .carousel-1 .owl-nav span {
-  background: #111827; /* Koyu gri renk */
-  border-top: 16px solid #111827;
-  border-bottom: 15px solid #111827;
-}
-
-.dark .carousel-1 .owl-nav span:hover {
-  background: #111827 !important;
-}
-
-@media only screen and (max-width: 992px) {
-  /* Default light mode */
-  .carousel-1 .owl-nav span {
-    color: #ea1918 !important;
-    font-size: 3rem !important;
-    padding-inline: 7px;
-    background: #f8fafc;
-    border-top: 9px solid #f8fafc;
-    border-bottom: 9px solid #f8fafc;
-  }
-
-  /* Dark mode */
-  .dark .carousel-1 .owl-nav span {
-    background: #111827; /* Koyu gri renk */
-    border-top: 9px solid #111827;
-    border-bottom: 9px solid #111827;
-  }
-}
