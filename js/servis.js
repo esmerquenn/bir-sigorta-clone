@@ -98,6 +98,7 @@ const metin = [
         </p>
       </div>`,
   },
+  
   {
     name: "cerime_odenisi",
     className: "cerime",

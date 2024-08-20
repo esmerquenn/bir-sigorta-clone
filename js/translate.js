@@ -3,6 +3,7 @@ const translations = {
     compulsory: "İcbarİ <br /> siğorta",
     payment: "sığorta <br /> ödənİşİ",
     paymentTitle: "sığorta ödənişi",
+    gomrukTitle: "Gömrük kalkulyator",
     payment_choose: "ÖDƏNİŞİ SEÇİN",
     home: "ANA SƏHİFƏ",
     product: "Məhsullarımız",
@@ -20,8 +21,10 @@ const translations = {
     vacancy: "Vakansiya",
     questions: "Ən çox verilən suallar",
     services: "Servİslər",
-    certificate_check: "Şəhadətnamə yoxla <br/> <span class='text-[.6rem]'>(icbari sığortanın yoxla)</span>",
+    certificate_check: "Şəhadətnamə yoxla <br/> <span class='text-[.6rem]'>(icbari sığortanı yoxla)</span>",
     certificate_check_title: "Şəhadətnamə yoxlama",
+    personal_cabinet: "şəxsi <br /> kabinet",
+
     insurance_payment: "Sığorta ödənişi",
     penalty_check: "Cərimə yoxla",
     penalty_payment: "Cərimə ödənişi",
@@ -31,7 +34,7 @@ const translations = {
     slide2_title: "Daşınmaz Əmlakınızın <br />İcbari Sığortası Bizimlə",
     slide3_title: "KASKO Sığortasında<br />Etibarlı Tərəfdaşınız",
     apply: "Müraciət et",
-    car_insurance: "Avtomobilin icbari sığortası",
+    car_insurance: "Avto icbari sığorta",
     life_insurance: "Həyat sığortası",
     property_insurance: "Əmlak sığortası",
     protect_friends: "Kiçik dostlarımızı qoruyaq onların bizə ehtiyaçları var",
@@ -64,10 +67,8 @@ const translations = {
 
     insurance_tagline: "Sığortanız bir ünvanda",
     website_info:
-      "www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Cəfərov tərəfindən <br/> təsis edilmiş,  Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337 <br/> saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır.",
+      "www.1sigorta.az saytı 19.07.2024-cü il tarixində Mircəfər Cəfərov tərəfindən təsis edilmiş, <br/>  Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş SA – 0337  saylı lisenziya əsasında sayt üzərindən sığorta fəaliyyətinə başlanmışdır.",
     contact: "Əlaqə",
-    phone_number_footer: "+994 55 200 99 95",
-    email: "Office@1sigorta.az",
     address: "Bakı ş. Səməd Vurğun küçəsi 34. (AF MALL, 3-cü mərtəbə)",
     car_info_heading: "Avtomobil məlumatlarını daxil edin",
     plate_number_label: " NV-nin qeydiyyat nişanı",
@@ -226,6 +227,8 @@ const translations = {
     compulsory: "Обязательное <br /> страхование",
     payment: "страховой <br /> платеж",
     paymentTitle: "страховой  платеж",
+    gomrukTitle: "Gömrük kalkulyator",
+
     payment_choose: "ВЫБЕРИТЕ ПЛАТЕЖ",
     home: "ГЛАВНАЯ",
     product: "Наши продукты",
@@ -243,8 +246,9 @@ const translations = {
     vacancy: "Вакансия",
     questions: "Часто задаваемые вопросы",
     services: "Услуги",
-    certificate_check: "Проверка сертификата <span class='text-[.6rem]'>(проверка обязательного страхования)</span>",
+    certificate_check: "Проверка свидетельства <br/> <span class='text-[.6rem]'>(проверка обязательного страхования)</span>",
     certificate_check_title: "Проверка сертификата",
+    personal_cabinet: " личный <br /> кабинет",
     insurance_payment: "Страховой платеж",
     penalty_check: "Проверка штрафа",
     penalty_payment: "Оплата штрафа",
@@ -286,10 +290,8 @@ const translations = {
     life_insurance_description: "Обеспечьте свое будущее с помощью страхования жизни.",
     insurance_tagline: "Ваша страховка на одном сайте",
     website_info:
-      "Сайт www.1sigorta.az был основан 19.07.2024 года Мирджафаром Мирэли оглы Джафаровым и начал <br/> свою деятельность по страхованию на основе лицензии № SA – 0337, выданной Центральным банком Азербайджанской Республики.",
+      "Сайт www.1sigorta.az был основан Мирджафаром Джафаровым 19.07.2024 года, <br/> и на основании лицензии № SA – 0337, выданной Центральным банком Азербайджанской Республики, начата страховая деятельность на сайте.",
     contact: "Контакты",
-    phone_number: "+994 55 200 99 95",
-    email: "Office@1sigorta.az",
     address: "г. Баку, ул. Самеда Вургуна, 34. (AF MALL, 3-й этаж)",
     car_info_heading: "Введите данные автомобиля",
     plate_number_label: "Номерной знак",
@@ -442,154 +444,11 @@ const translations = {
     annual_travel_insurance: "Возможность покупки годового страхования путешествий",
     annual_travel_insurance_text: `Для тех, кто хочет приобрести годовое страхование путешествий, нужно просто выполнить последовательные шаги на нашем сайте, как описано выше. Затем выберите коридор поездки, и вы сможете легко увидеть сумму, которую нужно заплатить за годовое страхование путешествий. Проанализируйте различия в ценах и рейтингах между компаниями и выберите наиболее подходящий вариант для себя. Покупка годового страхования путешествий с 1sigorta.az очень проста.`,
   },
-  en: {
-    compulsory: "Compulsory <br /> insurance",
-    payment: "Insurance <br /> payment",
-    home: "HOME",
-    product: "Our Products",
-    life_insurance: "Life Insurance",
-    casko_insurance: "CASKO Insurance",
-    property_insurance: "Property Insurance",
-    car_insurance: "Compulsory Car Insurance",
-    travel_insurance: "Travel Insurance",
-    about_company: "About Company",
-    info: "Information",
-    management: "Management",
-    mission: "Mission",
-    biznes: "Business Approach",
-    legislation: "Legislation",
-    vacancy: "Vacancy",
-    questions: "Frequently Asked Questions",
-    services: "Services",
-    certificate_check: "Certificate Check <span class='text-[.6rem]'>(compulsory insurance verification)</span>",
-    insurance_payment: "Insurance Payment",
-    penalty_check: "Check Penalty",
-    penalty_payment: "Penalty Payment",
-    customs_calculator: "Customs Calculator",
-    contact: "CONTACT",
-    slide1_title: "Trust us and secure your future <br /> with Life Insurance!",
-    slide2_title: "Compulsory Insurance <br />of Your Real Estate",
-    slide3_title: "Your Reliable Partner <br/> in CASKO Insurance",
-    apply: "Apply",
-    car_insurance: "Compulsory Car Insurance",
-    life_insurance: "Life Insurance",
-    voluntary_health_insurance: "Voluntary Health Insurance",
-    voluntary_health_insurance_description: "Information about voluntary health insurance.",
-    cargo_insurance: "Cargo Insurance",
-    cargo_insurance_description: "Information about cargo insurance.",
-    green_card_system: "Green Card System",
-    green_card_system_description: "Information about the Green Card System.",
-    voluntary_property_insurance: "Voluntary Property Insurance",
-    voluntary_property_insurance_description: "Information about voluntary property insurance.",
-
-    property_insurance: "Property Insurance",
-    protect_friends: "Let's protect our little friends, they need us",
-    about_description:
-      "Pet insurance is an ideal solution for protecting your little friends in unforeseen circumstances. This type of insurance not only covers emergencies but also provides access to a wide range of services such as inpatient and outpatient treatment, medication provision, diagnostics, and examinations. This way, in addition to emergency care, you have easy access to all the services necessary to protect your pet's health.",
-    satisfied_clients: "Satisfied Clients",
-    years_experience: "Years of Experience",
-    partners: "Partners",
-    products: "Products",
-    life_insurance: "Life Insurance",
-    property_insurance_mandatory: "Compulsory Property Insurance",
-    car_insurance_mandatory: "Compulsory Transport Insurance",
-    travel_insurance: "Travel Insurance",
-    casco_insurance: "CASKO Insurance",
-    life_insurance_description: "Secure your future with life insurance.",
-    property_insurance_description: "Protect your property with compulsory insurance.",
-    car_insurance_description: "Ensure your vehicles with compulsory insurance.",
-    travel_insurance_description: "Plan a safe trip with travel insurance.",
-    casco_insurance_description: "Protect your car from dangers with CASKO insurance.",
-    learn_more: "Learn More",
-    insurance_tagline: "Your insurance in one place",
-    website_info:
-      "The website www.1sigorta.az was established on 19.07.2024 by Mirjafar Mirali oghlu Jafarov <br/> and started its insurance activities under license number SA – 0337 issued by the Central Bank of the Republic of Azerbaijan.",
-    contact: "Contact",
-    phone_number: "+994 55 200 99 95",
-    email: "Office@1sigorta.az",
-    address: "Baku, Samed Vurgun Street 34. (AF MALL, 3rd floor)",
-    car_info_heading: "Enter Car Information",
-    plate_number_label: "License Plate Number",
-    registration_certificate_label: "Vehicle Registration Certificate",
-    mobile_number_label: "Mobile Number",
-    registration_date_label: "Car Registration Date",
-    engine_capacity_label: "Engine Capacity",
-    electric_car: "Electric Car",
-    motorcycle: "Motorcycle",
-    engine_1500_2000: "1500-2000",
-    engine_above_2000: "2000 and above",
-    cargo_vehicle: "Cargo Vehicle",
-    personal_info_heading: "Enter Your Personal Information",
-    id_number_label: "ID Card Number",
-    fin_code_label: "Personal Identification Number",
-    driver_license_label: "Driver's License Series and Number",
-    continue_button: "Continue",
-    insurance_recommendation: "We recommend you to choose after reviewing ratings and feedback on insurance companies",
-    select_button: "Select",
-    id_option_aze: "AZE",
-    id_option_aa: "AA",
-    auto_insurance_title: "Mandatory Auto Insurance",
-    online_insurance_paragraph_1:
-      "Getting online Mandatory Auto Insurance is now easier with BirSigorta.az, the mandatory insurance bureau. It takes just 1 minute to get your mandatory auto insurance online. As technology advances, online insurance services have also emerged. We now offer you other insurance services like Mandatory Auto Insurance online. The ability to make insurance payments online has also become very simple. You can handle all your insurance matters without leaving home. The mandatory insurance bureau offers you the most suitable insurance conditions. You can take advantage of the service to check the mandatory insurance of vehicles.",
-    mandatory_insurance_office_title: "Mandatory Insurance Bureau - BirSigorta.az",
-    online_insurance_paragraph_2:
-      "As a Mandatory Insurance Bureau, BirSigorta.az now provides mandatory insurance services in a very easy, online format, taking just 1 minute. The mandatory insurance bureau ensures timely or clear responses to all requests related to mandatory insurance and quickly resolves arising issues. The mandatory insurance bureau offers you the services of many insurance companies, allowing you to easily use the appropriate service. Now applying is very easy and quick. Checking the mandatory insurance of vehicles has become one of the most important tasks of insurance bureaus. Over time, this service has also started to be offered online.",
-    mandatory_auto_insurance_heading: "Mandatory Auto Insurance",
-    mandatory_auto_insurance_paragraph:
-      "Mandatory Auto Insurance is a type of insurance required by law that provides compensation if damage is caused to third parties as a result of a road traffic accident. Mandatory Auto Insurance provides coverage of up to 5000 AZN for damage caused to the other party in an accident. To check the mandatory insurance of vehicles during an accident, you invite the insurance expert and traffic police to the scene and document the incident in the appropriate format. Then, your insurance company determines the extent of the damage and either pays for the repair of your vehicle or repairs it at the appropriate auto service and hands it over to you.",
-    isb_bonus_malus_heading: "Mandatory Insurance Bureau (ISB) and the bonus-malus system",
-    isb_bonus_malus_paragraph:
-      "The Mandatory Insurance Bureau monitors payments and the bonus-malus system used in calculating these payments. Under this system, the ISB calculates a bonus for each insurance year you spend without an accident, officially rewarding you. If the opposite happens, a malus is calculated and applied as a penalty. ISB.az also calls on drivers to be more responsible and follow the rules.",
-    read_more_button: "Read more",
-    auto_insurance_heading: "Auto Insurance and Mandatory Insurance",
-    auto_insurance_paragraph_1:
-      "Auto Insurance is offered by insurance companies in several forms. According to official regulations, any vehicle is required to have Mandatory Auto Insurance. If you do not have online Mandatory Auto Insurance, you will be fined the amount set by law. Mandatory insurance provides you with coverage of up to 5000 AZN. This is an opportunity created by the state to help you feel more at ease in unpleasant situations.",
-    online_auto_insurance_check_heading: "Checking Auto Insurance Online",
-    online_auto_insurance_check_paragraph:
-      "You can take advantage of our online auto insurance check service. The service of checking the mandatory insurance of vehicles is offered to you under favorable and convenient conditions. After insuring, you can view and control even the smallest details through your online insurance profile. If any changes occur, they are reflected here. You can use the auto insurance check feature by entering details such as your ID card or vehicle registration number. You can easily carry out the auto insurance check operation by simply visiting the website. You can also easily handle auto insurance matters through mobile phones.",
-    ensure_future_heading: "Ensure Your Future with Mandatory Auto Insurance!",
-    ensure_future_paragraph:
-      "All laws regarding Mandatory Auto Insurance are stated in Chapter 4 of the Law of the Republic of Azerbaijan “On Mandatory Insurance”. Insuring vehicles is very important. Frequent accidents can occur due to the heavy traffic density in the country. Because of this, car owners pay large sums and suffer financial losses. With mandatory insurance, you are exempt from paying for damage to your vehicle as a guarantee. You can also check your insurance payments on our website if you forget them.",
-    compensation_amount_heading: "Compensation amounts for mandatory auto insurance of vehicle owners' civil liability:",
-    compensation_1: "For damage to the health of one person - 5 000 (five thousand) AZN",
-    compensation_2: "For total damage to health - 50 000 (fifty thousand) AZN",
-    compensation_3: "For damage to third-party property - 5 000 (five thousand) AZN",
-    compensation_4: "For one incident - 55 000 (fifty-five thousand) AZN",
-    property_insurance_advice_paragraph:
-      "As the name suggests, insuring all of your important properties is one of the main guarantees you can make for your future. Therefore, don't forget to 1sigorta your car and consult reliable insurance companies like 1sigorta.az.",
-    online_insurance_advantage_heading: "Online Mandatory Insurance Saves Time",
-    online_insurance_advantage_paragraph:
-      "Getting online mandatory insurance saves you time. If you are worried about calls from various insurance agents, you can purchase online mandatory auto insurance with 1sigorta.az. For this, you will only need your personal information, such as an ID card, driver's license, and technical passport. Then, you can select an insurance company and pay the amount specified for your mandatory auto insurance contract. After completing the insurance payment, your vehicle will be 1sigortad, and you can drive your vehicle with peace of mind.",
-    online_auto_insurance_advantage_heading: "Advantages of Getting Online Mandatory Auto Insurance",
-    online_auto_insurance_advantage_paragraph:
-      "Regarding the advantages of getting online mandatory auto insurance, it can be said that fines are now automatically issued by cameras installed on the roads. Considering this, you should make every effort to obtain a new insurance policy before your existing one expires. If your mandatory insurance has expired, you should not drive your vehicle without renewing the insurance. There is now an online insurance platform, 1sigorta.az, that allows you to renew your mandatory insurance at the right time. Through the 1sigorta.az website, you can obtain mandatory auto insurance for your vehicle within 1 minute and continue your journey without any problems.",
-    isb_info_heading: "What is the Mandatory Insurance Bureau (ISB)?",
-    isb_info_paragraph:
-      "The Mandatory Insurance Bureau (ISB) was established to ensure the implementation of the requirements of the Law on Mandatory Insurance. The ISB ensures the protection of 1sigortad persons, victims, and those who cause damage, as well as the stability and development of the mandatory insurance system. You can also contact the ISB directly if you have any concerns. The Mandatory Insurance Bureau will record your request, investigate, and provide you with legal assistance.",
-    isb_activity_heading: "What does ISB az do?",
-    isb_activity_paragraph:
-      "Insurance companies have come together to establish and form ISB az, which acts as a government agency with a supervisory role and also has the authority to protect the common interests of companies.",
-    mandatory_insurance_benefits_heading: "What does Mandatory Insurance give you?",
-    mandatory_insurance_benefits_paragraph:
-      "Purchasing Mandatory Insurance is now completely online. This way, you get coverage of up to 5000 AZN for your vehicle. If an accident occurs, mandatory insurance will cover up to 5000 manats of the damage you caused to the injured party. Thus, you get significant coverage by paying a small amount for mandatory insurance.",
-    insurance_calculator_heading: "What is the Mandatory Insurance Calculator for?",
-    insurance_calculator_paragraph:
-      "The Mandatory Insurance Calculator is a new tool used to check mandatory insurance online. The mandatory insurance calculator provided for checking is very simple and easy to use. You can easily perform calculations related to mandatory insurance using the mandatory insurance calculator.",
-  },
 };
 
-// function changeLanguage(language) {
-//   document.querySelectorAll("[data-key]").forEach((element) => {
-//     const key = element.getAttribute("data-key");
-//     element.innerHTML = translations[language][key];
-//   });
-// }
-
 function changeLanguage(language) {
-  // Dili localStorage'da sakla
   localStorage.setItem("selectedLanguage", language);
 
-  // Sayfadaki tüm metinleri güncelle
   document.querySelectorAll("[data-key]").forEach((element) => {
     const key = element.getAttribute("data-key");
     element.innerHTML = translations[language][key];
@@ -600,7 +459,6 @@ function changeLanguage(language) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  // LocalStorage'da saklanan dili kontrol et
   const selectedLanguage = localStorage.getItem("selectedLanguage") || "AZ"; // Varsayılan dil 'az'
 
   // Seçilen dili sayfaya uygula
