@@ -42,16 +42,16 @@ function updateContent(page, language) {
       </div>`,
     },
     rehberlik: {
-      az: `<div class=" container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
+      az: `<div class=" container xxl:w-[75%]  mx-auto py-10 px-5 xxl:px-20">
   <h1   class="text-2xl font-semibold border-b-2 pb-3 border-red-600 text-center text-white dark:text-slate-50 mb-8">
     Mircəfər Mirəli oğlu Cəfərov – <span class="text-2xl md:text-3xl text-[#EA1918]">1</span>sigorta.az saytının təsisçisi
   </h1>
 
-  <div class="md:flex md:items-start">
-    <div class="md:w-1/3 mb-6 md:mb-0">
-      <img src="./../assets/img/admin.jpg" alt="Mircəfər Cəfərov" class="w-full h-auto rounded">
+  <div class=" flex flex-col justify-end items-start lg:flex-row ">
+    <div class=" w-full lg:w-[35%] mb-10 md:mb-0">
+      <img src="./../assets/img/admin.jpg" alt="Mircəfər Cəfərov" class=" w-full  rounded">
     </div>
-    <div class="md:w-2/3 md:pl-10">
+    <div class=" w-full lg:w-[60%] md:pl-10">
       <p class="text-lg text-slate-50 leading-8 dark:text-gray-300">
         Mircəfər Cəfərov 28.06.1987-ci ildə Quba şəhərində anadan olmuşdur. Orta təhsilini Quba Özəl Türk Liseyindən almışdır.
         2010-cu ildə Azərbaycan Dövlət İqtisad Universitetinin Beynəlxalq İqtisadi Münasibətlər fakültəsini bitirmişdir. Əmək
@@ -69,11 +69,11 @@ function updateContent(page, language) {
    
   </h1>
 
-  <div class="md:flex md:items-start">
-    <div class="md:w-1/3 mb-6 md:mb-0">
-      <img src="./../assets/img/admin.jpg" alt="Мирджафар Джафаров" class="w-full h-auto rounded">
+  <div class=" flex flex-col justify-end items-start lg:flex-row">
+    <div class=" w-full lg:w-[35%]  mb-10 md:mb-0 ">
+      <img src="./../assets/img/admin.jpg" alt="Мирджафар Джафаров" class="w-full  rounded">
     </div>
-    <div class="md:w-2/3 md:pl-10">
+    <div class="w-full lg:w-[60%] md:pl-10">
       <p class="text-lg text-slate-50 leading-8 dark:text-gray-300">
         Мирджафар Джафаров родился 28.06.1987 года в городе Куба. Среднее образование получил в Кубинском Специальном Турецком Лицее.
         В 2010 году окончил факультет Международных Экономических Отношений Азербайджанского Государственного Экономического Университета. Трудовую
