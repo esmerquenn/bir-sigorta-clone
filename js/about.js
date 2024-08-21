@@ -58,7 +58,7 @@ function updateContent(page, language) {
         fəaliyyətinə 2007-ci ildə “Damirbank” ASC-də başlamışdır. 2011-ci ildən əmək fəaliyyətini “AXA MBASK” SŞ-də davam
         etdirmişdir. 2017-ci ilin yanvar ayında “MeqaSığorta” ASC-nin Şimal bölgəsinin rəhbəri vəzifəsində çalışmışdır.
         2017-ci ilin iyun ayında “AtaSığorta” ASC-nin İçəri Şəhər filialının müdiri vəzifəsinə təyin edilmişdir.
-        19.07.2024-cü il tarixində 1sigorta.az saytını təsis etmişdir.
+        19.07.2024-cü il tarixindən 1sigorta.az saytını təsisçisidir.
       </p>
     </div>
   </div>
@@ -79,7 +79,7 @@ function updateContent(page, language) {
         В 2010 году окончил факультет Международных Экономических Отношений Азербайджанского Государственного Экономического Университета. Трудовую
         деятельность начал в 2007 году в ОАО “Дамирбанк”. С 2011 года продолжил трудовую деятельность в ООО “AXA MBASK”.
         В январе 2017 года работал в должности руководителя Северного региона ОАО “МегаСтрахование”.
-        В июне 2017 года был назначен на должность директора филиала ОАО “AtaSigorta” в Ичери Шехер. создал сайт 1sigorta.az 19.07.2024.
+        В июне 2017 года был назначен на должность директора филиала ОАО “AtaSigorta” в Ичери Шехер. С 19.07.2024 года является основателем сайта 1sigorta.az.
       </p>
     </div>
   </div>
