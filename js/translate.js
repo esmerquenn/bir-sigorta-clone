@@ -24,6 +24,7 @@ const translations = {
     certificate_check: "Şəhadətnamə yoxla <br/> <span class='text-[.6rem]'>(icbari sığortanı yoxla)</span>",
     certificate_check_title: "Şəhadətnamə yoxlama",
     personal_cabinet: "şəxsi <br /> kabinet",
+    personal_cabinet_2: "şəxsi kabinet",
 
     insurance_payment: "Sığorta ödənişi",
     penalty_check: "Cərimə yoxla",
@@ -244,6 +245,7 @@ const translations = {
     certificate_check: "Проверка свидетельства <br/> <span class='text-[.6rem]'>(проверка обязательного страхования)</span>",
     certificate_check_title: "Проверка сертификата",
     personal_cabinet: " личный <br /> кабинет",
+    personal_cabinet_2: " личный кабинет",
     insurance_payment: "Страховой платеж",
     penalty_check: "Проверка штрафа",
     penalty_payment: "Оплата штрафа",
