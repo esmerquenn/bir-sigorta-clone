@@ -11,7 +11,7 @@ function updateContent(page, language) {
   const content = {
     melumat: {
       az: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1 data-key="info" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+        <h1 data-key="info" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
    Məlumat
   </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
@@ -29,7 +29,7 @@ function updateContent(page, language) {
         </p>
       </div>`,
       ru: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1 data-key="info" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+        <h1 data-key="info" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
    Информация
   </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
@@ -42,10 +42,9 @@ function updateContent(page, language) {
       </div>`,
     },
     rehberlik: {
-      az: `<div class=" bg-slate-50 dark:bg-gray-900 container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
-  <h1   class="text-2xl font-semibold border-b-4 pb-3 border-red-600 text-center text-gray-900 dark:text-white mb-8">
+      az: `<div class=" container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
+  <h1   class="text-2xl font-semibold border-b-2 pb-3 border-red-600 text-center text-white dark:text-slate-50 mb-8">
     Mircəfər Mirəli oğlu Cəfərov – <span class="text-2xl md:text-3xl text-[#EA1918]">1</span>sigorta.az saytının təsisçisi
-   
   </h1>
 
   <div class="md:flex md:items-start">
@@ -53,18 +52,19 @@ function updateContent(page, language) {
       <img src="./../assets/img/admin.jpg" alt="Mircəfər Cəfərov" class="w-full h-auto rounded">
     </div>
     <div class="md:w-2/3 md:pl-10">
-      <p class="text-lg text-gray-800 leading-8 dark:text-gray-400">
+      <p class="text-lg text-slate-50 leading-8 dark:text-gray-300">
         Mircəfər Cəfərov 28.06.1987-ci ildə Quba şəhərində anadan olmuşdur. Orta təhsilini Quba Özəl Türk Liseyindən almışdır.
         2010-cu ildə Azərbaycan Dövlət İqtisad Universitetinin Beynəlxalq İqtisadi Münasibətlər fakültəsini bitirmişdir. Əmək
         fəaliyyətinə 2007-ci ildə “Damirbank” ASC-də başlamışdır. 2011-ci ildən əmək fəaliyyətini “AXA MBASK” SŞ-də davam
         etdirmişdir. 2017-ci ilin yanvar ayında “MeqaSığorta” ASC-nin Şimal bölgəsinin rəhbəri vəzifəsində çalışmışdır.
         2017-ci ilin iyun ayında “AtaSığorta” ASC-nin İçəri Şəhər filialının müdiri vəzifəsinə təyin edilmişdir.
+        19.07.2024-cü il tarixində 1sigorta.az saytını təsis etmişdir.
       </p>
     </div>
   </div>
 </div>`,
-      ru: `<div class=" bg-slate-50 dark:bg-gray-900 container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
-  <h1   class="text-2xl font-semibold border-b-4 pb-3 border-red-600 text-center text-gray-900 dark:text-white mb-8">
+      ru: `<div class=" container md:w-[80%]  mx-auto py-10 px-5 md:px-20">
+  <h1   class="text-2xl font-semibold border-b-2 pb-3 border-red-600 text-center text-white dark:text-slate-50 mb-8">
     Мирджафар Мирели оглы Джафаров – <span class="text-2xl md:text-3xl text-[#EA1918]">1</span>sigorta.az основатель сайта
    
   </h1>
@@ -74,12 +74,12 @@ function updateContent(page, language) {
       <img src="./../assets/img/admin.jpg" alt="Мирджафар Джафаров" class="w-full h-auto rounded">
     </div>
     <div class="md:w-2/3 md:pl-10">
-      <p class="text-lg text-gray-800 leading-8 dark:text-gray-400">
+      <p class="text-lg text-slate-50 leading-8 dark:text-gray-300">
         Мирджафар Джафаров родился 28.06.1987 года в городе Куба. Среднее образование получил в Кубинском Специальном Турецком Лицее.
         В 2010 году окончил факультет Международных Экономических Отношений Азербайджанского Государственного Экономического Университета. Трудовую
         деятельность начал в 2007 году в ОАО “Дамирбанк”. С 2011 года продолжил трудовую деятельность в ООО “AXA MBASK”.
         В январе 2017 года работал в должности руководителя Северного региона ОАО “МегаСтрахование”.
-        В июне 2017 года был назначен на должность директора филиала ОАО “AtaSigorta” в Ичери Шехер.
+        В июне 2017 года был назначен на должность директора филиала ОАО “AtaSigorta” в Ичери Шехер. создал сайт 1sigorta.az 19.07.2024.
       </p>
     </div>
   </div>
@@ -87,7 +87,7 @@ function updateContent(page, language) {
     },
     missiya: {
       az: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1  data-key="mission" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+        <h1  data-key="mission" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Missiya
   </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
@@ -114,7 +114,7 @@ function updateContent(page, language) {
         </p>
       </div>`,
       ru: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-        <h1  data-key="mission" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+        <h1  data-key="mission" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Миссия
   </h1>
         <p class="mt-5 md:text-[1.2rem] text-white">
@@ -140,7 +140,7 @@ function updateContent(page, language) {
     },
     biznes: {
       az: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-            <h1  data-key="biznes" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+            <h1  data-key="biznes" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Biznesə yanaşma
   </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
@@ -196,7 +196,7 @@ function updateContent(page, language) {
             </p>
           </div>`,
       ru: ` <div class="container md:w-[80%] mx-auto py-10 px-5 md:px-20">
-            <h1  data-key="biznes" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+            <h1  data-key="biznes" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Подход к бизнесу
   </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
@@ -254,7 +254,7 @@ function updateContent(page, language) {
     },
     qanunvericilik: {
       az: `<div class="container mx-auto py-10 px-5 md:px-20">
-           <h1  data-key="legislation" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+           <h1  data-key="legislation" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Qanunvericilik
   </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
@@ -273,7 +273,7 @@ function updateContent(page, language) {
             </ul>
           </div>`,
       ru: `<div class="container mx-auto py-10 px-5 md:px-20">
-           <h1  data-key="legislation" class="text-3xl md:text-4xl font-bold text-[#f0f0f0] dark:text-gray-300 mb-8">
+           <h1  data-key="legislation" class="text-3xl md:text-4xl font-bold text-[#E2C445] inline-block  border-b-2 pb-2 border-[#EA1918] dark:text-gray-300 mb-8">
     Законодательство
   </h1>
             <p class="mt-5 md:text-[1.2rem] text-white">
@@ -540,7 +540,7 @@ function updateContent(page, language) {
 
   const images = {
     melumat: "melumat.jpg",
-    rehberlik: "Bu, Rəhbərlik səhifəsidir.",
+    rehberlik: "time.jpg",
     missiya: "mission.jpg",
     biznes: "biznes.webp",
     qanunvericilik: "korporativ.jpg",

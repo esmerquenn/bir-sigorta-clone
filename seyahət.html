@@ -404,14 +404,15 @@
                 </label>
               </div>
             </div>
+            
             <div class="w-full flex px-3 flex-wrap mb-7">
               <div class="w-full md:w-1/2 md:pr-3 mb-6 md:mb-0">
                 <label
-                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  class="block  tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                   for="grid-first-name"
                   data-key="id_number_label"
                 >
-                  şəxsiyyət Vəsiqəsinin Nömrəsi
+                  Şəxsiyyət vəsiqəsinin nömrəsi
                 </label>
                 <div class="flex items-center">
                   <div class="flex items-center justify-center">
@@ -428,7 +429,7 @@
                         ></span>
                         <i class="fa-solid fa-angle-down ml-2 w-4 h-4 text-gray-700 dark:text-gray-300"></i>
                       </button>
-
+  
                       <div
                         x-show="open"
                         class="absolute mt-1 bg-white border rounded w-full z-10 dark:bg-[rgb(2,1,142)] dark:border-gray-600"
@@ -437,8 +438,22 @@
                         <ul
                           class="overflow-auto [&>li]:text-gray-700 [&>li]:px-4 [&>li]:py-2 hover:[&>li]:bg-gray-100 dark:[&>li]:text-gray-100 dark:hover:[&>li]:bg-[#05363f7a] [&>li]:cursor-pointer"
                         >
-                          <li onclick="change(event,'AZE')" @click="selected = 'AZE'; open = false;" value="1">AZE</li>
-                          <li onclick="change(event,'AA')" @click="selected = 'AA'; open = false;" value="2">AA</li>
+                          <li
+                            onclick="change(event,'AZE')"
+                            @click="selected = 'AZE'; open = false;"
+                            value="1"
+                            data-key="id_option_aze"
+                          >
+                            AZE
+                          </li>
+                          <li
+                            onclick="change(event,'AA')"
+                            @click="selected = 'AA'; open = false;"
+                            value="2"
+                            data-key="id_option_aa"
+                          >
+                            AA
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -453,11 +468,11 @@
               </div>
               <div class="w-full md:w-1/2 md:pl-3">
                 <label
-                  class="block uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
+                  class="block  tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold mb-2"
                   for="grid-last-name"
                   data-key="fin_code_label"
                 >
-                  Fərdi indentifikasiya Nömrəsi
+                  Fərdi indentifikasiya nömrəsi
                 </label>
                 <input
                   class="appearance-none block w-full border-2 border-gray-300 bg-transparent rounded-md px-3 py-2.5 text-gray-700 leading-tight focus:outline-none focus:border-gray-800 dark:focus:border-white"
@@ -478,7 +493,7 @@
                   />
                 </div>
               </div>
-            </div>
+            </div> 
             <div class="w-full md:w-1/2 px-3 mb-6">
               <div class="relative">
                 <input
@@ -531,7 +546,7 @@
           </div>
 
           <h2 class="my-5 font-bold font-roboto text-[1.2rem] md:text-[1.5rem]" data-key="enter_travel_information">
-            Səfər məlumatlarınızı daxil edin
+            Səyahət məlumatlarınızı daxil edin
           </h2>
           <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/3 px-3 mb-6">
@@ -547,7 +562,7 @@
                   data-key="start_of_trip"
                   class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Səfər başlanğıcı
+                  Səyahət başlanğıcı
                 </label>
               </div>
             </div>
@@ -564,7 +579,7 @@
                   data-key="end_of_trip"
                   class="absolute left-3 top-2.5 z-10 origin-[0] bg-slate-100 dark:bg-gray-900 px-1 text-gray-500 duration-300 transform -translate-y-6 scale-75 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                 >
-                  Səfər sonu
+                  Səyahət sonu
                 </label>
               </div>
             </div>
@@ -602,7 +617,7 @@
                   class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold"
                   data-key="travel_zone_1"
                 >
-                  Səfərin zonası
+                  Səyahətin zonası
                 </h2>
                 <div id="travelGroup" class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"></div>
               </div>
@@ -611,7 +626,7 @@
                   class="mb-4 uppercase tracking-wide text-gray-700 dark:text-gray-200 text-xs font-bold"
                   data-key="travel_zone_2"
                 >
-                  Səfərin zonası
+                  Səyahətin zonası
                 </h2>
                 <div id="travelGroup2" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6"></div>
               </div>
@@ -626,7 +641,7 @@
             </h2>
 
             <!-- Paşa Sığorta -->
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/ata.png" alt="Paşa Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -639,7 +654,7 @@
               </div>
             </div>
             <!-- Bakı Sığorta -->
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/pasha.png" alt="Bakı Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -652,7 +667,7 @@
               </div>
             </div>
             <!-- Xalq Sığorta -->
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/xalq.png" alt="Xalq Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -664,7 +679,7 @@
                 </button>
               </div>
             </div>
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/qala.png" alt="Xalq Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -677,7 +692,7 @@
               </div>
             </div>
             <!-- Mega Sığorta -->
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/mega.png" alt="Mega Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -689,7 +704,7 @@
                 </button>
               </div>
             </div>
-            <div class="flex flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
+            <div class="flex mb-4 flex-col md:flex-row bg-white dark:bg-gray-700 p-1 rounded-lg shadow">
               <div class="flex items-center w-full bg-slate-50 dark:bg-gray-600 justify-between space-x-4 p-4">
                 <img src="./assets/img/senaye.png" alt="Xalq Sığorta" class="w-[100px] md:w-[130px] object-cover" />
                 <button
@@ -755,21 +770,12 @@
           sığortalayır. Bununla da siz hadisə zamanı ilkin yardımı rahatlıqla səyahət sığortası online aldığınız sığorta
           şirkətiniz tərəfindən yönləndirilərək ala biləcəksiniz.
         </p>
-        <h2 class="text-2xl font-bold mb-4" data-key="advantages_of_travel_insurance">Səfər Sığortası almağın üstünlükləri</h2>
+        <h2 class="text-2xl font-bold mb-4" data-key="advantages_of_travel_insurance">Səyahət Sığortası almağın üstünlükləri</h2>
         <p class="mb-6" data-key="advantages_of_travel_insurance_text">
-          <b>" Səfər sığortası"</b> almağın üstünlükləri olaraq ilkin olaraq sizə qeyd edə bilərik ki, xaricə səfər edən zaman
-          sizin üçün sefer sigortasi ən vacib sənədlərdən biridir. Səfər sığortası alaraq siz özünüzü sığortalamış olursunuz.
+          <b>" Səyahət sığortası"</b> almağın üstünlükləri olaraq ilkin olaraq sizə qeyd edə bilərik ki, xaricə səfər edən zaman
+          sizin üçün sefer sigortasi ən vacib sənədlərdən biridir. Səyahət sığortası alaraq siz özünüzü sığortalamış olursunuz.
           Beləliklə isə baş verən hər bir hadisə zamanı əlavə pul ödəməkdən azad olursunuz. Bununla yanaşı unutmayın ki, viza üçün
           səfər sığortası sənəd toplayarkən ən vacib tələb edilən sənəddir.
-        </p>
-
-        <h2 class="text-2xl font-bold mb-4" data-key="travel_insurance_prices">Seyahat sigortasi qiymetleri</h2>
-        <p class="mb-6" data-key="travel_insurance_prices_text">
-          Seyahat sigortasi qiymetleri bizim portal vasitəsilə rahatlıqla öyrənmək mümkündür. Sadəcə lazım olan parametrləri
-          dolduraraq 6 şirkətin seyahat sigortasi qiymetleri ilə tanış ola bilərsiniz. Qiymətlər sığorta şirkətinə görə dəyişir və
-          ən əsası Covid19 riskini qarşılayan şirkətlər də mövcuddur. Məsələn, Mega Sığorta şirkəti təminat məbləği üzrə tam
-          təminat verir, ancaq Qala Sığorta şirkəti isə təminatın yalnızca bir hissəsi Covid19 riskini qarşılamağı öz öhdəsinə
-          götürür. Səyahət sığortası qiymətləri formalaşmasında təminatın hansı formada olması buna görə önəmli nüasndır.
         </p>
         <h2 class="text-2xl font-bold mb-4" data-key="easy_online_travel_insurance_purchase">
           Səyahət Sığortası online almaq çox asandır!
@@ -788,7 +794,7 @@
           səyahət sığortanız ilə gələcəkdə baş verə biləcək sığorta hadisəsi zamanı hansı şirkətdən daha asanlıqla yardım ala
           biləcəyinizə əmin olacaqsınız. Hazırda davam edən Covid-19 pandemiyası ilə əlaqədar olaraq sığorta alarkən şərtlərlə
           diqqətlə tanış olmağınız çox önəmlidir. Çünki bir sıra səfirliklər artıq səyahət sığortanızı alarkən sığorta
-          müqavilənizdə belə bir bəndin olub olmamasını yoxlamaqdadır artıq. Səfər Sığortası almadan öncə bizim müştəri
+          müqavilənizdə belə bir bəndin olub olmamasını yoxlamaqdadır artıq. Səyahət Sığortası almadan öncə bizim müştəri
           xidmətlərimizlə də əlaqə saxlayaraq geniş məlumat əldə edə bilərsiniz. İnsure.az olaraq daim sizin viza üçün səfər
           sığortanızı online almağınıza yardımçı ola bilərik
         </p>
