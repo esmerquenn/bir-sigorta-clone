@@ -1,18 +1,18 @@
 $(".carousel-1").owlCarousel({
   loop: true,
-  margin: 50,
+  margin: 20,
   dots:false,
   nav: true,
   autoplay: false, // Enable autoplay
   responsive: {
     0: {
-      items: 1,
-    },
-    600: {
       items: 2,
     },
+    600: {
+      items: 5,
+    },
     1000: {
-      items: 3,
+      items: 7,
     },
   },
 });
@@ -34,7 +34,7 @@ $(".image-slider").owlCarousel({
       items: 3,
     },
     1000: {
-      items: 4,
+      items: 3,
     },
   },
 });

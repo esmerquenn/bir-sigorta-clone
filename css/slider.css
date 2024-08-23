@@ -17,15 +17,15 @@ body {
   align-items: center;
 }
 .slide-1{
-  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/bg5.png) 66% / cover;
+  background: linear-gradient(#0000003d, #0000003d), url(./../assets/imgSR/parke2.jpg) center / cover;
 
 }
 .slide-2{
-  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/bg1.jpg) 66% / cover;
+  background: linear-gradient(#0000003d, #0000003d), url(./../assets/imgSR/melumat.jpg) center / cover;
 
 }
 .slide-3{
-  background: linear-gradient(rgba(1, 4, 66, 0.33), rgba(1, 4, 66, 0.33)), url(./../assets/img/bg2.jpg) 66% / cover;
+  background: linear-gradient(#0000003d, #0000003d), url(./../assets/imgSR/parke3.webp) center / cover;
 
 }
 
